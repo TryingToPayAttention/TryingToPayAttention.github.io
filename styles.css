@@ -1,0 +1,38 @@
+
+body {
+    background-color: rgba(255, 255, 255, 0.742);
+    display: table-cell;
+    
+  }
+
+html {
+    display: table;
+    margin: auto;
+    
+    font-family: "Geneva";
+    background-image: url('lol.jpg');
+    background-repeat: repeat;
+}
+
+form{
+    text-align: center;
+}
+
+input {
+    width: 15px;
+}
+
+button {
+    color: rgb(0, 0, 0); 
+    background: transparent; 
+    border: 2px solid rgba(255, 255, 255, 0);
+    font-size: medium;
+    border-radius: 6px;   
+}
+
+button:active {
+    color: rgb(0, 0, 0); 
+    background: transparent; 
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 6px;   
+}
