@@ -1,38 +1,48 @@
+.header {
+    padding: .01em;
+    background-color: rgba(63, 141, 141, 0.9);
+}
 
-body {
-    background-color: rgba(255, 255, 255, 0.742);
-    display: table-cell;
-    
-  }
-
-html {
-    display: table;
+.post {
+    width: 60%;
     margin: auto;
-    
-    font-family: "Geneva";
+    padding: .01em;
+    background-color: rgba(252, 210, 252, 0.9);
+}
+
+/* Link style */
+a:link {
+    color: black;
+    text-decoration: none;
+}
+  
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: underline;
+}
+  
+a:active {
+    text-decoration: underline;
+}
+
+/* Format */
+html{
+    font-family: "Arial", Helvetica, sans-serif;
     background-image: url('lol.jpg');
-    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
-form{
-    text-align: center;
-}
 
-input {
-    width: 15px;
-}
-
-button {
-    color: rgb(0, 0, 0); 
-    background: transparent; 
-    border: 2px solid rgba(255, 255, 255, 0);
-    font-size: medium;
-    border-radius: 6px;   
-}
-
-button:active {
-    color: rgb(0, 0, 0); 
-    background: transparent; 
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 6px;   
-}
+/* Sidebar */
+.sidebar {
+    height: 70%; /* Full-height: remove this if you want "auto" height */
+    width: 130px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    background-color: rgb(255, 254, 205, 90%); /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding: .01em;
+  }
