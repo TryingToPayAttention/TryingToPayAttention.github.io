@@ -23,16 +23,16 @@ const load = () => {
                     el.innerHTML = d.slice(10)
                     post.append(el)
                 }
-                // Header 3
-                else if (d.slice(0, 2) === "###"){
-                    var el = document.createElement('h3')
-                    el.innerHTML = d.slice(3)
-                    post.append(el)
-                }
                 // Header 4
                 else if (d.slice(0, 3) === "####"){
                     var el = document.createElement('h4')
                     el.innerHTML = d.slice(4)
+                    post.append(el)
+                }
+                // Header 3
+                else if (d.slice(0, 2) === "###"){
+                    var el = document.createElement('h3')
+                    el.innerHTML = d.slice(3)
                     post.append(el)
                 }
                 // Paragraph
