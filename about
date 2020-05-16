@@ -1,36 +1,6 @@
-<!doctype html >
-<html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" href="styles.css">
-    <title>Blog</title>
-  </head>
-
-  <body>
-
-
-    <div class="header">
-      <h1> <a href="index.html">Blog</a></h1>
-      <h3> <a href="about.html">about</a></h3>
-    </div>
-
-    <div class="sidebar">
-      <h4> <a href="#">See all posts...</a> </h4>
-      <br>
-      <h4> <a href="#">Services</a> </h4>
-    </div>
-
-    <br>
-
-    <div class="post fade"> 
-        <p> I like writing things. ash dkja hsk jdha kjhs kdjashd akjsh djkahs kdjhakjshd khasd akj hsdk jah sk jdhk askj dhkas dkjha skjdha kjshd kjah skd ha skjdh akjs  hdkjh aks dkj askdj ha skdh akjs hd kja hskjd ha skd ajks hdkjahsk jdhkah skd hk ahsd ak jhsd jk ahk sjd hkas dkas dk jahskjd hakjsh  dka hk shdk jah sd kj haks jdha kjskdjh</p> 
+<p> I like writing things. ash dkja hsk jdha kjhs kdjashd akjsh djkahs kdjhakjshd khasd akj hsdk jah sk jdhk askj dhkas dkjha skjdha kjshd kjah skd ha skjdh akjs  hdkjh aks dkj askdj ha skdh akjs hd kja hskjd ha skd ajks hdkjahsk jdhkah skd hk ahsd ak jhsd jk ahk sjd hkas dkas dk jahskjd hakjsh  dka hk shdk jah sd kj haks jdha kjskdjh</p> 
         <p> I like wakd lkajs dlkj alksd jadh ings. ash dkja hsk jdhakjhs kdjashd akjsh djkahs kdjha kjshd khasd akj hsdk jah sk jdhk askj dhkas dkjha skjdha kjshd kjah skd  kjdh akjs  hdkjh aksdkj askdj ha skdh akjs hd kja hskjd ha skd ajks hdk jahsk jdhkah skd hk ahsd ak jhsd jk ahk sjd hkas dkas dk ja hskjd hakjsh  dka hk shdk jah sd kj haks jdha kjskdjh</p>
         <p> I like writing things. ash dkja hsk jdhak jhs kdjashd akjsh djkahs kdjh akjs asdah dasa dasha dhad  3i42u 234h 234h2 34 234 23 4234 2jh34j2 34khj234 2h34 2h34h2k34khd kha sd akj hsdk jah sk jdhk askj dhkas dkjha skjdha kjshd kjah skd ha skj dh akjs  hdkjh aksd kj askdj ha skdh akjs hd kja hskjd ha skd ajks hdkjahsk jdh kah skd hk ahsd ak jhsd jk ahk sjd hkas dkas dk jahskjd hakjsh  dka hk shdk jah sd kj haks jdha kjskdjh</p>
         <p>Cumin (/ˈkʌmɪn/,[2][3] /ˈkjuːmɪn/,[2][3] or US: /ˈkuːmɪn/)[2] (Cuminum cyminum) is a flowering plant in the family Apiaceae, native to southwestern Asia including the Middle East.[4] Its seeds – each one contained within a fruit, which is dried – are used in the cuisines of many cultures in both whole and ground form. Although cumin is thought to have uses in traditional medicine, there is no high-quality evidence that it is safe or effective as a therapeutic agent.[5] </p>
         <p>Cumin (/ˈkʌmɪn/,[2][3] /ˈkjuːmɪn/,[2][3] or US: /ˈkuːmɪn/)[2] (Cuminum cyminum) is a flowering plant in the family Apiaceae, native to southwestern Asia including the Middle East.[4] Its seeds – each one contained within a fruit, which is dried – are used in the cuisines of many cultures in both whole and ground form. Although cumin is thought to have uses in traditional medicine, there is no high-quality evidence that it is safe or effective as a therapeutic agent.[5] </p>
         <p>Cumin (/ˈkʌmɪn/,[2][3] /ˈkjuːmɪn/,[2][3] or US: /ˈkuːmɪn/)[2] (Cuminum cyminum) is a flowering plant in the family Apiaceae, native to southwestern Asia including the Middle East.[4] Its seeds – each one contained within a fruit, which is dried – are used in the cuisines of many cultures in both whole and ground form. Although cumin is thought to have uses in traditional medicine, there is no high-quality evidence that it is safe or effective as a therapeutic agent.[5] </p>
-
-      </div>
-    
-    </body>
-</html>
