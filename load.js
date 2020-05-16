@@ -24,7 +24,9 @@ const load = () => {
                 // Title of post
                 if (d.slice(0, 10) === "##########"){
                     var el = document.createElement('h1')
-                    el.innerHTML = d.slice(11)
+                    var link = document.createElement('a')
+                    link.innerHTML = d.slice(11)
+                    el.append(link)
                     post.append(el)
                 }
                 // Date published
@@ -69,7 +71,6 @@ const load = () => {
                 l.innerHTML = "expand"
                 links.append(l)
             }
-            
         }
 
         // Add some space at the bottom
