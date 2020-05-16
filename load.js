@@ -22,6 +22,7 @@ const writeIt = () => {
 
     var par2 = document.createElement('p')
     par2.innerHTML = resp
+    alert(resp)
     showing.append(par2)
 }
 
