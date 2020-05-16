@@ -11,7 +11,7 @@ const load = () => {
 
             // Make the post element
             var post = document.createElement('div')
-            if(data[i].length){ // If it's over 2000 chars, hide some content
+            if(data[i].length > 2000){ // If it's over 2000 chars, hide some content
                 post.className = "post fade"
             } else {
                 post.className = "post"
