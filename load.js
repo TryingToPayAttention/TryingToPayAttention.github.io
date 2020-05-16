@@ -10,7 +10,7 @@ const load = () => {
             document.body.append(br)
 
             var post = document.createElement('div')
-            post.className = "post"
+            post.classList = ["post", "fade"]
             document.body.append(post)
 
             for (d of data[i].split(/\r?\n/)) { 
