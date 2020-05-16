@@ -48,6 +48,10 @@ html{
     background: linear-gradient(180deg, rgba(252, 210, 252, 0), rgba(252, 210, 252, 1) 100%);
   }
 
+  .fade:after:active{
+    display: none;
+  }
+
 /* Links */
 a:link {
     color: black;

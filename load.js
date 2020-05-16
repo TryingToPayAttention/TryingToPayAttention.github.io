@@ -54,6 +54,9 @@ const load = () => {
                     post.append(el)
                 }
             }
+            var link = document.createElement('a')
+            link.innerHTML = "expand"
+            document.append(link)
         }
         document.body.append(document.createElement('br'))
         document.body.append(document.createElement('br'))
