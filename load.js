@@ -6,8 +6,10 @@ const load = () => {
     .then((data) => {
         for (i = 0; i < posts.length; i++){
 
+            // Add a break
             document.body.append(document.createElement('br'))
 
+            // Make the post element
             var post = document.createElement('div')
             if(data[i].length > 2000){ // If it's over 2000 chars, truncate
                 post.className = "post fade"
@@ -16,6 +18,7 @@ const load = () => {
             }
             document.body.append(post)
 
+            // Parse adn process the text
             for (d of data[i].split(/\r?\n/)) { 
                 // Title of post
                 if (d.slice(0, 10) === "##########"){
@@ -54,14 +57,18 @@ const load = () => {
                     post.append(el)
                 }
             }
+
+            // Add the post links for expanding etc
             var links = document.createElement('div')
-            links.className = "post"
+            links.className = "postlinks"
             document.body.append(links)
             var link = document.createElement('a')
             link.href = "#"
             link.innerHTML = "expand"
             links.append(link)
         }
+
+        // Add some space at the bottom
         document.body.append(document.createElement('br'))
         document.body.append(document.createElement('br'))
         document.body.append(document.createElement('br'))
