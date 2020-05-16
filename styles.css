@@ -37,6 +37,7 @@ html{
     height: 35em; /* max length of element*/
     overflow: hidden;
   }
+  
 .fade:after {
     content: "";
     position: absolute;
