@@ -11,7 +11,7 @@ const load = async () => {
         title.innerHTML = p
         post.append(title)
 
-        var fetched = await fetch('/posts/' + p)
+        const fetched = await fetch('/posts/' + p)
         /*
         .then(response => response.text())
         .then((data) => {
@@ -20,7 +20,7 @@ const load = async () => {
             post.append(par)
         })
         */
-       var text = await fetched.response.text
+       const text = await fetched.text()
        var par = document.createElement('p')
         par.innerHTML = text
         post.append(par)
