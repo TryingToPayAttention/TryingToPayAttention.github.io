@@ -4,12 +4,16 @@ const load = async () => {
     rec(posts)
 }
 
-const rec = async (posts) => {
+async function rec(posts) {
     if (posts.length == 0) {
         return
     }
 
     p = posts[0]
+
+    posts2 = posts
+
+    posts2.shift()
 
     console.log("1we are here " + p)
 
@@ -45,7 +49,6 @@ const rec = async (posts) => {
 
         rec(posts.shift())
         return
-
 }
 
 
