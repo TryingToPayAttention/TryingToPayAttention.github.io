@@ -6,8 +6,7 @@ const load = () => {
     .then((data) => {
         for (i = 0; i < posts.length; i++){
 
-            var br = document.createElement('br')
-            document.body.append(br)
+            document.body.append(document.createElement('br'))
 
             var post = document.createElement('div')
             if(data[i].length > 300){
@@ -57,6 +56,8 @@ const load = () => {
                 }
             }
         }
+        document.body.append(document.createElement('br'))
+        document.body.append(document.createElement('br'))
     })
 }
 
