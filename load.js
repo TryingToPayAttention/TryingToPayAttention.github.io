@@ -1,21 +1,25 @@
 
-const writeIt = () => {
-    var showing = document.createElement('div')
-    showing.className = "post"
-    document.body.append(showing)
+const load = () => {
 
-    var head = document.createElement('h2')
-    head.innerHTML = "Title"
-    showing.append(head)
+    var posts = ["Post 1", "Post 2", "Post 3"]
+    for (p in posts){
 
-    var resp = ""
-    fetch('/posts/33.txt')
+        var post = document.createElement('div')
+        post.className = "post"
+        document.body.append(post)
+
+        var title = document.createElement('h2')
+        title.innerHTML = p
+        post.append(title)
+
+        fetch('/posts/' + p)
         .then(response => response.text())
         .then((data) => {
             var par = document.createElement('p')
             par.innerHTML = data
-            showing.append(par)
+            post.append(par)
         })
+    }
 }
 
-writeIt()
+load()
