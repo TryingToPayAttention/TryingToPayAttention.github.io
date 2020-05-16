@@ -18,7 +18,7 @@ const load = () => {
             }
             document.body.append(post)
 
-            // Parse adn process the text
+            // Parse and process the text
             for (d of data[i].split(/\r?\n/)) { 
                 // Title of post
                 if (d.slice(0, 10) === "##########"){
