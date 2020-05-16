@@ -9,6 +9,8 @@ const rec = async (posts) => {
         return
     }
 
+    p = posts[0]
+
     console.log("1we are here " + p)
 
         var post = document.createElement('div')
