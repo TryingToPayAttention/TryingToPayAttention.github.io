@@ -4,7 +4,6 @@ const load = () => {
 
     get(posts)
     .then((data) => {
-        console.log('we got here!')
         for (i = 0; i < posts.length; i++){
 
             var post = document.createElement('div')
@@ -29,7 +28,13 @@ const get = async (posts) => {
     var ret = []
     for (p of posts){
         var url = '/posts/' + p
-        var data = await fetch(url).then(response => response.text())
+        var data = await fetch(url, {
+            mode: 'cors',
+            credentials: 'same-origin',
+            headers : {
+                'Content-Type': 'text/plain'
+            },
+        }).then(response => response.text())
         console.log(data)
         ret.push(data)
     }
