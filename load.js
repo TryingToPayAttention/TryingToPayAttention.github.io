@@ -23,8 +23,5 @@ const load = async () => {
     }
 }
 
-const get = async (url) => {
-    return   
-}
 
 load()
