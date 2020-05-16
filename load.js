@@ -39,7 +39,22 @@ const get = async (posts) => {
 const test = () => {
     fetch('/posts/Post 1')
   .then(response => response.text())
-  .then(data => console.log(data))
+  .then(data => {
+    var post = document.createElement('div')
+    post.className = "post"
+    document.body.append(post)
+
+    var title = document.createElement('h2')
+    title.innerHTML = "Post 1"
+    post.append(title)
+
+    var par = document.createElement('p')
+    par.innerHTML = data
+    post.append(par)
+    
+    var br = document.createElement('br')
+    document.body.append(br)
+  })
 }
 
 test()
