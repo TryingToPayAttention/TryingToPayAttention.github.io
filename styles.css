@@ -34,7 +34,7 @@ html{
 
 .fade {
     position: relative;
-    height: 35em; /* max length of element*/
+    height: 30em; /* max length of element*/
     overflow: hidden;
   }
 
