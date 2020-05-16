@@ -3,22 +3,20 @@ const load = () => {
     var posts = ["Post 1", "Post 2", "Post 3"];
 
     get(posts)
-    .then( (data) => {
+    .then((data) => {
         console.log('we got here!')
         for (i = 0; i < posts.length; i++){
-            var lol = data
-            p = posts[i];
-    
+
             var post = document.createElement('div')
             post.className = "post"
             document.body.append(post)
     
             var title = document.createElement('h2')
-            title.innerHTML = p
+            title.innerHTML = posts[i]
             post.append(title)
     
             var par = document.createElement('p')
-            par.innerHTML = "lol"
+            par.innerHTML = data[i]
             post.append(par)
             
             var br = document.createElement('br')
@@ -35,6 +33,7 @@ const get = async (posts) => {
         console.log(data)
         ret.push(data)
     }
+    return ret
 }
 
 load()
