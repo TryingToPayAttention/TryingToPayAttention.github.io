@@ -12,14 +12,13 @@ const writeIt = () => {
     par.innerHTML = "Lakhfjahskfjhalskjfhakjshflkjahsfajshfkahsf"
     showing.append(par)
 
-    var client = new XMLHttpRequest();
     var resp = ""
-    client.open('GET', '/33.txt');
-    client.onreadystatechange = function() {
-        resp = client.responseText
-        alert(resp)
-    }
-    client.send(); 
+    fetch('/33.txt')
+  .then(response => response.text())
+  .then((data) => {
+      resp = data
+    console.log(data)
+  })
 
     var par2 = document.createElement('p')
     par2.innerHTML = resp
