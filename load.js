@@ -11,24 +11,23 @@ const load = async () => {
         title.innerHTML = p
         post.append(title)
 
-        const fetched = await fetch('/posts/' + p)
-        /*
-        .then(response => response.text())
-        .then((data) => {
-            var par = document.createElement('p')
-            par.innerHTML = data
-            post.append(par)
-        })
-        */
-       const text = await fetched.text()
-       var par = document.createElement('p')
-        par.innerHTML = text
+        var data = await get('/posts/' + p)
+        var par = document.createElement('p')
+        par.innerHTML = data
         post.append(par)
     
         var br = document.createElement('br')
         document.body.append(br)
        
     }
+}
+
+const get = async (url) => {
+    fetch(url)
+    .then(response => response.text())
+    .then((data) => {
+        return data
+    })     
 }
 
 load()
