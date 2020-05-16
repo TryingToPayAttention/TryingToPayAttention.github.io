@@ -25,13 +25,14 @@ const load = async () => {
         console.log("7we are here " + p)
 
         var par = document.createElement('p')
-        par.innerHTML = data
+        par.innerHTML = "lol"
         post.append(par)
         
 
         console.log("9we are here " + p)
     
-        
+        var br = document.createElement('br')
+        document.body.append(br)
 
         console.log("10we are here " + p)
        
