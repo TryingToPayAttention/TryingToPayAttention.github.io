@@ -14,7 +14,6 @@ const load = () => {
             } else {
                 post.className = "post"
             }
-            
             document.body.append(post)
 
             for (d of data[i].split(/\r?\n/)) { 
