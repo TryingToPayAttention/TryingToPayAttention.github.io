@@ -10,7 +10,7 @@ const load = () => {
             document.body.append(br)
 
             var post = document.createElement('div')
-            if(data[i].length > 400){
+            if(data[i].length > 300){
                 post.className = "post fade"
             } else {
                 post.className = "post"
