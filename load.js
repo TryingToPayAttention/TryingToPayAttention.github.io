@@ -19,7 +19,7 @@ const load = async () => {
         console.log("5we are here " + p)
 
         var url = '/posts/' + p
-        var data = await fetch(url).then(response => response.text()) 
+        var data = fetch(url).then(response => response.text()) 
         alert(data) 
 
         console.log("7we are here " + p)
