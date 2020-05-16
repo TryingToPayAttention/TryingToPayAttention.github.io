@@ -1,11 +1,11 @@
 
 const load = async () => {
-    var posts = ["Post 1", "Post 2", "Post 3"]
+    var posts = ["Post 1", "Post 2", "Post 3"];
 
-    const data = await get(posts)
+    const data = await get(posts);
 
     for (i = 0; i < posts.length; i++){
-        p = posts[i]
+        p = posts[i];
 
         var post = document.createElement('div')
         post.className = "post"
