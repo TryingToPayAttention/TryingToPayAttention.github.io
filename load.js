@@ -10,7 +10,8 @@ const load = () => {
             post.className = "post"
             document.body.append(post)
 
-            for (d of data[i].split(/\r?\n/))   { 
+            for (d of data[i].split(/\r?\n/)) { 
+                console.log(d)
                 // Title of post
                 if (d.slice(0, 10) === "##########"){
                     console.log(d.slice(0, 10))
