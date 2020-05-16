@@ -24,10 +24,7 @@ const load = async () => {
 
 const get = async (url) => {
     fetch(url)
-    .then(response => response.text())
-    .then((data) => {
-        return data
-    })     
+    .then(response => response.text())    
 }
 
 load()
