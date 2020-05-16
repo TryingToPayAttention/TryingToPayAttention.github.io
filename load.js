@@ -28,14 +28,14 @@ const load = () => {
                     post.append(el)
                 }
                 // Header 4
-                else if (d.slice(0, 3) === "####"){
+                else if (d.slice(0, 4) === "####"){
                     console.log("h4" + d)
                     var el = document.createElement('h4')
                     el.innerHTML = d.slice(4)
                     post.append(el)
                 }
                 // Header 3
-                else if (d.slice(0, 2) === "###"){
+                else if (d.slice(0, 3) === "###"){
                     console.log("h3" + d)
                     var el = document.createElement('h3')
                     el.innerHTML = d.slice(3)
