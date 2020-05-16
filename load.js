@@ -54,10 +54,13 @@ const load = () => {
                     post.append(el)
                 }
             }
+            var links = document.createElement('div')
+            links.className = "post"
+            document.body.append(links)
             var link = document.createElement('a')
             link.href = "#"
             link.innerHTML = "expand"
-            post.append(link)
+            links.append(link)
         }
         document.body.append(document.createElement('br'))
         document.body.append(document.createElement('br'))
