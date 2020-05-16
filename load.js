@@ -10,27 +10,31 @@ const load = async () => {
         document.body.append(post)
 
 
-        console.log("5we are here " + p)
+        console.log("3we are here " + p)
 
         var title = document.createElement('h2')
         title.innerHTML = p
         post.append(title)
 
-        console.log("7we are here " + p)
+        console.log("5we are here " + p)
+
         var url = '/posts/' + p
         var data = await fetch(url).then(response => response.text()) 
         alert(data) 
+
+        console.log("7we are here " + p)
+
         var par = document.createElement('p')
         par.innerHTML = data
         post.append(par)
         
 
-        console.log("8we are here " + p)
+        console.log("9we are here " + p)
     
         var br = document.createElement('br')
         document.body.append(br)
 
-        console.log("9we are here " + p)
+        console.log("10we are here " + p)
        
     }
 }
