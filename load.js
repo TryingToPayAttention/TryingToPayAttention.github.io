@@ -9,7 +9,7 @@ const load = () => {
             document.body.append(document.createElement('br'))
 
             var post = document.createElement('div')
-            if(data[i].length > 1800){
+            if(data[i].length > 2000){ // If it's over 2000 chars, truncate
                 post.className = "post fade"
             } else {
                 post.className = "post"
