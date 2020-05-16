@@ -11,6 +11,7 @@ const load = () => {
             document.body.append(post)
 
             for (d of data[i].split(/\r?\n/))   { 
+                console.log(d)
                 // Title of post
                 if (d.slice(0, 10) === "##########"){
                     var el = document.createElement('h2')
