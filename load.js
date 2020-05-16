@@ -1,9 +1,15 @@
 
 const load = async () => {
-
     var posts = ["Post 1", "Post 2", "Post 3"]
-    for (p of posts){
-        console.log("1we are here " + p)
+    rec(posts)
+}
+
+const rec = async (posts) => {
+    if (posts.length == 0) {
+        return
+    }
+
+    console.log("1we are here " + p)
 
         var post = document.createElement('div')
         post.className = "post"
@@ -34,8 +40,10 @@ const load = async () => {
         document.body.append(br)
 
         console.log("10we are here " + p)
-       
-    }
+
+        rec(posts.shift())
+        return
+
 }
 
 
