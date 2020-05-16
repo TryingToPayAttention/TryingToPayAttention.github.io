@@ -1,23 +1,29 @@
 
 const load = () => {
-    var posts = ["Post 1", "Post 2", "Post 3"];
+    var posts = ["Post 1", "Post 2", "Post 3"]
 
     get(posts)
     .then((data) => {
         for (i = 0; i < posts.length; i++){
-            console.log(data[i].split(/\r?\n/))
 
             var post = document.createElement('div')
             post.className = "post"
             document.body.append(post)
-    
             var title = document.createElement('h2')
             title.innerHTML = posts[i]
             post.append(title)
+
+            for (d of data[i].split(/\r?\n/)){
     
             var par = document.createElement('p')
-            par.innerHTML = data[i]
+            par.innerHTML = d
             post.append(par)
+
+            }
+
+            
+    
+            
             
             var br = document.createElement('br')
             document.body.append(br)
