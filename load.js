@@ -17,7 +17,6 @@ const writeIt = () => {
     client.open('GET', '/33.txt');
     client.onreadystatechange = function() {
         resp = client.responseText
-        alert(resp);
     }
     client.send(); 
 
