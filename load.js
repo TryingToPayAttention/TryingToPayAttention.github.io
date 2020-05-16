@@ -4,7 +4,9 @@ const load = () => {
 
     get(posts)
     .then( (data) => {
+        console.log('we got here!')
         for (i = 0; i < posts.length; i++){
+            var lol = data
             p = posts[i];
     
             var post = document.createElement('div')
