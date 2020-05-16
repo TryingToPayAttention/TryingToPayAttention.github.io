@@ -35,6 +35,12 @@ const load = () => {
                     el.innerHTML = d.slice(3)
                     post.append(el)
                 }
+                // Header 2
+                else if (d.slice(0, 2) === "##"){
+                    var el = document.createElement('h3')
+                    el.innerHTML = d.slice(2)
+                    post.append(el)
+                }
                 // Paragraph
                 else{
                     var el = document.createElement('p')
