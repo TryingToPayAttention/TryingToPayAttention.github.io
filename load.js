@@ -1,7 +1,9 @@
 
 const load = async () => {
     var posts = ["Post 1", "Post 2", "Post 3"]
-    const data = await get(posts)
+
+    //const data = await get(posts)
+
     for (i = 0; i < posts.length; i++){
         p = posts[i]
 
@@ -30,7 +32,5 @@ const get = async (posts) => {
         ret.push(data)
     }
 }
-
-
 
 load()
