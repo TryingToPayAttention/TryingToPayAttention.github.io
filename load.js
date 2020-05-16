@@ -14,7 +14,7 @@ const writeIt = () => {
 
     var client = new XMLHttpRequest();
     var resp = ""
-    client.open('GET', '/posts/33.txt');
+    client.open('GET', '/33.txt');
     client.onreadystatechange = function() {
         resp = client.responseText
         alert(resp);
