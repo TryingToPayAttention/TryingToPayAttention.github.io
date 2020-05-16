@@ -37,7 +37,7 @@ const load = () => {
                 }
                 // Header 2
                 else if (d.slice(0, 2) === "##"){
-                    var el = document.createElement('h3')
+                    var el = document.createElement('h2')
                     el.innerHTML = d.slice(2)
                     post.append(el)
                 }
