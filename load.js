@@ -10,7 +10,12 @@ const load = () => {
             document.body.append(br)
 
             var post = document.createElement('div')
-            post.className = "post fade"
+            if(data[i].length > 400){
+                post.className = "post fade"
+            } else {
+                post.className = "post"
+            }
+            
             document.body.append(post)
 
             for (d of data[i].split(/\r?\n/)) { 

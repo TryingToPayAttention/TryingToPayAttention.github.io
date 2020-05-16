@@ -38,7 +38,7 @@ html{
     height: 20em; /* max length of element*/
   }
 .fade:after {
-    content: "LOL";
+    content: "";
     position: absolute;
     text-align: right;
     bottom: 0;
