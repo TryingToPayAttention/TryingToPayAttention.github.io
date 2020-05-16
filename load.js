@@ -40,6 +40,7 @@ const test = () => {
     fetch('/posts/Post 1')
   .then(response => response.text())
   .then(data => {
+      alert("we are now in the dom creation")
     var post = document.createElement('div')
     post.className = "post"
     document.body.append(post)
@@ -54,6 +55,8 @@ const test = () => {
     
     var br = document.createElement('br')
     document.body.append(br)
+
+    alert("we are exiting the dom creation")
   })
 }
 
