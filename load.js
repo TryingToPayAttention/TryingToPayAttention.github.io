@@ -60,4 +60,4 @@ const test = () => {
   })
 }
 
-test()
+load()
