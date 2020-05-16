@@ -11,10 +11,6 @@ async function rec(posts) {
 
     p = posts[0]
 
-    posts2 = posts
-
-    posts2.shift()
-
     console.log("1we are here " + p)
 
         var post = document.createElement('div')
@@ -47,7 +43,7 @@ async function rec(posts) {
 
         console.log("10we are here " + p)
 
-        rec(posts.shift())
+        rec(posts.slice(1, posts.length -1))
         return
 }
 
