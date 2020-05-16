@@ -6,6 +6,9 @@ const load = () => {
     .then((data) => {
         for (i = 0; i < posts.length; i++){
 
+            var br = document.createElement('br')
+            document.body.append(br)
+
             var post = document.createElement('div')
             post.className = "post"
             document.body.append(post)
@@ -48,9 +51,6 @@ const load = () => {
                     post.append(el)
                 }
             }
-
-            var br = document.createElement('br')
-            document.body.append(br)
         }
     })
 }
