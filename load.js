@@ -19,10 +19,9 @@ const load = async () => {
         console.log("5we are here " + p)
 
         var url = '/posts/' + p
-        var data = Promise.resolve(fetch(url).then(response => response.text()) )
-        alert(data) 
+        var data = await fetch(url).then(response => response.text())
 
-        console.log("7we are here " + p)
+        console.log("7we are here " + p + " data: " + data)
 
         var par = document.createElement('p')
         par.innerHTML = "lol"
