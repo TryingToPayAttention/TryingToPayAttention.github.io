@@ -9,7 +9,7 @@ const writeIt = () => {
     showing.append(head)
 
     var resp = ""
-    fetch('/33.txt')
+    fetch('/posts/33.txt')
         .then(response => response.text())
         .then((data) => {
             var par = document.createElement('p')
