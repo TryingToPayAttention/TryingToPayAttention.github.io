@@ -24,7 +24,7 @@ const load = () => {
                 else{
                     var el = document.createElement('p')
                     el.innerHTML = d
-                    post.append(par)
+                    post.append(el)
                 }
             }
 
