@@ -13,12 +13,12 @@ const load = () => {
             for (d of data[i].split(/\r?\n/))   { 
                 if (d.slice(0, 10) === "##########"){
                     var el = document.createElement('h2')
-                    el.innerHTML = d.slice(11)
+                    el.innerHTML = d.slice(10)
                     post.append(el)
                 }
-                if (d.slice(0, 9) === "#########"){
+                else if (d.slice(0, 9) === "#########"){
                     var el = document.createElement('h5')
-                    el.innerHTML = "Published " + d.slice(10)
+                    el.innerHTML = "Published " + d.slice(9)
                     post.append(el)
                 }
                 else{
