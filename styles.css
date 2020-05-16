@@ -35,7 +35,7 @@ html{
 
 .fade {
     position: relative;
-    height: 20em; /* max length of element*/
+    height: 25em; /* max length of element*/
   }
 .fade:after {
     content: "";
