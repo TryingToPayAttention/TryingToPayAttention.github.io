@@ -10,40 +10,33 @@ const load = () => {
             post.className = "post"
             document.body.append(post)
 
-            console.log("datai: " + data[i])
-
             for (d of data[i].split(/\r?\n/)) { 
                 // Title of post
                 if (d.slice(0, 10) === "##########"){
-                    console.log("title" + d)
-                    var el = document.createElement('h2')
+                    var el = document.createElement('h1')
                     el.innerHTML = d.slice(11)
                     post.append(el)
                 }
                 // Date published
                 else if (d.slice(0, 9) === "#########"){
-                    console.log("date" + d)
                     var el = document.createElement('h6')
                     el.innerHTML = d.slice(10)
                     post.append(el)
                 }
                 // Header 4
                 else if (d.slice(0, 4) === "####"){
-                    console.log("h4" + d)
                     var el = document.createElement('h4')
                     el.innerHTML = d.slice(4)
                     post.append(el)
                 }
                 // Header 3
                 else if (d.slice(0, 3) === "###"){
-                    console.log("h3" + d)
                     var el = document.createElement('h3')
                     el.innerHTML = d.slice(3)
                     post.append(el)
                 }
                 // Paragraph
                 else{
-                    console.log("paragraph" + d)
                     var el = document.createElement('p')
                     el.innerHTML = d
                     post.append(el)
