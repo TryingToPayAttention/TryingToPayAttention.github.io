@@ -14,7 +14,7 @@ const writeIt = () => {
         .then((data) => {
             var par = document.createElement('p')
             par.innerHTML = data
-            showing.append(par2)
+            showing.append(par)
         })
 }
 
