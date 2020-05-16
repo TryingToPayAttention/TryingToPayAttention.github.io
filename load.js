@@ -18,11 +18,12 @@ const writeIt = () => {
   .then((data) => {
       resp = data
     console.log(data)
-  })
-
     var par2 = document.createElement('p')
     par2.innerHTML = resp
     showing.append(par2)
+  })
+
+    
 }
 
 writeIt()
