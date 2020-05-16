@@ -36,4 +36,10 @@ const get = async (posts) => {
     return ret
 }
 
-load()
+const test = () => {
+    fetch('/posts/Post 1')
+  .then(response => response.text())
+  .then(data => console.log(data))
+}
+
+test()
