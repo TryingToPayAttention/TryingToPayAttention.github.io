@@ -17,12 +17,12 @@ const writeIt = () => {
     client.open('GET', '/33.txt');
     client.onreadystatechange = function() {
         resp = client.responseText
+        alert(resp)
     }
     client.send(); 
 
     var par2 = document.createElement('p')
     par2.innerHTML = resp
-    alert(resp)
     showing.append(par2)
 }
 
