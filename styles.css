@@ -1,14 +1,17 @@
 .header {
+    text-align: center;
     padding: .01em;
     background-color: rgba(63, 141, 141, 0.9);
 }
 
 .post {
+    text-align: justify;
     width: 60%;
     margin: auto;
-    padding: .01em;
+    padding: 1em;
     background-color: rgba(252, 210, 252, 0.9);
 }
+
 
 /* Link style */
 a:link {
@@ -31,7 +34,7 @@ a:active {
 
 /* Format */
 html{
-    font-family: "Arial", Helvetica, sans-serif;
+    font-family: "Courier", monospace;
     background-image: url('lol.jpg');
     background-attachment: fixed;
 }
