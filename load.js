@@ -25,6 +25,7 @@ const load = () => {
                 if (d.slice(0, 10) === "##########"){
                     var el = document.createElement('h1')
                     var link = document.createElement('a')
+                    link.href = "#" // This can link to the single blog post
                     link.innerHTML = d.slice(11)
                     el.append(link)
                     post.append(el)
