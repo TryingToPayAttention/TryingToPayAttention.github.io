@@ -11,8 +11,7 @@ const load = () => {
 
             // Make the post element
             var post = document.createElement('div')
-            contract = data[i].length > 2000
-            if(contract){ // If it's over 2000 chars, hide some content
+            if(data[i].length){ // If it's over 2000 chars, hide some content
                 post.className = "post fade"
             } else {
                 post.className = "post"
@@ -60,17 +59,6 @@ const load = () => {
                     el.innerHTML = d
                     post.append(el)
                 }
-            }
-
-            // Add the post links for expanding etc
-            if(contract){
-                var links = document.createElement('div')
-                links.className = "postlinks"
-                document.body.append(links)
-                var l = document.createElement('a')
-                l.href = "#"
-                l.innerHTML = "expand"
-                links.append(l)
             }
         }
 
