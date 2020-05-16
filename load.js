@@ -2,8 +2,7 @@
 const load = () => {
 
     var posts = ["Post 1", "Post 2", "Post 3"]
-    for (p in posts){
-
+    for (p of posts){
         var post = document.createElement('div')
         post.className = "post"
         document.body.append(post)
@@ -19,6 +18,10 @@ const load = () => {
             par.innerHTML = data
             post.append(par)
         })
+    
+        var br = document.createElement('br')
+        document.body.append(br)
+       
     }
 }
 
