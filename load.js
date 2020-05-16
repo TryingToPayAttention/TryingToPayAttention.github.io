@@ -55,8 +55,9 @@ const load = () => {
                 }
             }
             var link = document.createElement('a')
+            link.href = "#"
             link.innerHTML = "expand"
-            document.append(link)
+            document.body.append(link)
         }
         document.body.append(document.createElement('br'))
         document.body.append(document.createElement('br'))
