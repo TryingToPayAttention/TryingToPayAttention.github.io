@@ -8,22 +8,14 @@ const writeIt = () => {
     head.innerHTML = "Title"
     showing.append(head)
 
-    var par = document.createElement('p')
-    par.innerHTML = "Lakhfjahskfjhalskjfhakjshflkjahsfajshfkahsf"
-    showing.append(par)
-
     var resp = ""
     fetch('/33.txt')
-  .then(response => response.text())
-  .then((data) => {
-      resp = data
-    console.log(data)
-    var par2 = document.createElement('p')
-    par2.innerHTML = resp
-    showing.append(par2)
-  })
-
-    
+        .then(response => response.text())
+        .then((data) => {
+            var par = document.createElement('p')
+            par.innerHTML = data
+            showing.append(par2)
+        })
 }
 
 writeIt()
