@@ -36,28 +36,4 @@ const get = async (posts) => {
     return ret
 }
 
-const test = () => {
-    fetch('/posts/Post 1')
-  .then(response => response.text())
-  .then(data => {
-      alert("we are now in the dom creation")
-    var post = document.createElement('div')
-    post.className = "post"
-    document.body.append(post)
-
-    var title = document.createElement('h2')
-    title.innerHTML = "Post 1"
-    post.append(title)
-
-    var par = document.createElement('p')
-    par.innerHTML = data
-    post.append(par)
-    
-    var br = document.createElement('br')
-    document.body.append(br)
-
-    alert("we are exiting the dom creation")
-  })
-}
-
 load()
