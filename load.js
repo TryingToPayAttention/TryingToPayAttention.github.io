@@ -11,7 +11,8 @@ const load = () => {
 
             // Make the post element
             var post = document.createElement('div')
-            if(data[i].length > 2000){ // If it's over 2000 chars, truncate
+            contract = data[i].length > 2000
+            if(contract){ // If it's over 2000 chars, hide some content
                 post.className = "post fade"
             } else {
                 post.className = "post"
@@ -59,13 +60,16 @@ const load = () => {
             }
 
             // Add the post links for expanding etc
-            var links = document.createElement('div')
-            links.className = "postlinks"
-            document.body.append(links)
-            var link = document.createElement('a')
-            link.href = "#"
-            link.innerHTML = "expand"
-            links.append(link)
+            if(contract){
+                var links = document.createElement('div')
+                links.className = "postlinks"
+                document.body.append(links)
+                var l = document.createElement('a')
+                l.href = "#"
+                l.innerHTML = "expand"
+                links.append(l)
+            }
+            
         }
 
         // Add some space at the bottom
