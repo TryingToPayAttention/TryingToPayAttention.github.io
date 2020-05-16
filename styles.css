@@ -35,7 +35,7 @@ html{
 
 .fade {
     position: relative;
-    height: 5.4em; /* exactly three lines */
+    height: 20em; /* exactly three lines */
   }
 .fade:after {
     content: "";
