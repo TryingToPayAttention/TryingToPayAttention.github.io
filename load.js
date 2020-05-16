@@ -31,8 +31,7 @@ const load = async () => {
 
         console.log("9we are here " + p)
     
-        var br = document.createElement('br')
-        document.body.append(br)
+        
 
         console.log("10we are here " + p)
        
