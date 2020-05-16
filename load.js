@@ -2,7 +2,7 @@
 const load = async () => {
     var posts = ["Post 1", "Post 2", "Post 3"]
 
-    //const data = await get(posts)
+    const data = await get(posts)
 
     for (i = 0; i < posts.length; i++){
         p = posts[i]
@@ -29,6 +29,7 @@ const get = async (posts) => {
     for (p of posts){
         var url = '/posts/' + p
         var data = await fetch(url).then(response => response.text())
+        console.log(data)
         ret.push(data)
     }
 }
