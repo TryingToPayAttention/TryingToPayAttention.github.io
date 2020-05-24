@@ -68,13 +68,14 @@ const load = () => {
 
                             // Search for the }
                             var j
+                            loop2:
                             for(j = i +1 ; j < d.length; j++){
                                 // When you find it, append it
                                 if(d[j] === '}'){
                                     //var sup = document.createElement("sup")
                                     //sup.innerHTML = d.slice(i+1, j)
                                     //el.append(sup)
-                                    break
+                                    break loop2
                                 }
                             }
                             // Set to the character after the }
