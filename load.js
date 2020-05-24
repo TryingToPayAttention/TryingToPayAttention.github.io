@@ -56,7 +56,39 @@ const load = () => {
                 // Paragraph
                 else{
                     var el = document.createElement('p')
-                    el.innerHTML = d
+                    //el.innerHTML = d
+                    var i
+                    last = 0
+                    //Check to see if a character is {
+                    for(i=0; i < d.length; i++){
+                        if (d[i] === '{'){
+                            //Append the text that came before
+                            var node = document.createTextNode(d.slice(last, i))
+                            el.append(node)
+
+                            // Search for the }
+                            var j
+                            for(j = i +1 ; j < d.length; j++){
+                                // When you find it, append it
+                                if(d[j] === '}'){
+                                    var sup = document.createElement("sup")
+                                    sup.innerHTML = d.slice(i+1, j)
+                                    //el.append(sup)
+                                    break
+                                }
+                            }
+                            // Set to the character after the }
+                            last = j + 1
+                            i = j
+                        }
+                    }
+                    // If the post doesnt end in a footnote, append text that you have not gotten to 
+                    if(last != i){
+                        var node = document.createTextNode(d.slice(last))
+                        el.append(node)
+                    }
+                    
+                    // Append the full post to the page
 
                     post.append(el)
                 }
