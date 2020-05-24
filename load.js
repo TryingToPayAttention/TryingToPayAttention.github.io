@@ -57,7 +57,7 @@ const load = () => {
                 else{
                     var el = document.createElement('p')
                     el.innerHTML = d
-                    
+
                     var i
                     last = 0
                     //Check to see if a character is {
@@ -72,12 +72,12 @@ const load = () => {
                             //loop2:
                             for(j = i ; j < d.length; j++){
                                 // When you find it, append it
-                                if(d[j] === '}'){
+                                //if(d[j] === '}'){
                                     //var sup = document.createElement("sup")
                                     //sup.innerHTML = d.slice(i+1, j)
                                     //el.append(sup)
                                     //break loop2
-                                }
+                                //}
                             }
                             // Set to the character after the }
                             //last = j + 1
@@ -85,10 +85,10 @@ const load = () => {
                         }
                     }
                     // If the post doesnt end in a footnote, append text that you have not gotten to 
-                    if(last != i){
+                    //if(last != i){
                         //var node = document.createTextNode(d.slice(last))
                         //el.append(node)
-                    }
+                    //}
                     
                     // Append the full post to the page
 
