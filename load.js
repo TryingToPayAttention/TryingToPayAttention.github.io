@@ -63,7 +63,7 @@ const load = () => {
                     for(i=0; i < d.length; i++){
                         if (d[i] === '{'){
                             //Append the text that came before
-                            var node = document.createTextNode(d.slice(last, i))
+                            //var node = document.createTextNode(d.slice(last, i))
                             //el.append(node)
 
                             // Search for the }
@@ -71,8 +71,8 @@ const load = () => {
                             for(j = i +1 ; j < d.length; j++){
                                 // When you find it, append it
                                 if(d[j] === '}'){
-                                    var sup = document.createElement("sup")
-                                    sup.innerHTML = d.slice(i+1, j)
+                                    //var sup = document.createElement("sup")
+                                    //sup.innerHTML = d.slice(i+1, j)
                                     //el.append(sup)
                                     break
                                 }
@@ -84,7 +84,7 @@ const load = () => {
                     }
                     // If the post doesnt end in a footnote, append text that you have not gotten to 
                     if(last != i){
-                        var node = document.createTextNode(d.slice(last))
+                        //var node = document.createTextNode(d.slice(last))
                         //el.append(node)
                     }
                     
