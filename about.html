@@ -1,70 +1,47 @@
-<!doctype html >
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" href="styles.css">
-    <title>Trying</title>
-    <link rel="shortcut icon" type="image/x-icon"  href="favicon.ico" />
-  </head>
 
-  <body>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="styles.css">
+  <title>Trying</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+</head>
+
+<body>
 
 
-    <div class="header">
-      <h1> <a href="index.html">Trying to Pay Attention</a></h1>
-      <h3> <a href="about.html">about</a></h3>
+  <div class="header">
+    <h1> <a href="index.html">Trying to Pay Attention</a></h1>
+    <h3> <a href="about.html">about</a></h3>
+  </div>
+
+  <br>
+
+  <div class="post">
+    <h2> Wow </h2>
+    <p> Crazy world we live<sup class="superscript">1</sup> in, huh? I'm just trying to get my thoughts together and make sense of everything.</p>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal1" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Modal 1 jadkshkajhskdahskjdh askdhajshdkahda dkahsjkdhakjsdhajhds askjdhajkhsdkjahsdjhaskda sdkhasjdhkahsdka
+        sdkjhaksjdhakjshdkjahksjhd akjshdkjahkjsdhjkashd ahsdka sdkasjdhak sdh ajsdkajksdjahskd aksdka sdkas kdjaks jdh
+        aksd kadksasdaksdh aksd kjahsdk a skd haksdakdkadakdhakjhsd kadkahsdkjads kjads kjahds kjahks djaksjdh akjsd
+        kajd kajh das dkahs dkhajsdhakdakjshd akj sdkajdsajsdkaskdjaks djadhdks</p>
     </div>
-
-    
-
-    <br>
-
-    <div class="post">
-      <h2> Wow </h2>
-      <p> Crazy world we live in, huh? I'm just trying to get my thoughts together and make sense of everything.</p> 
+    <div id="myModal2" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Modal 2</p>
+      </div>
     </div>
+  </div>
 
-    <!-- Trigger/Open The Modal -->
-<button id="myBtn1" margin="auto" class="modal-button" trgt="myModal1">Open Modal 1</button>
-<button id="myBtn2" margin="auto" class="modal-button" trgt="myModal2">Open Modal 2</button>
+  <script src="notes.js"></script>
 
-<!-- The Modal -->
-<div id="myModal1" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Modal 1</p>
-</div>
-<div id="myModal2" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Modal 2</p>
-</div>
+</body>
 
-  <script>
-
-    //var modal = document.getElementById("myModal");
-    var btns = document.getElementsByClassName("modal-button");
-
-    for (btn of btns){
-      btn.onclick = function() {
-        var modal = document.getElementById("myModal1");
-        modal.style.display = "block";
-
-        var span = document.getElementsByClassName("close")[0];
-        span.onclick = function() {
-          modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        }
-      }
-    }
-    </script>
-    
-    </body>
 </html>
