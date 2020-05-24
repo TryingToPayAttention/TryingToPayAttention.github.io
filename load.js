@@ -88,6 +88,7 @@ const load = () => {
                         el.append(node)
                     }
                     
+                    // Append the full post to the page
                     post.append(el)
                 }
             }
