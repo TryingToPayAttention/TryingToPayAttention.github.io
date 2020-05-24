@@ -62,14 +62,14 @@ const load = () => {
                     var para = document.createElement("p")
 
 var node = document.createTextNode("This comes first.")
-para.appendChild(node)
+para.append(node)
 
 var sup = document.createElement("sup")
 sup.innerHTML = "HAHA"
-para.appendChild(sup)
+para.append(sup)
 
 var node2 = document.createTextNode("This comes after.")
-para.appendChild(node)
+para.append(node)
 
 post.append(para)
 
