@@ -21,37 +21,37 @@ const load = () => {
             // Parse and process the text
             for (d of data[i].split(/\r?\n/)) { 
                 // Title of post
-                if (d.slice(0, 10) === "##########"){
+                if (d.slice(0, 2) === "# "){
                     var el = document.createElement('h1')
                     var link = document.createElement('a')
                     link.href = "#" // This can link to the single blog post
-                    link.innerHTML = d.slice(11)
+                    link.innerHTML = d.slice(2)
                     el.append(link)
                     post.append(el)
                 }
+                // Article Title Metadata
+                else if (d.slice(0, 2) === "$ "){
+                }
                 // Date published
-                else if (d.slice(0, 9) === "#########"){
+                else if (d.slice(0, 2) === "& "){
                     var el = document.createElement('h6')
-                    el.innerHTML = d.slice(10)
+                    el.innerHTML = d.slice(2)
                     post.append(el)
                 }
-                // Header 4
-                else if (d.slice(0, 4) === "####"){
-                    var el = document.createElement('h4')
+                // Section Header
+                else if (d.slice(0, 4) === "### "){
+                    var el = document.createElement('h3')
                     el.innerHTML = d.slice(4)
                     post.append(el)
                 }
-                // Header 3
-                else if (d.slice(0, 3) === "###"){
-                    var el = document.createElement('h3')
+                // Subsection Header
+                else if (d.slice(0, 3) === "## "){
+                    var el = document.createElement('h2')
                     el.innerHTML = d.slice(3)
                     post.append(el)
                 }
-                // Header 2
-                else if (d.slice(0, 2) === "##"){
-                    var el = document.createElement('h2')
-                    el.innerHTML = d.slice(2)
-                    post.append(el)
+                // Media
+                else if (d.slice(0, 2) === "! "){
                 }
                 // Paragraph
                 else{
