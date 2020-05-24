@@ -59,7 +59,7 @@ const load = () => {
                     el.innerHTML = d
 
                     var i
-                    last = 0
+                    var last = 0
                     //Check to see if a character is {
                     for(i=0; i < d.length; i++){
                         if (d[i] === '{'){
