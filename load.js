@@ -56,42 +56,40 @@ const load = () => {
                 // Paragraph
                 else{
                     var el = document.createElement('p')
-                    el.innerHTML = d
-                    post.append(el)
 
-                    //var i
-                    //var last2 = 0
+                    var ind
+                    last = 0
                     //Check to see if a character is {
-                    //for (i=0; i < d.length; i++) {
-                        //if (d[i] === '{'){
+                    for(ind=0; ind < d.length; ind++){
+                        if (d[ind] === '{'){
                             //Append the text that came before
-                            //var node = document.createTextNode(d.slice(last2, i))
-                            //el.append(node)
+                            var node = document.createTextNode(d.slice(last, ind))
+                            el.append(node)
 
                             // Search for the }
-                            //var j
-                            //loop2:
-                            //for(j = i ; j < d.length; j++){
+                            var j
+                            for(j = ind +1 ; j < d.length; j++){
                                 // When you find it, append it
-                                //if(d[j] === '}'){
-                                    //var sup = document.createElement("sup")
-                                    //sup.innerHTML = d.slice(i+1, j)
-                                    //el.append(sup)
-                                    //break loop2
-                                //}
-                            //}
+                                if(d[j] === '}'){
+                                    var sup = document.createElement("sup")
+                                    sup.innerHTML = d.slice(ind+1, j)
+                                    el.append(sup)
+                                    break
+                                }
+                            }
                             // Set to the character after the }
-                            //last2 = j + 1
-                            //i = j
-                        //}
-                    //}
+                            last = j + 1
+                            ind = j
+                        }
+                    }
                     // If the post doesnt end in a footnote, append text that you have not gotten to 
-                    //if(last2 != i){
-                        //var node = document.createTextNode(d.slice(last2))
-                        //el.append(node)
-                    //}
+                    if(last != ind){
+                        var node = document.createTextNode(d.slice(last))
+                        el.append(node)
+                    }
                     
                     // Append the full post to the page
+                    post.append(el)
 
                     
                 }
