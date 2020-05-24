@@ -56,8 +56,7 @@ const load = () => {
                 // Paragraph
                 else{
                     var el = document.createElement('p')
-                    
-                    foundFootnote = false
+
                     var i
                     last = 0
                     //Check to see if a character is {
