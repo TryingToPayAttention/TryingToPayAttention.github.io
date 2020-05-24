@@ -55,9 +55,24 @@ const load = () => {
                 }
                 // Paragraph
                 else{
+                    /*
                     var el = document.createElement('p')
                     el.innerHTML = d
-                    post.append(el)
+                    post.append(el)*/
+                    var para = document.createElement("p")
+
+var node = document.createTextNode("This comes first.")
+para.appendChild(node)
+
+var sup = document.createElement("sup")
+sup.innerHTML = "HAHA"
+para.appendChild(sup)
+
+var node2 = document.createTextNode("This comes after.")
+para.appendChild(node)
+
+post.append(para)
+
                 }
             }
         }
