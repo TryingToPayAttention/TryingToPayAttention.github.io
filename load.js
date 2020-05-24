@@ -69,7 +69,7 @@ sup.innerHTML = "HAHA"
 para.append(sup)
 
 var node2 = document.createTextNode("This comes after.")
-para.append(node)
+para.append(node2)
 
 post.append(para)
 
