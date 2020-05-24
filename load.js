@@ -79,12 +79,12 @@ const load = () => {
                             }
                             // Set to the character after the }
                             last = j + 1
-                            i = j +1
+                            i = j
                         }
                     }
                     // If the post doesnt end in a footnote, append text that you have not gotten to 
                     if(last != i){
-                        var node = document.createTextNode(d.slice(last, i))
+                        var node = document.createTextNode(d.slice(last))
                         el.append(node)
                     }
                     
