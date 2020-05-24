@@ -59,10 +59,10 @@ const load = () => {
                     el.innerHTML = d
                     post.append(el)
 
-                    var i
-                    var last2 = 0
+                    //var i
+                    //var last2 = 0
                     //Check to see if a character is {
-                    for(i=0; i < d.length; i++){
+                    //for (i=0; i < d.length; i++) {
                         //if (d[i] === '{'){
                             //Append the text that came before
                             //var node = document.createTextNode(d.slice(last2, i))
@@ -84,7 +84,7 @@ const load = () => {
                             //last2 = j + 1
                             //i = j
                         //}
-                    }
+                    //}
                     // If the post doesnt end in a footnote, append text that you have not gotten to 
                     //if(last2 != i){
                         //var node = document.createTextNode(d.slice(last2))
