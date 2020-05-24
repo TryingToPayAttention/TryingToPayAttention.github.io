@@ -56,6 +56,7 @@ const load = () => {
                 // Paragraph
                 else{
                     var el = document.createElement('p')
+                    
                     foundFootnote = false
                     var i
                     last = 0
