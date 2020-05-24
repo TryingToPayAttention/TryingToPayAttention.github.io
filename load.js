@@ -62,15 +62,15 @@ const load = () => {
                     var last = 0
                     //Check to see if a character is {
                     for(i=0; i < d.length; i++){
-                        if (d[i] === '{'){
+                        //if (d[i] === '{'){
                             //Append the text that came before
                             //var node = document.createTextNode(d.slice(last, i))
                             //el.append(node)
 
                             // Search for the }
-                            var j
+                            //var j
                             //loop2:
-                            for(j = i ; j < d.length; j++){
+                            //for(j = i ; j < d.length; j++){
                                 // When you find it, append it
                                 //if(d[j] === '}'){
                                     //var sup = document.createElement("sup")
@@ -78,11 +78,11 @@ const load = () => {
                                     //el.append(sup)
                                     //break loop2
                                 //}
-                            }
+                            //}
                             // Set to the character after the }
                             //last = j + 1
                             //i = j
-                        }
+                        //}
                     }
                     // If the post doesnt end in a footnote, append text that you have not gotten to 
                     //if(last != i){
