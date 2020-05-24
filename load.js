@@ -55,24 +55,27 @@ const load = () => {
                 }
                 // Paragraph
                 else{
-                    /*
                     var el = document.createElement('p')
-                    el.innerHTML = d
-                    post.append(el)*/
-                    var para = document.createElement("p")
+                    var i
+                    last = 0
+                    for(i=0; i < d.length; i++){
+                        if (d[i] === '{'){
+                            var node = document.createTextNode(d.slice(last, i))
+                            el.append(node)
 
-var node = document.createTextNode("This comes first.")
-para.append(node)
-
-var sup = document.createElement("sup")
-sup.innerHTML = "HAHA"
-para.append(sup)
-
-var node2 = document.createTextNode("This comes after.")
-para.append(node2)
-
-post.append(para)
-
+                            var j
+                            for(j = i +1 ; j < d.length; j++){
+                                if(d[j] === '}'){
+                                    var sup = document.createElement("sup")
+                                    sup.innerHTML = d.slice(i+1, j)
+                                    el.append(sup)
+                                    break
+                                }
+                            }
+                            i = j +1
+                        }
+                    }
+                    post.append(el)
                 }
             }
         }
