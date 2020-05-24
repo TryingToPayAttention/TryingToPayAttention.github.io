@@ -56,7 +56,7 @@ const load = () => {
                 // Paragraph
                 else{
                     var el = document.createElement('p')
-                    //el.innerHTML = d
+                    el.innerHTML = d
                     var i
                     last = 0
                     //Check to see if a character is {
@@ -64,7 +64,7 @@ const load = () => {
                         if (d[i] === '{'){
                             //Append the text that came before
                             var node = document.createTextNode(d.slice(last, i))
-                            el.append(node)
+                            //el.append(node)
 
                             // Search for the }
                             var j
@@ -85,7 +85,7 @@ const load = () => {
                     // If the post doesnt end in a footnote, append text that you have not gotten to 
                     if(last != i){
                         var node = document.createTextNode(d.slice(last))
-                        el.append(node)
+                        //el.append(node)
                     }
                     
                     // Append the full post to the page
