@@ -57,14 +57,15 @@ const load = () => {
                 else{
                     var el = document.createElement('p')
                     el.innerHTML = d
+                    post.append(el)
 
                     var i
-                    var last = 0
+                    var last2 = 0
                     //Check to see if a character is {
                     for(i=0; i < d.length; i++){
                         //if (d[i] === '{'){
                             //Append the text that came before
-                            //var node = document.createTextNode(d.slice(last, i))
+                            //var node = document.createTextNode(d.slice(last2, i))
                             //el.append(node)
 
                             // Search for the }
@@ -80,19 +81,19 @@ const load = () => {
                                 //}
                             //}
                             // Set to the character after the }
-                            //last = j + 1
+                            //last2 = j + 1
                             //i = j
                         //}
                     }
                     // If the post doesnt end in a footnote, append text that you have not gotten to 
-                    //if(last != i){
-                        //var node = document.createTextNode(d.slice(last))
+                    //if(last2 != i){
+                        //var node = document.createTextNode(d.slice(last2))
                         //el.append(node)
                     //}
                     
                     // Append the full post to the page
 
-                    post.append(el)
+                    
                 }
             }
         }
