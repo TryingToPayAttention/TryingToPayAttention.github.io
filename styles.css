@@ -13,6 +13,7 @@ html{
     background-color: rgba(63, 141, 141, .9);
 }
 
+
 /* Sidebar */
 .sidebar {
     height: 70%; /* Full-height: remove this if you want "auto" height */
@@ -32,6 +33,7 @@ html{
     background-color: rgba(252, 210, 252, .9);
 }
 
+/* Fade for longer posts */
 .fade {
     position: relative;
     height: 30em; /* max length of element*/
@@ -67,6 +69,8 @@ a:active {
     text-decoration: underline;
 }
 
+
+
 /* Modals */
 /* The Modal (background) */
 .modal {
@@ -84,10 +88,13 @@ a:active {
   
   /* Modal Content */
   .modal-content {
-    background-color: #fefefe;
-    margin: auto;
+    background-color: rgb(235, 235, 235);
+   
     padding: 1em;
     width: 60%;
+    position: fixed;
+    bottom: 0px;
+    margin: auto;
   }
   
   /* The Close Button */
@@ -110,8 +117,8 @@ a:active {
     color: rgb(0, 0, 0); 
   }
   .superscript:hover {
-    color: rgb(56, 218, 150); 
+    text-decoration: underline; 
   }
   .superscript:active {
-    color: rgb(56, 218, 150); 
+    text-decoration: underline;
   }
