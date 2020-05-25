@@ -16,6 +16,18 @@ const load = () => {
       }
       document.body.append(post)
 
+      // Make the footnotes modal
+      var mod = document.createElement("div")
+      mod.className = "modal-content"
+      var content = document.createElement("div")
+      content.className = "modal-content"
+      var span = document.createElement("span")
+      span.className = "close"
+      span.innerHTML = "&times;"
+      content.append(span)
+      mod.append(content)
+      document.bodya.append(mod)
+
       // Parse and process the text
       for (d of data[i].split(/\r?\n/)) {
         // Title of post
@@ -53,7 +65,10 @@ const load = () => {
         }
         // Paragraph
         else {
+          // 
           var el = document.createElement("p")
+
+          
 
 
           var ind
@@ -71,8 +86,12 @@ const load = () => {
                 // When you find it, append it
                 if (d[j] === "}") {
                   var sup = document.createElement("sup")
-                  sup.innerHTML = d.slice(ind + 1, j)
+                  sup.innerHTML = d[i+1]
                   el.append(sup);
+
+                  var note = document.createElement("p")
+                  note.innerHTML = d.slice(i+2, j)
+                  content.append(note)
                   break;
                 }
               }
@@ -87,10 +106,11 @@ const load = () => {
             el.append(node)
           }
 
-          // Append the full post to the page
+          // Append the full paragraph to the page
           post.append(el)
         }
       }
+      
     }
 
     // Add some space at the bottom
