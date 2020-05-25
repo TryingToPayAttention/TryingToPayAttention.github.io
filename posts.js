@@ -100,16 +100,20 @@ const load = () => {
                   document.body.append(mod)
 
                   // Setup callback on superscript
-                  sup.onclick = function () {
-                    mod.style.display = "block";
+                  sup.onclick = function (event) {
+                    enclosedSup = event.target
+                    var modalName = "modal_" + enclosedSup.innerHTML
+                    var enclosedMod = document.getElementById(modalName)
+
+                    enclosedModstyle.display = "block";
 
                     span.onclick = function () {
-                      mod.style.display = "none"
+                      enclosedMod.style.display = "none"
                     }
 
                     window.onclick = function (event) {
-                      if (event.target == mod) {
-                        mod.style.display = "none"
+                      if (event.target == enclosedMod) {
+                        enclosedMod.style.display = "none"
                       }
                     }
                   }
