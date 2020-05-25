@@ -126,7 +126,7 @@ const load = () => {
 
 
 
-    // Set up callbackks on superscript
+    // Set up callbacks on each superscript
     var btns = document.getElementsByClassName("superscript")
       for (let i = 0; i < btns.length; i++) {
       var btn = btns[i]
@@ -143,7 +143,7 @@ const load = () => {
         }
 
         window.onclick = function (event) {
-          if (event.target == modal) {
+          if (event.target == mod) {
             mod.style.display = "none"
           }
         }
