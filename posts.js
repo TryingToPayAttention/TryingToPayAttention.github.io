@@ -111,8 +111,8 @@ const load = () => {
                       enclosedMod.style.display = "none"
                     }
 
-                    window.onclick = function (event) {
-                      if (event.target == enclosedMod) {
+                    window.onclick = function (event2) {
+                      if (event2.target == enclosedMod) {
                         enclosedMod.style.display = "none"
                       }
                     }
