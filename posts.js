@@ -91,7 +91,7 @@ const load = () => {
 
                   // Append the note to the modal content
                   var note = document.createElement("p")
-                  note.innerHTML = d.slice(ind+2, j)
+                  note.innerHTML = d.slice(ind+1, j)
                   content.append(note)
                   break;
                 }
