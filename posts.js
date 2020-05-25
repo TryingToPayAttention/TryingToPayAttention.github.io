@@ -26,11 +26,7 @@ const load = () => {
       var span = document.createElement("span")
       span.className = "close"
       span.innerHTML = "&times;"
-      // Append in backwards order: button to content, 
-      // content to modal, modal to page
       content.append(span)
-      mod.append(content)
-      document.body.append(mod)
 
       // Parse and process the text
       for (d of data[i].split(/\r?\n/)) {
@@ -87,6 +83,7 @@ const load = () => {
                 if (d[j] === "}") {
                   // Append the superscript
                   var sup = document.createElement("sup")
+                  sup.className = "superscript"
                   sup.innerHTML = d[ind+1]
                   el.append(sup);
 
@@ -112,7 +109,9 @@ const load = () => {
           post.append(el)
         }
       }
-      
+      // Append modal content in backwards order: content to modal, modal to page
+      mod.append(content)
+      document.body.append(mod)
     }
 
     // Add some space at the bottom
