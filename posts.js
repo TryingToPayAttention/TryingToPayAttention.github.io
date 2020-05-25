@@ -3,18 +3,7 @@ const load = () => {
 
   get(posts).then((data) => {
 
-    // Make the footnotes modal
-    var mod = document.createElement("div")
-    mod.className = "modal"
-    mod.id = "myModal1"
-    // Make the contents box
-    var content = document.createElement("div")
-    content.className = "modal-content"
-    // Make the x exit button
-    var span = document.createElement("span")
-    span.className = "close"
-    span.innerHTML = "&times;"
-    content.append(span)
+
 
     for (i = 0; i < posts.length; i++) {
       // Add a break
@@ -90,9 +79,26 @@ const load = () => {
                   el.append(sup);
 
                   // Append the note to the modal content
+                  // Make the footnotes modal
+                  var mod = document.createElement("div")
+                  mod.className = "modal"
+                  mod.id = "modal_" + d[ind+1]
+                  // Make the contents box
+                  var content = document.createElement("div")
+                  content.className = "modal-content"
+                  // Make the x exit button
+                  var span = document.createElement("span")
+                  span.className = "close"
+                  span.innerHTML = "&times;"
+                  content.append(span)
+                  // Append the note to the content box
                   var note = document.createElement("p")
                   note.innerHTML = d.slice(ind + 1, j)
                   content.append(note)
+                  // Append modal content in backwards order: content to modal, modal to page
+                  mod.append(content)
+                  document.body.append(mod)
+
                   break;
                 }
               }
@@ -118,15 +124,15 @@ const load = () => {
     document.body.append(document.createElement("br"))
     document.body.append(document.createElement("br"))
 
-    // Append modal content in backwards order: content to modal, modal to page
-    mod.append(content)
-    document.body.append(mod)
+
 
     // Set up callbackks on superscript
     var btns = document.getElementsByClassName("superscript")
     for (btn of btns) {
+      var modalName = "modal_" + btn.innerHTML
+
       btn.onclick = function () {
-        var modal = document.getElementById("myModal1")
+        var modal = document.getElementById(modalName)
         modal.style.display = "block";
 
         var span = document.getElementsByClassName("close")[0]
