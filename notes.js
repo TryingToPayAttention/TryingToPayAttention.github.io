@@ -4,7 +4,7 @@ const load = () => {
 
     for (btn of btns) {
         btn.onclick = function () {
-            var modal = document.getElementsByClassName("modal")[0];
+            var modal = document.getElementById("myModal1")[0];
             modal.style.display = "block";
 
             var span = document.getElementsByClassName("close")[0];

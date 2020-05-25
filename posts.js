@@ -2,6 +2,19 @@ const load = () => {
   var posts = ["3", "2", "1"]
 
   get(posts).then((data) => {
+
+    // Make the footnotes modal
+    var mod = document.createElement("div")
+    mod.className = "modal"
+    // Make the contents box
+    var content = document.createElement("div")
+    content.className = "modal-content"
+    // Make the x exit button
+    var span = document.createElement("span")
+    span.className = "close"
+    span.innerHTML = "&times;"
+    content.append(span)
+
     for (i = 0; i < posts.length; i++) {
       // Add a break
       document.body.append(document.createElement("br"))
@@ -15,18 +28,6 @@ const load = () => {
         post.className = "post"
       }
       document.body.append(post)
-
-      // Make the footnotes modal
-      var mod = document.createElement("div")
-      mod.className = "modal"
-      // Make the contents box
-      var content = document.createElement("div")
-      content.className = "modal-content"
-      // Make the x exit button
-      var span = document.createElement("span")
-      span.className = "close"
-      span.innerHTML = "&times;"
-      content.append(span)
 
       // Parse and process the text
       for (d of data[i].split(/\r?\n/)) {
@@ -109,15 +110,36 @@ const load = () => {
           post.append(el)
         }
       }
-      // Append modal content in backwards order: content to modal, modal to page
-      mod.append(content)
-      document.body.append(mod)
     }
 
     // Add some space at the bottom
     document.body.append(document.createElement("br"))
     document.body.append(document.createElement("br"))
     document.body.append(document.createElement("br"))
+
+    // Append modal content in backwards order: content to modal, modal to page
+    mod.append(content)
+    document.body.append(mod)
+
+    var btns = document.getElementsByClassName("superscript");
+
+    for (btn of btns) {
+        btn.onclick = function () {
+            var modal = document.getElementById("myModal1")[0];
+            modal.style.display = "block";
+
+            var span = document.getElementsByClassName("close")[0];
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    }
   })
 }
 
