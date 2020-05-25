@@ -130,8 +130,9 @@ const load = () => {
     var btns = document.getElementsByClassName("superscript")
       for (let i = 0; i < btns.length; i++) {
       var btn = btns[i]
-      var span = document.getElementsByClassName("close")[i] // To Do: does this grab in order?
       var modalName = "modal_" + btn.innerHTML
+      console.log(modalName)
+      var span = document.getElementsByClassName("close")[i] // To Do: does this grab in order?
 
       btn.onclick = function () {
         var mod = document.getElementById(modalName)
