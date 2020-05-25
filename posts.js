@@ -107,12 +107,13 @@ const load = () => {
 
                     enclosedMod.style.display = "block";
 
-                    span.onclick = function () {
-                      enclosedMod.style.display = "none"
+                    span.onclick = function (event2) {
+                      enclosedMod2 = event2.target.parent.parent
+                      enclosedMod2.style.display = "none"
                     }
 
-                    window.onclick = function (event2) {
-                      if (event2.target == enclosedMod) {
+                    window.onclick = function (event3) {
+                      if (event3.target == enclosedMod) {
                         enclosedMod.style.display = "none"
                       }
                     }
