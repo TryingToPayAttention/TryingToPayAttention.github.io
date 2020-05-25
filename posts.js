@@ -99,6 +99,21 @@ const load = () => {
                   mod.append(content)
                   document.body.append(mod)
 
+                  // Setup callback on superscript
+                  sup.onclick = function () {
+                    mod.style.display = "block";
+
+                    span.onclick = function () {
+                      mod.style.display = "none"
+                    }
+
+                    window.onclick = function (event) {
+                      if (event.target == mod) {
+                        mod.style.display = "none"
+                      }
+                    }
+                  }
+
                   break;
                 }
               }
@@ -126,6 +141,7 @@ const load = () => {
 
 
 
+    /*
     // Set up callbacks on each superscript
     var btns = document.getElementsByClassName("superscript")
     for (let i = 0; i < btns.length; i++) {
@@ -148,7 +164,7 @@ const load = () => {
           }
         }
       }
-    }
+    }*/
   })
 }
 
