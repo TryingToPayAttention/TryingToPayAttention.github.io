@@ -19,14 +19,18 @@ const load = () => {
       // Make the footnotes modal
       var mod = document.createElement("div")
       mod.className = "modal-content"
+      // Make the contents box
       var content = document.createElement("div")
       content.className = "modal-content"
+      // Make the x exit button
       var span = document.createElement("span")
       span.className = "close"
       span.innerHTML = "&times;"
+      // Append in backwards order: button to content, 
+      // content to modal, modal to page
       content.append(span)
       mod.append(content)
-      document.bodya.append(mod)
+      document.body.append(mod)
 
       // Parse and process the text
       for (d of data[i].split(/\r?\n/)) {
@@ -65,11 +69,7 @@ const load = () => {
         }
         // Paragraph
         else {
-          // 
           var el = document.createElement("p")
-
-          
-
 
           var ind
           last = 0
@@ -85,10 +85,12 @@ const load = () => {
               for (j = ind + 1; j < d.length; j++) {
                 // When you find it, append it
                 if (d[j] === "}") {
+                  // Append the superscript
                   var sup = document.createElement("sup")
                   sup.innerHTML = d[i+1]
                   el.append(sup);
 
+                  // Append the note to the modal content
                   var note = document.createElement("p")
                   note.innerHTML = d.slice(i+2, j)
                   content.append(note)
