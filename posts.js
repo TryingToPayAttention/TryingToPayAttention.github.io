@@ -19,6 +19,7 @@ const load = () => {
       // Make the footnotes modal
       var mod = document.createElement("div")
       mod.className = "modal-content"
+      mod.id = "myModal1"
       // Make the contents box
       var content = document.createElement("div")
       content.className = "modal-content"
