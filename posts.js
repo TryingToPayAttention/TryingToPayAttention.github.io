@@ -86,12 +86,12 @@ const load = () => {
                   // Append the superscript
                   var sup = document.createElement("sup")
                   sup.className = "superscript"
-                  sup.innerHTML = d[ind+1]
+                  sup.innerHTML = d[ind + 1]
                   el.append(sup);
 
                   // Append the note to the modal content
                   var note = document.createElement("p")
-                  note.innerHTML = d.slice(ind+1, j)
+                  note.innerHTML = d.slice(ind + 1, j)
                   content.append(note)
                   break;
                 }
@@ -123,23 +123,23 @@ const load = () => {
     document.body.append(mod)
 
     // Set up callbackks on superscript
-    var btns = document.getElementsByClassName("superscript");
+    var btns = document.getElementsByClassName("superscript")
     for (btn of btns) {
-        btn.onclick = function () {
-            var modal = document.getElementById("myModal1")[0];
-            modal.style.display = "block";
+      btn.onclick = function () {
+        var modal = document.getElementById("myModal1")
+        modal.style.display = "block";
 
-            var span = document.getElementsByClassName("close")[0];
-            span.onclick = function () {
-                modal.style.display = "none";
-            }
-
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
+        var span = document.getElementsByClassName("close")[0]
+        span.onclick = function () {
+          modal.style.display = "none"
         }
+
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none"
+          }
+        }
+      }
     }
   })
 }
