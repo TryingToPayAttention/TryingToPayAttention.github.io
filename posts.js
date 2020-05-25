@@ -129,10 +129,8 @@ const load = () => {
     // Set up callbackks on superscript
     var btns = document.getElementsByClassName("superscript")
       for (let i = 0; i < btns.length; i++) {
-        var btn = btns[i]
-        var span = document.getElementsByClassName("close")[i] // To Do: does this grab in order?
-
-      // Grab the modal of the correct name (now it reflects content of superscript)
+      var btn = btns[i]
+      var span = document.getElementsByClassName("close")[i] // To Do: does this grab in order?
       var modalName = "modal_" + btn.innerHTML
 
       btn.onclick = function () {
@@ -141,12 +139,12 @@ const load = () => {
 
         
         span.onclick = function () {
-          modal.style.display = "none"
+          mod.style.display = "none"
         }
 
         window.onclick = function (event) {
           if (event.target == modal) {
-            modal.style.display = "none"
+            mod.style.display = "none"
           }
         }
       }
