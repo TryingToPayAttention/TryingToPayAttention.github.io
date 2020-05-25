@@ -82,7 +82,7 @@ const load = () => {
                   // Make the footnotes modal
                   var mod = document.createElement("div")
                   mod.className = "modal"
-                  mod.id = "modal_" + d[ind+1]
+                  mod.id = "modal_" + d[ind + 1]
                   // Make the contents box
                   var content = document.createElement("div")
                   content.className = "modal-content"
@@ -128,17 +128,16 @@ const load = () => {
 
     // Set up callbacks on each superscript
     var btns = document.getElementsByClassName("superscript")
-      for (let i = 0; i < btns.length; i++) {
+    for (let i = 0; i < btns.length; i++) {
       var btn = btns[i]
-      var modalName = "modal_" + btn.innerHTML
-      console.log(modalName)
       var span = document.getElementsByClassName("close")[i] // To Do: does this grab in order?
 
       btn.onclick = function () {
+        var modalName = "modal_" + btn.innerHTML
         var mod = document.getElementById(modalName)
+
         mod.style.display = "block";
 
-        
         span.onclick = function () {
           mod.style.display = "none"
         }
