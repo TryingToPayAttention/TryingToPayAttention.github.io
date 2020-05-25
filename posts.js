@@ -105,7 +105,7 @@ const load = () => {
                     var modalName = "modal_" + enclosedSup.innerHTML
                     var enclosedMod = document.getElementById(modalName)
 
-                    enclosedModstyle.display = "block";
+                    enclosedMod.style.display = "block";
 
                     span.onclick = function () {
                       enclosedMod.style.display = "none"
