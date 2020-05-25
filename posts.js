@@ -87,12 +87,12 @@ const load = () => {
                 if (d[j] === "}") {
                   // Append the superscript
                   var sup = document.createElement("sup")
-                  sup.innerHTML = d[i+1]
+                  sup.innerHTML = d[ind+1]
                   el.append(sup);
 
                   // Append the note to the modal content
                   var note = document.createElement("p")
-                  note.innerHTML = d.slice(i+2, j)
+                  note.innerHTML = d.slice(ind+2, j)
                   content.append(note)
                   break;
                 }
