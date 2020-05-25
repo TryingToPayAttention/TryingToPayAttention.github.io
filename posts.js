@@ -121,8 +121,8 @@ const load = () => {
     mod.append(content)
     document.body.append(mod)
 
+    // Set up callbackks on superscript
     var btns = document.getElementsByClassName("superscript");
-
     for (btn of btns) {
         btn.onclick = function () {
             var modal = document.getElementById("myModal1")[0];
