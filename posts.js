@@ -35,8 +35,8 @@ const load = () => {
             // Get rid of all the other posts
             // Change this post so that it is expanded
             console.log("title clicked: " + event.target.innerHTML)
-            var posts = document.getElementsByClassName("postContainer")
-            var postList = document.getElementsByClassName("post")
+            var posts = document.getElementsByClassName("postContainer") // Get the post container
+            var postList = document.getElementsByClassName("post") // Get the posts
             var saved
             for (p of postList){
               var t = p.getElementsByClassName("title")
@@ -44,10 +44,10 @@ const load = () => {
                 p.style.display = "none" // Turn off posts that aren't of the clicked title
               } else {
                 p.className = "post" // Make sure this post is not faded
-                saved = p
+                saved = p // Save the post so you can atach it later
               }
-              posts[0].innerHTML = ""
-              posts[0].append(saved)
+              posts[0].innerHTML = "" // remove everything in the container
+              posts[0].append(saved) // Add the single post back into the container
             }
           }
         }
