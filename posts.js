@@ -3,11 +3,13 @@ const load = () => {
 
   get(posts).then((data) => {
 
-
-
     for (i = 0; i < posts.length; i++) {
+      // Create a container for the posts
+      var postContainer = document.createElement("div")
+      document.body.append(postContainer)
+
       // Add a break
-      document.body.append(document.createElement("br"))
+      postContainer.append(document.createElement("br"))
 
       // Make the post element
       var post = document.createElement("div")
@@ -17,7 +19,7 @@ const load = () => {
       } else {
         post.className = "post"
       }
-      document.body.append(post)
+      postContainer.append(post)
 
       // Parse and process the text
       for (d of data[i].split(/\r?\n/)) {
@@ -33,14 +35,18 @@ const load = () => {
             // Get rid of all the other posts
             // Change this post so that it is expanded
             console.log("title clicked: " + event.target.innerHTML)
-            var postList = document.getElementsByClassName("post")
+            var postList = postContainer.getElementsByClassName("post")
+            var saved
             for (p of postList){
               var t = p.getElementsByClassName("title")
               if (t[0].innerHTML != event.target.innerHTML){
-                p.style.display = "none"
+                p.style.display = "none" // Turn off posts that aren't of the clicked title
               } else {
-                p.className = "post"
+                p.className = "post" // Make sure this post is not faded
+                saved = p
               }
+              postContainer.innerHTML = ""
+              postContainer.append(saved)
             }
           }
         }
@@ -111,7 +117,7 @@ const load = () => {
                   content.append(note)
                   // Append modal content in backwards order: content to modal, modal to page
                   mod.append(content)
-                  document.body.append(mod)
+                  postContainer.append(mod)
 
                   // Setup callback on superscript
                   sup.onclick = function (event) {
@@ -154,9 +160,9 @@ const load = () => {
     }
 
     // Add some space at the bottom
-    document.body.append(document.createElement("br"))
-    document.body.append(document.createElement("br"))
-    document.body.append(document.createElement("br"))
+    postContainer.append(document.createElement("br"))
+    postContainer.append(document.createElement("br"))
+    postContainer.append(document.createElement("br"))
   })
 }
 
