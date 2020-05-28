@@ -27,6 +27,15 @@ const load = () => {
           el.className = "title"
           el.innerHTML = d.slice(2)
           post.append(el)
+
+          el.onclick = function (event) {
+            // Change the URL
+            // Get rid of all the other posts
+            // Change this post so that it is expanded
+            console.log("title clicked")
+          }
+
+
         }
         // Article Title Metadata
         else if (d.slice(0, 2) === "$ ") {
