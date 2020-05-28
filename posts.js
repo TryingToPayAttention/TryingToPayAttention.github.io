@@ -45,7 +45,7 @@ const load = () => {
                 p.style.display = "none" // Turn off posts that aren't of the clicked title
               } else {
                 p.className = "post" // Make sure this post is not faded
-                saved = p // Save the post so you can atach it later
+                saved = p.cloneNode(true) // Save the post so you can atach it later
               }
               posts[0].innerHTML = "" // remove everything in the container
               posts[0].append(saved) // Add the single post back into the container
