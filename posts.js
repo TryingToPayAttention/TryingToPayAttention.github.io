@@ -36,14 +36,14 @@ const load = () => {
             // Change this post so that it is expanded
             console.log("title clicked: " + event.target.innerHTML)
             var postList = postContainer.getElementsByClassName("post")
-            var saved
+            //var saved
             for (p of postList){
               var t = p.getElementsByClassName("title")
               if (t[0].innerHTML != event.target.innerHTML){
                 p.style.display = "none" // Turn off posts that aren't of the clicked title
               } else {
                 p.className = "post" // Make sure this post is not faded
-                saved = p
+                //saved = p
               }
               //postContainer.innerHTML = ""
               //postContainer.append(saved)
