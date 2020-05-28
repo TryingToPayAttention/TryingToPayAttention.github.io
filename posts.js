@@ -24,10 +24,8 @@ const load = () => {
         // Title of post
         if (d.slice(0, 2) === "# ") {
           var el = document.createElement("h1")
-          var link = document.createElement("a")
-          link.href = "#"; // This can link to the single blog post
-          link.innerHTML = d.slice(2)
-          el.append(link)
+          el.className = "title"
+          el.innerHTML = d.slice(2)
           post.append(el)
         }
         // Article Title Metadata
