@@ -108,7 +108,7 @@ const load = () => {
                     enclosedMod.style.display = "block";
 
                     span.onclick = function (event2) {
-                      enclosedMod2 = event2.target.parent.parent
+                      enclosedMod2 = event2.target.
                       enclosedMod2.style.display = "none"
                     }
 
@@ -143,33 +143,6 @@ const load = () => {
     document.body.append(document.createElement("br"))
     document.body.append(document.createElement("br"))
     document.body.append(document.createElement("br"))
-
-
-
-    /*
-    // Set up callbacks on each superscript
-    var btns = document.getElementsByClassName("superscript")
-    for (let i = 0; i < btns.length; i++) {
-      var btn = btns[i]
-      var span = document.getElementsByClassName("close")[i] // To Do: does this grab in order?
-
-      btn.onclick = function () {
-        var modalName = "modal_" + btn.innerHTML
-        var mod = document.getElementById(modalName)
-
-        mod.style.display = "block";
-
-        span.onclick = function () {
-          mod.style.display = "none"
-        }
-
-        window.onclick = function (event) {
-          if (event.target == mod) {
-            mod.style.display = "none"
-          }
-        }
-      }
-    }*/
   })
 }
 

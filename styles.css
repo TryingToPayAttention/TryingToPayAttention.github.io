@@ -122,3 +122,16 @@ a:active {
   .superscript:active {
     text-decoration: underline;
   }
+
+  /* Post Title*/
+  .title {
+    color: rgb(0, 0, 0); 
+  }
+
+  .title:hover {
+    color: rgb(0, 0, 0); 
+  }
+
+  .title:active {
+    text-decoration: underline;
+  }
