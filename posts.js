@@ -36,6 +36,7 @@ const load = () => {
             // Change this post so that it is expanded
             console.log("title clicked: " + event.target.innerHTML)
             var posts = document.getElementsByClassName("postContainer") // Get the post container
+            console.log("# of post containers: " + posts.length)
             var postList = document.getElementsByClassName("post") // Get the posts
             var saved
             for (p of postList){
