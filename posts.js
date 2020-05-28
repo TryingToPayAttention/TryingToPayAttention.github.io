@@ -45,8 +45,8 @@ const load = () => {
                 p.className = "post" // Make sure this post is not faded
                 saved = p
               }
-              postContainer.innerHTML = ""
-              postContainer.append(saved)
+              //postContainer.innerHTML = ""
+              //postContainer.append(saved)
             }
           }
         }
