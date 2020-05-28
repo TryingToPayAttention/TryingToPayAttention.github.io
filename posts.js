@@ -45,15 +45,13 @@ const load = () => {
                 p.style.display = "none" // Turn off posts that aren't of the clicked title
               } else {
                 p.className = "post" // Make sure this post is not faded
-                saved = p.cloneNode(true) // Save the post so you can atach it later
+                saved = p// Save the post so you can atach it later
               }
-              //posts[0].innerHTML = "" // remove everything in the container
-              //posts[0].append(document.createElement("br")) // Add a space
-              //posts[0].append(saved) // Add the single post back into the container
             }
             while (posts[0].hasChildNodes()) {
                 posts[0].removeChild(posts[0].lastChild);
             }
+            posts[0].append(document.createElement("br")) // Add a space
             posts[0].append(saved) // Add the single post back into the container
           }
         }
