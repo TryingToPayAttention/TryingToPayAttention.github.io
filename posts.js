@@ -33,9 +33,16 @@ const load = () => {
             // Get rid of all the other posts
             // Change this post so that it is expanded
             console.log("title clicked: " + event.target.innerHTML)
+            var postList = document.getElementsByClassName("post")
+            for (p of postList){
+              var t = p.getElementsByClassName("title")
+              if (t[0].innerHTML != event.target.innerHTML){
+                p.style.display = "none"
+              } else {
+                p.className = "post"
+              }
+            }
           }
-
-
         }
         // Article Title Metadata
         else if (d.slice(0, 2) === "$ ") {
