@@ -131,16 +131,16 @@ const load = () => {
                     enclosedSup = event.target
                     var modalName = "modal_" + enclosedSup.innerHTML
                     var enclosedMod = document.getElementById(modalName)
-
                     enclosedMod.style.display = "block";
 
-                    span.onclick = function (event2) {
+                    var enclosedSpan = enclosedMod.getElementsByClassName("span")[0]
+                    enclosedSpan.onclick = function (event2) {
                       enclosedMod2 = event2.target.parentNode.parentNode
                       enclosedMod2.style.display = "none"
                     }
 
                     window.onclick = function (event3) {
-                      if (event3.target == enclosedMod) {
+                      if (event3.target == enclosedMod) { // Beware: enclosedMode is not enclosed for this callback!
                         enclosedMod.style.display = "none"
                       }
                     }
