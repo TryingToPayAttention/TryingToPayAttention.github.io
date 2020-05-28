@@ -32,7 +32,7 @@ const load = () => {
             // Change the URL
             // Get rid of all the other posts
             // Change this post so that it is expanded
-            console.log("title clicked")
+            console.log("title clicked: " + event.target.innerHTML)
           }
 
 
