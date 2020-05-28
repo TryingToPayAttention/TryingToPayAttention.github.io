@@ -48,6 +48,7 @@ const load = () => {
                 saved = p.cloneNode(true) // Save the post so you can atach it later
               }
               posts[0].innerHTML = "" // remove everything in the container
+              posts[0].append(document.createElement("br")) // Add a space
               posts[0].append(saved) // Add the single post back into the container
             }
           }
