@@ -6,6 +6,7 @@ const load = () => {
     for (i = 0; i < posts.length; i++) {
       // Create a container for the posts
       var postContainer = document.createElement("div")
+      postContainer.className = "postContainer"
       document.body.append(postContainer)
 
       // Add a break
@@ -35,7 +36,8 @@ const load = () => {
             // Get rid of all the other posts
             // Change this post so that it is expanded
             console.log("title clicked: " + event.target.innerHTML)
-            var postList = postContainer.getElementsByClassName("post")
+            var posts = document.getElementsByClassName("postContainer")
+            var postList = document.getElementsByClassName("post")
             //var saved
             for (p of postList){
               var t = p.getElementsByClassName("title")
@@ -45,8 +47,8 @@ const load = () => {
                 p.className = "post" // Make sure this post is not faded
                 //saved = p
               }
-              //postContainer.innerHTML = ""
-              //postContainer.append(saved)
+              posts[0].innerHTML = ""
+              posts[0].append(saved)
             }
           }
         }
