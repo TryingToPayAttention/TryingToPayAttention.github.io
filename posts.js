@@ -30,15 +30,15 @@ const load = () => {
           el.innerHTML = d.slice(2)
           post.append(el)
 
+          // Callback for clicking on a title
           el.onclick = function (event) {
-            // Change the URL
-            // Get rid of all the other posts
-            // Change this post so that it is expanded
             console.log("title clicked: " + event.target.innerHTML)
             var posts = document.getElementsByClassName("postContainer") // Get the post container
             console.log("# of post containers: " + posts.length)
             var postList = document.getElementsByClassName("post") // Get the posts
             var saved
+            // To Do: will this become useless after adding url change listener?
+            // Then all I would have to do here is change the url and the rest would do its thing
             for (p of postList){
               var t = p.getElementsByClassName("title")
               if (t[0].innerHTML != event.target.innerHTML){
@@ -51,6 +51,7 @@ const load = () => {
             while (posts[0].hasChildNodes()) {
                 posts[0].removeChild(posts[0].lastChild);
             }
+            
             posts[0].append(document.createElement("br")) // Add a space
             posts[0].append(saved) // Add the single post back into the container
             window.scrollTo(0, 0)
@@ -134,12 +135,12 @@ const load = () => {
                     enclosedMod.style.display = "block";
 
                     span.onclick = function (event2) {
-                      enclosedMod2 = event2.target.
+                      enclosedMod2 = event2.target.parentNode.parentNode
                       enclosedMod2.style.display = "none"
                     }
 
-                    window.onclick = function (event3) {
-                      if (event3.target == enclosedMod) {
+                    window.onclick = function (event2) {
+                      if (event2.target == enclosedMod) {
                         enclosedMod.style.display = "none"
                       }
                     }
