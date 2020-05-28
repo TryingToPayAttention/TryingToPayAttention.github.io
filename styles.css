@@ -129,7 +129,7 @@ a:active {
   }
 
   .title:hover {
-    color: rgb(0, 0, 0); 
+    text-decoration: underline;
   }
 
   .title:active {
