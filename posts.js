@@ -133,7 +133,7 @@ const load = () => {
                     var enclosedMod = document.getElementById(modalName)
                     enclosedMod.style.display = "block";
 
-                    var enclosedSpan = enclosedMod.getElementsByClassName("span")
+                    var enclosedSpan = enclosedMod.getElementsByClassName("close")
                     console.log("Length of enclosedSpan: " + enclosedSpan.length)
                     enclosedSpan[0].onclick = function (event2) {
                       enclosedMod2 = event2.target.parentNode.parentNode
