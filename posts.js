@@ -50,11 +50,11 @@ const load = () => {
               //posts[0].innerHTML = "" // remove everything in the container
               //posts[0].append(document.createElement("br")) // Add a space
               //posts[0].append(saved) // Add the single post back into the container
-              while (posts[0].hasChildNodes()) {
-                posts[0].removeChild(posts[0].lastChild);
-              }
-              posts[0].append(saved) // Add the single post back into the container
             }
+            while (posts[0].hasChildNodes()) {
+                posts[0].removeChild(posts[0].lastChild);
+            }
+            posts[0].append(saved) // Add the single post back into the container
           }
         }
         // Article Title Metadata
