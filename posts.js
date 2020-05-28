@@ -53,6 +53,7 @@ const load = () => {
             }
             posts[0].append(document.createElement("br")) // Add a space
             posts[0].append(saved) // Add the single post back into the container
+            window.scrollTo(0, 0)
           }
         }
         // Article Title Metadata
