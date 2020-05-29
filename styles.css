@@ -88,20 +88,22 @@ a:active {
   
   /* Modal Content */
   .modal-content {
+    text-align: justify;
+
     background-color: rgb(235, 235, 235);
    
-    padding: 1em;
-    width: 60%;
+    padding: .35em .7em 0 .7em;
+    width: 62%;
     position: fixed;
     bottom: 0px;
-    margin: auto;
+    left: 18.2%;
   }
   
   /* The Close Button */
   .close {
     color: #aaaaaa;
     float: right;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
   }
   
