@@ -138,12 +138,12 @@ const load = () => {
                       enclosedMod2.style.display = "none"
                     }
 
-                    // AddEventListener to see if it works on mobile
-                    enclosedMod.addEventListener('click', function (event3) {
+                    // If click outside content
+                    window.addEventListener = function (event3) {
                       if (event3.target == enclosedMod) { // Beware: enclosedMode is not enclosed for this callback!
                         enclosedMod.style.display = "none"
                       }
-                    })
+                    }
                   }
 
                   break;
