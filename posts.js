@@ -144,6 +144,7 @@ const load = () => {
                       if (event3.target == enclosedMod) { // Beware: enclosedMode is not enclosed for this callback!
                         enclosedMod.style.display = "none"
                       }
+                    }
                   }
 
                   break;
