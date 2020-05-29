@@ -32,9 +32,7 @@ const load = () => {
 
           // Callback for clicking on a title
           el.onclick = function (event) {
-            console.log("title clicked: " + event.target.innerHTML)
             var posts = document.getElementsByClassName("postContainer") // Get the post container
-            console.log("# of post containers: " + posts.length)
             var postList = document.getElementsByClassName("post") // Get the posts
             var saved
             // To Do: will this become useless after adding url change listener?
@@ -140,11 +138,11 @@ const load = () => {
                       enclosedMod2.style.display = "none"
                     }
 
-                    window.onclick = function (event3) {
+                    window.addEventListener('click', function (event3) {
                       if (event3.target == enclosedMod) { // Beware: enclosedMode is not enclosed for this callback!
                         enclosedMod.style.display = "none"
                       }
-                    }
+                    })
                   }
 
                   break;
