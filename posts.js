@@ -43,7 +43,7 @@ const load = () => {
                 p.style.display = "none" // Turn off posts that aren't of the clicked title
               } else {
                 p.className = "post" // Make sure this post is not faded
-                saved = p.copyNode(true)// Save the post so you can atach it later
+                saved = p// Save the post so you can atach it later
               }
             }
             while (posts[0].hasChildNodes()) {
