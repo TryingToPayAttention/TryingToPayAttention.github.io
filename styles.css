@@ -90,7 +90,7 @@ a:active {
   .modal-content {
     text-align: justify;
 
-    background-color: rgb(235, 235, 235);
+    background-color:rgba(255, 254, 205);
    
     padding: .35em .7em 0 .7em;
     width: 62%;
