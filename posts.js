@@ -124,7 +124,7 @@ const load = () => {
                   content.append(note)
                   // Append modal content in backwards order: content to modal, modal to page
                   mod.append(content)
-                  postContainer.append(mod)
+                  document.body.append(mod)
 
                   // Setup callback on superscript
                   sup.onclick = function (event) {
