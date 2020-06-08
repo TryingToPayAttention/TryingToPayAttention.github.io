@@ -1,5 +1,5 @@
 const load = () => {
-  var posts = ["3", "2", "1"]
+  var posts = ["3", "2", "1", "first"]
 
   get(posts).then((data) => {
     // Create a container for the posts
