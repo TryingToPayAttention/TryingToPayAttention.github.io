@@ -1,5 +1,5 @@
 const load = () => {
-  var posts = ["3", "2", "1", "first.txt"]
+  var posts = ["first.txt", "3", "2", "1"]
 
   get(posts).then((data) => {
     // Create a container for the posts
