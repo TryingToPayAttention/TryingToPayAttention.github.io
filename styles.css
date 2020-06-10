@@ -1,6 +1,8 @@
 /* Page */
 html{
-    font-family: "Courier", monospace;
+    /*font-family: "Courier", monospace;*/
+    text-rendering: optimizeLegibility;
+    font-family: "Scala W01", "Palatino", "Book Antiqua", serif;
     font-size: 20px;
 
     background-image: url('flowers.png');
@@ -34,8 +36,7 @@ html{
     /*background-color: rgba(255, 254, 205, .9);*/
     background-color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
-    text-rendering: optimizeLegibility;
-    font-family: "Scala W01", "Palatino", "Book Antiqua", serif;
+    
 }
 
 .title {
