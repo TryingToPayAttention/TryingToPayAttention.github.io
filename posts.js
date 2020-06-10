@@ -104,7 +104,7 @@ const load = () => {
                   // Append the superscript
                   var sup = document.createElement("sup")
                   sup.className = "superscript"
-                  sup.innerHTML = d.slice(ind + 1, ind + 1 + 1)//firstSpace(d.slice(ind+1)))
+                  sup.innerHTML = d.slice(ind + 1, ind + 1 + firstSpace(d.slice(ind+1)))
                   el.append(sup);
 
                   // Append the note to the modal content
