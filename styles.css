@@ -32,7 +32,7 @@ html{
     text-align: justify;
     width: 35em;
     margin: auto;
-    padding: 2em 6em 4em 6em;
+    padding: 2em 6em 3em 6em;
     /*background-color: rgba(255, 254, 205, .9);*/
     background-color: rgba(255, 250, 245, 0.9);
     line-height: 1.6;
@@ -118,10 +118,10 @@ a:active {
   .modal-content {
     text-align: justify;
 
-    background-color:rgba(252, 210, 252);;
+    background-color:rgba(255, 250, 245);
    
     padding: .35em .7em 0 .7em;
-    width: 62%;
+    width: 35em;
     position: fixed;
     bottom: 0px;
     left: 18.2%;
