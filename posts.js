@@ -130,7 +130,7 @@ const load = () => {
                   var restOfText = document.createTextNode("div")
                   restOfText.innerHTML = d.slice(ind + 1 + space1, j)
                   note.append(footnoteName)
-                  node.append(restOfText)
+                  note.append(restOfText)
                   content.append(note)
                   // Append modal content in backwards order: content to modal, modal to page
                   mod.append(content)
