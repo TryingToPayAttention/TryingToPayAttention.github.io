@@ -117,9 +117,8 @@ a:active {
   /* Modal Content */
   .modal-content {
     text-align: justify;
-
     background-color:rgba(255, 250, 245);
-    font-size: 16;
+    font-size: 16px;
     padding: .35em 6em 0 6em;
     width: 35em;
     position: fixed;
