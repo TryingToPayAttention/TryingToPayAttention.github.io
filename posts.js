@@ -127,7 +127,6 @@ const load = () => {
                   var footnoteName = document.createElement("span")
                   footnoteName.innerHTML = d.slice(ind + 1, ind + 1 + space1)
                   footnoteName.style.textDecoration = "underline"
-                  footnoteName.style.color = "grey"
                   var restOfText = document.createTextNode(d.slice(ind + 1 + space1, j))
                   note.append(footnoteName)
                   note.append(restOfText)
