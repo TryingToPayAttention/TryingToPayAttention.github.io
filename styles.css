@@ -145,6 +145,7 @@ a:active {
   /* Note Superscript*/
   .superscript {
     color: rgb(0, 0, 0); 
+    vertical-align: top;
   }
   .superscript:hover {
     text-decoration: underline; 
