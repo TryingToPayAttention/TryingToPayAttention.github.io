@@ -87,8 +87,10 @@ const load = () => {
           var el = document.createElement("p")
           el.className = "paragraph"
 
+          // Check for block quote
           if(d.slice(0, 3) === '"" '){
             el.style.fontStyle = "italic"
+            d = d.slice(3)
           }
 
           var ind
