@@ -122,7 +122,7 @@ a:active {
     font-size: 16;
     padding: .35em 6em 0 6em;
     width: 35em;
-    position: relative;
+    position: fixed;
     margin: auto;
     bottom: 0px;
     left: 25%;
