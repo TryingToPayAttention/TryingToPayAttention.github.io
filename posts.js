@@ -181,7 +181,7 @@ const load = () => {
 }
 
 const firstSpace = (arr) =>{
-  log.display(arr)
+  console.log(arr)
   for(i = 0; i<arr.length; i++){
     if(arr[i] === " "){
       return i
