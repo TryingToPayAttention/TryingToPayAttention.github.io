@@ -124,7 +124,13 @@ const load = () => {
                   content.append(span)
                   // Append the note to the content box
                   var note = document.createElement("p")
-                  note.innerHTML = d.slice(ind + 1, j)
+                  foonoteName = document.createElement("div")
+                  footnoteName.innerHTML = d.slice(ind + 1, ind + 1 + space1)
+                  footnoteName.style.textDecoration = "underline"
+                  restOfText = document.createTextNode("div")
+                  restOfText.innerHTML = d.slice(ind + 1 + space1, j)
+                  note.append(footnoteName)
+                  node.append(restOfText)
                   content.append(note)
                   // Append modal content in backwards order: content to modal, modal to page
                   mod.append(content)
