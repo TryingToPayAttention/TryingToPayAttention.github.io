@@ -104,7 +104,7 @@ const load = () => {
                   // Append the superscript
                   var sup = document.createElement("sup")
                   sup.className = "superscript"
-                  sup.innerHTML = d.slice(ind + 1, ind + 3)
+                  sup.innerHTML = d.slice(ind + 1, ind + 2 + firstSpace(d.slice(ind+1)))
                   el.append(sup);
 
                   // Append the note to the modal content
@@ -112,7 +112,7 @@ const load = () => {
                   var mod = document.createElement("div")
                   mod.className = "modal"
                   postName = post.getElementsByClassName("title")[0]
-                  mod.id = postName.innerHTML+ "_modal_" + d.slice(ind + 1, ind + 3)
+                  mod.id = postName.innerHTML+ "_modal_" + d.slice(ind + 1, ind + 2 + firstSpace(d.slice(ind+1)))
                   // Make the contents box
                   var content = document.createElement("div")
                   content.className = "modal-content"
@@ -178,6 +178,16 @@ const load = () => {
     postContainer.append(document.createElement("br"))
     postContainer.append(document.createElement("br"))
   })
+}
+
+const firstSpace = (arr) =>{
+  var ret = 0
+  for(i = 0; i<arr.length; i++){
+    if(arr[i] === " "){
+      return ret
+    }
+  }
+  return -1
 }
 
 const get = async (posts) => {
