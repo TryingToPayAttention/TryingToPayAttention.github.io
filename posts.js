@@ -104,7 +104,7 @@ const load = () => {
                   // Append the superscript
                   var sup = document.createElement("sup")
                   sup.className = "superscript"
-                  sup.innerHTML = d[ind + 1]
+                  sup.innerHTML = d.slice(ind + 1, ind + 3)
                   el.append(sup);
 
                   // Append the note to the modal content
@@ -112,7 +112,7 @@ const load = () => {
                   var mod = document.createElement("div")
                   mod.className = "modal"
                   postName = post.getElementsByClassName("title")[0]
-                  mod.id = postName.innerHTML+ "_modal_" + d[ind + 1]
+                  mod.id = postName.innerHTML+ "_modal_" + d.slice(ind + 1, ind + 3)
                   // Make the contents box
                   var content = document.createElement("div")
                   content.className = "modal-content"
