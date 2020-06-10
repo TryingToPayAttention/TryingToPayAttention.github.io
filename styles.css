@@ -1,3 +1,9 @@
+/* Variables*/
+:root {
+  --post-color: brown;
+}
+
+
 /* Page */
 html{
     /*font-family: "Courier", monospace;*/
@@ -124,7 +130,7 @@ a:active {
     position: fixed;
     margin: auto;
     bottom: 0px;
-    left: 25%;
+    left: 27%;
   }
   
   /* The Close Button */
