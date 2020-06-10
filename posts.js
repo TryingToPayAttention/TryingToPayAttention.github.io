@@ -107,7 +107,8 @@ const load = () => {
                   // Make the footnotes modal
                   var mod = document.createElement("div")
                   mod.className = "modal"
-                  mod.id = "modal_" + d[ind + 1]
+                  postName = post.getElementsByClassName("title")
+                  mod.id = postName.innerHTML+ "_modal_" + d[ind + 1]
                   // Make the contents box
                   var content = document.createElement("div")
                   content.className = "modal-content"
@@ -127,7 +128,9 @@ const load = () => {
                   // Setup callback on superscript
                   sup.onclick = function (event) {
                     enclosedSup = event.target
-                    var modalName = "modal_" + enclosedSup.innerHTML
+                    enclosedPost = event.target.parentNode.parentNode
+                    postName = enclosedPost.getElementsByClassName("title")
+                    var modalName = postName.innerHTML + "_modal_" + enclosedSup.innerHTML
                     var enclosedMod = document.getElementById(modalName)
                     enclosedMod.style.display = "block";
 
