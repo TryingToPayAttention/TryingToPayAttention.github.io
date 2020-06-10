@@ -49,6 +49,11 @@ html{
   text-align: left;
 }
 
+.paragraph {
+  text-align: justify;
+  font-family: "Ariel", sans-serif;
+}
+
 /* Fade for longer posts */
 .fade {
     position: relative;

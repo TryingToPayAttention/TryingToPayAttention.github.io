@@ -85,6 +85,7 @@ const load = () => {
         // Paragraph
         else {
           var el = document.createElement("p")
+          el.className = "paragraph"
 
           var ind
           last = 0
