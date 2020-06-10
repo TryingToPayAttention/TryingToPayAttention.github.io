@@ -127,8 +127,7 @@ const load = () => {
                   var footnoteName = document.createElement("div")
                   footnoteName.innerHTML = d.slice(ind + 1, ind + 1 + space1)
                   footnoteName.style.textDecoration = "underline"
-                  var restOfText = document.createElement("div")
-                  restOfText.innerHTML = d.slice(ind + 1 + space1, j)
+                  var restOfText = document.createTextNode(d.slice(ind + 1 + space1, j))
                   note.append(footnoteName)
                   note.append(restOfText)
                   content.append(note)
