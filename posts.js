@@ -87,6 +87,10 @@ const load = () => {
           var el = document.createElement("p")
           el.className = "paragraph"
 
+          if(d.slice(0, 3) === '"" '){
+            el.style.fontStyle = "italic"
+          }
+
           var ind
           last = 0
           //Check to see if a character is {
