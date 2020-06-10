@@ -34,7 +34,7 @@ html{
 }
 
 .post:title {
-  text-align: left;
+  text-align: right;
 }
 
 /* Fade for longer posts */
