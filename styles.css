@@ -1,6 +1,7 @@
 /* Page */
 html{
     font-family: "Courier", monospace;
+    font-size: 20px;
 
     background-image: url('flowers.png');
     background-attachment: fixed;
