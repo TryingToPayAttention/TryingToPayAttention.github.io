@@ -112,7 +112,7 @@ const load = () => {
                   var mod = document.createElement("div")
                   mod.className = "modal"
                   postName = post.getElementsByClassName("title")[0]
-                  mod.id = postName.innerHTML+ "_modal_" + d.slice(ind + 1, ind + 1 + 1)//firstSpace(d.slice(ind+1)))
+                  mod.id = postName.innerHTML+ "_modal_" + d.slice(ind + 1, ind + 1 + firstSpace(d.slice(ind+1))
                   // Make the contents box
                   var content = document.createElement("div")
                   content.className = "modal-content"
