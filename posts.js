@@ -187,7 +187,7 @@ const firstSpace = (arr) =>{
       return i
     }
   }
-  return -1
+  return 1
 }
 
 const get = async (posts) => {
