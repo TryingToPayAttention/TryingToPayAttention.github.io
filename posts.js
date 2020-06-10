@@ -142,7 +142,7 @@ const load = () => {
                     }
 
                     // If click outside content
-                    window.addEventListener = function (event3) {
+                    window.onclick = function (event3) {
                       if (event3.target == enclosedMod) { // Beware: enclosedMode is not enclosed for this callback!
                         enclosedMod.style.display = "none"
                       }
