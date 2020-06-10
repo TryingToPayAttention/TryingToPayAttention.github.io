@@ -33,7 +33,7 @@ html{
     background-color: rgba(255, 254, 205, .9);
 }
 
-.post:title {
+.post:h1 {
   text-align: left;
 }
 
