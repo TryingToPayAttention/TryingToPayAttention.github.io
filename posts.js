@@ -185,7 +185,7 @@ const firstSpace = (arr) =>{
   console.log(arr)
   for(iii = 0; iii<arr.length; iii++){
     if(arr[iii] === " "){
-      console.log(i)
+      console.log(iii)
       return iii
     }
   }
