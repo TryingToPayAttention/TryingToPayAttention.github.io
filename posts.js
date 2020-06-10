@@ -124,7 +124,7 @@ const load = () => {
                   content.append(span)
                   // Append the note to the content box
                   var note = document.createElement("p")
-                  var footnoteName = document.createElement("div")
+                  var footnoteName = document.createElement("span")
                   footnoteName.innerHTML = d.slice(ind + 1, ind + 1 + space1)
                   footnoteName.style.textDecoration = "underline"
                   var restOfText = document.createTextNode(d.slice(ind + 1 + space1, j))
