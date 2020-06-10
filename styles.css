@@ -3,7 +3,7 @@ html{
     /*font-family: "Courier", monospace;*/
     text-rendering: optimizeLegibility;
     font-family: "Scala W01", "Palatino", "Book Antiqua", serif;
-    font-size: 20px;
+    font-size: 19px;
 
     background-image: url('flowers.png');
     background-attachment: fixed;
