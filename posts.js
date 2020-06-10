@@ -61,18 +61,21 @@ const load = () => {
         // Date published
         else if (d.slice(0, 2) === "& ") {
           var el = document.createElement("h6")
+          el.className = "date"
           el.innerHTML = d.slice(2)
           post.append(el)
         }
         // Section Header
         else if (d.slice(0, 4) === "### ") {
           var el = document.createElement("h3")
+          el.className = "subsection"
           el.innerHTML = d.slice(4)
           post.append(el)
         }
         // Subsection Header
         else if (d.slice(0, 3) === "## ") {
           var el = document.createElement("h2")
+          el.className = "section"
           el.innerHTML = d.slice(3)
           post.append(el)
         }
