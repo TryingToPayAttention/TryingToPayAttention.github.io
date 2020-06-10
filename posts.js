@@ -129,8 +129,8 @@ const load = () => {
                   sup.onclick = function (event) {
                     enclosedSup = event.target
                     enclosedPost = event.target.parentNode.parentNode
-                    postName = enclosedPost.getElementsByClassName("title")[0]
-                    var modalName = postName.innerHTML + "_modal_" + enclosedSup.innerHTML
+                    postName1 = enclosedPost.getElementsByClassName("title")[0]
+                    var modalName = postName1.innerHTML + "_modal_" + enclosedSup.innerHTML
                     var enclosedMod = document.getElementById(modalName)
                     enclosedMod.style.display = "block";
 
