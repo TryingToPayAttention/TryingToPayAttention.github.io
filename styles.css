@@ -119,12 +119,13 @@ a:active {
     text-align: justify;
 
     background-color:rgba(255, 250, 245);
-   
+    font-size: 16;
     padding: .35em 6em 0 6em;
     width: 35em;
-    position: fixed;
+    /*position: fixed;*/
+    margin: auto;
     bottom: 0px;
-    left: 30%;
+    left: 25%;
   }
   
   /* The Close Button */
