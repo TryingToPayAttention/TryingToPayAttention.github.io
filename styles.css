@@ -1,6 +1,8 @@
 /* Variables*/
 :root {
-  --post-color: brown;
+  --post-color-opaque: rgba(255, 250, 245, .9);
+  --post-color-0:rgba(255, 250, 245, 0);
+  --post-color-1: rgba(255, 250, 245, 1);
 }
 
 
@@ -40,7 +42,7 @@ html{
     margin: auto;
     padding: 2em 6em 3em 6em;
     /*background-color: rgba(255, 254, 205, .9);*/
-    background-color: rgba(255, 250, 245, 0.9);
+    background-color: var(--post-color-opaque);
     line-height: 1.6;
     
 }
@@ -81,7 +83,7 @@ html{
     bottom: 0;
     width: 100%;
     height: 6em; /*length of fade*/
-    background: linear-gradient(180deg, rgba(255, 250, 245, 0), rgba(255, 250, 245, 1) 100%);
+    background: linear-gradient(180deg, var(--post-color-0), var(--post-color-1) 100%);
   }
 
 /* Links */
@@ -123,7 +125,7 @@ a:active {
   /* Modal Content */
   .modal-content {
     text-align: justify;
-    background-color:rgba(255, 250, 245);
+    background-color:var(--post-color-1);
     font-size: 16px;
     padding: .35em 6em 0 6em;
     width: 35em;
