@@ -30,7 +30,7 @@ html{
 /* Posts */
 .post {
     text-align: justify;
-    width: 60%;
+    width: 30em;
     margin: auto;
     padding: 1em;
     /*background-color: rgba(255, 254, 205, .9);*/
