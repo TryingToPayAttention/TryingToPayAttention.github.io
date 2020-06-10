@@ -16,7 +16,7 @@ html{
 
 /* Sidebar */
 .sidebar {
-    height: 70%; /* Full-height: remove this if you want "auto" height */
+    height: 60%; /* Full-height: remove this if you want "auto" height */
     width: 130px; /* Set the width of the sidebar */
     position: absolute; /* Fixed Sidebar (stay in place on scroll) */
     background-color: rgba(252, 210, 252, .9);
