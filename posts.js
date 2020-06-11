@@ -90,7 +90,7 @@ const load = () => {
           // Check for block quote
           if(d.slice(0, 3) === '"" '){
             el.style.fontStyle = "italic"
-            el.style.marginLeft = "7em"
+            el.style.marginLeft = "1em"
             d = d.slice(3)
           }
 
