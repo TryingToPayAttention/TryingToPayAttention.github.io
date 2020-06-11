@@ -14,7 +14,7 @@ html{
     font-size: 19px;
 
     background-image: url('pretty.jpg');
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
 }
 
 /* Header */
