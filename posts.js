@@ -211,5 +211,3 @@ const get = async (posts) => {
   }
   return ret;
 }
-
-load(["EA.txt", "balance.txt"])
