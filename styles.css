@@ -125,6 +125,7 @@ a:active {
   /* Modal Content */
   .modal-content {
     text-align: left;
+    hyphens:  none;
     background-color:var(--post-color-1);
     padding: .50em 7.5em 0 7.5em;
     width: 35em;
