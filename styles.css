@@ -130,9 +130,8 @@ a:active {
     padding: .50em 7.5em 0 7.5em;
     width: 35em;
     position: fixed;
-    margin: auto;
     bottom: 0px;
-    left: 16%;
+    left: 20%;
   }
   
   /* The Close Button */
