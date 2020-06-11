@@ -1,5 +1,4 @@
-const load = () => {
-  var posts = ["EA.txt", "balance.txt"]
+const load = (posts) => {
 
   get(posts).then((data) => {
     // Create a container for the posts
@@ -213,4 +212,4 @@ const get = async (posts) => {
   return ret;
 }
 
-load()
+load(["EA.txt", "balance.txt"])
