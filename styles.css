@@ -43,7 +43,7 @@ html{
     padding: 2em 6em 3em 6em;
     /*background-color: rgba(255, 254, 205, .9);*/
     background-color: var(--post-color-opaque);
-    line-height: 1.6;
+    line-height: 1.7;
     
 }
 
@@ -124,7 +124,7 @@ a:active {
   
   /* Modal Content */
   .modal-content {
-    text-align: left;
+    text-align: justify;
     hyphens:  none;
     line-height: 1.4;
 
