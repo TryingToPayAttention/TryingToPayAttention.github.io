@@ -91,6 +91,7 @@ const load = () => {
           if(d.slice(0, 3) === '"" '){
             el.style.fontStyle = "italic"
             el.style.marginLeft = "1em"
+            el.style.marginRight = "1em"
             d = d.slice(3)
           }
 
