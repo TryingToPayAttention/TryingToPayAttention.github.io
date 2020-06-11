@@ -129,9 +129,15 @@ a:active {
     background-color:var(--post-color-1);
     padding: .50em 7.5em 0 7.5em;
     width: 35em;
+    /*
     position: fixed;
     bottom: 0px;
     left: 20%;
+    */
+
+    margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
   }
   
   /* The Close Button */
