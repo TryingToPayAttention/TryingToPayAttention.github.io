@@ -1,50 +1,47 @@
 /* Variables*/
 :root {
-  --post-color-opaque: rgba(255, 250, 245, .9);
-  --post-color-0:rgba(255, 250, 245, 0);
+  --post-color-opaque: rgba(255, 250, 245, 0.9);
+  --post-color-0: rgba(255, 250, 245, 0);
   --post-color-1: rgba(255, 250, 245, 1);
 }
 
-
 /* Page */
-html{
-    /*font-family: "Courier", monospace;*/
-    text-rendering: optimizeLegibility;
-    font-family: "Scala W01", "Palatino", "Book Antiqua", serif;
-    font-size: 19px;
+html {
+  /*font-family: "Courier", monospace;*/
+  text-rendering: optimizeLegibility;
+  font-family: "Scala W01", "Palatino", "Book Antiqua", serif;
+  font-size: 19px;
 
-    background-image: url('pretty.jpg');
-    /*background-attachment: fixed;*/
+  background-image: url("pretty.jpg");
+  /*background-attachment: fixed;*/
 }
 
 /* Header */
 .header {
-    text-align: center;
-    padding: .01em;
-    background-color: var(--post-color-opaque);
+  text-align: center;
+  padding: 0.01em;
+  background-color: var(--post-color-opaque);
 }
-
 
 /* Sidebar */
 .sidebar {
-    height: 70%; /* Full-height: remove this if you want "auto" height */
-    width: 7em; /* Set the width of the sidebar */
-    position: absolute; /* Fixed Sidebar (stay in place on scroll) */
-    background-color: rgba(252, 210, 252, .9);
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding: .01em;
-  }
+  height: 70%; /* Full-height: remove this if you want "auto" height */
+  width: 7em; /* Set the width of the sidebar */
+  position: absolute; /* Fixed Sidebar (stay in place on scroll) */
+  background-color: rgba(252, 210, 252, 0.9);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding: 0.01em;
+}
 
 /* Posts */
 .post {
-    text-align: justify;
-    width: 35em;
-    margin: auto;
-    padding: 2em 6em 3em 6em;
-    /*background-color: rgba(255, 254, 205, .9);*/
-    background-color: var(--post-color-opaque);
-    line-height: 1.7;
-    
+  text-align: justify;
+  width: 35em;
+  margin: auto;
+  padding: 2em 6em 3em 6em;
+  /*background-color: rgba(255, 254, 205, .9);*/
+  background-color: var(--post-color-opaque);
+  line-height: 1.7;
 }
 
 .title {
@@ -71,110 +68,112 @@ html{
 
 /* Fade for longer posts */
 .fade {
-    position: relative;
-    height: 30em; /* max length of element*/
-    overflow: hidden;
-  }
+  position: relative;
+  height: 30em; /* max length of element*/
+  overflow: hidden;
+}
 
 .fade:after {
-    content: "";
-    position: absolute;
-    text-align: right;
-    bottom: 0;
-    width: 100%;
-    height: 6em; /*length of fade*/
-    background: linear-gradient(180deg, var(--post-color-0), var(--post-color-1) 100%);
-  }
+  content: "";
+  position: absolute;
+  text-align: right;
+  bottom: 0;
+  width: 100%;
+  height: 6em; /*length of fade*/
+  background: linear-gradient(
+    180deg,
+    var(--post-color-0),
+    var(--post-color-1) 100%
+  );
+}
 
 /* Links */
 a:link {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 a:visited {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 a:active {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
-
 
 /* Modals */
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
-    text-align: justify;
-    hyphens:  none;
-    line-height: 1.4;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
 
-    background-color:var(--post-color-1);
-    padding: .50em 7.5em 0 7.5em;
-    width: 35em;
+/* Modal Content */
+.modal-content {
+  text-align: justify;
+  hyphens: none;
+  line-height: 1.4;
 
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-  }
-  
-  /* The Close Button */
-  .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 30px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
+  background-color: var(--post-color-1);
+  padding: 0.5em 7.5em 0 7.5em;
+  width: 35em;
 
-  /* Note Superscript*/
-  .superscript {
-    color: rgb(0, 0, 0); 
-    vertical-align: top;
-  }
-  .superscript:hover {
-    text-decoration: underline; 
-  }
-  .superscript:active {
-    text-decoration: underline;
-  }
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
 
-  /* Post Title*/
-  .title {
-    color: rgb(0, 0, 0); 
-  }
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+}
 
-  .title:hover {
-    text-decoration: underline;
-  }
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-  .title:active {
-    text-decoration: underline;
-  }
+/* Note Superscript*/
+.superscript {
+  color: rgb(0, 0, 0);
+  vertical-align: top;
+}
+.superscript:hover {
+  text-decoration: underline;
+}
+.superscript:active {
+  text-decoration: underline;
+}
+
+/* Post Title*/
+.title {
+  color: rgb(0, 0, 0);
+}
+
+.title:hover {
+  text-decoration: underline;
+}
+
+.title:active {
+  text-decoration: underline;
+}

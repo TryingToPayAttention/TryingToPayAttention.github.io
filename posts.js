@@ -19,7 +19,6 @@ const load = (posts) => {
         post.className = "post"
       }
       postContainer.append(post)
-
       // Parse and process the text
       for (d of data[i].split(/\r?\n/)) {
         // Title of post
@@ -36,9 +35,9 @@ const load = (posts) => {
             var saved
             // To Do: will this become useless after adding url change listener?
             // Then all I would have to do here is change the url and the rest would do its thing
-            for (p of postList){
+            for (p of postList) {
               var t = p.getElementsByClassName("title")
-              if (t[0].innerHTML != event.target.innerHTML){
+              if (t[0].innerHTML != event.target.innerHTML) {
                 p.style.display = "none" // Turn off posts that aren't of the clicked title
               } else {
                 p.className = "post" // Make sure this post is not faded
@@ -46,9 +45,9 @@ const load = (posts) => {
               }
             }
             while (posts[0].hasChildNodes()) {
-                posts[0].removeChild(posts[0].lastChild);
+              posts[0].removeChild(posts[0].lastChild);
             }
-            
+
             posts[0].append(document.createElement("br")) // Add a space
             posts[0].append(saved) // Add the single post back into the container
             window.scrollTo(0, 0)
@@ -87,7 +86,7 @@ const load = (posts) => {
           el.className = "paragraph"
 
           // Check for block quote
-          if(d.slice(0, 3) === '"" '){
+          if (d.slice(0, 3) === '"" ') {
             el.style.fontStyle = "italic"
             el.style.marginLeft = "1em"
             el.style.marginRight = "1em"
@@ -111,7 +110,7 @@ const load = (posts) => {
                   // Append the superscript
                   var sup = document.createElement("sup")
                   sup.className = "superscript"
-                  space1 = firstSpace(d.slice(ind+1))
+                  space1 = firstSpace(d.slice(ind + 1))
                   sup.innerHTML = d.slice(ind + 1, ind + 1 + space1)
                   el.append(sup);
 
@@ -120,7 +119,7 @@ const load = (posts) => {
                   var mod = document.createElement("div")
                   mod.className = "modal"
                   postName = post.getElementsByClassName("title")[0]
-                  mod.id = postName.innerHTML+ "_modal_" + d.slice(ind + 1, ind + 1 + space1)
+                  mod.id = postName.innerHTML + "_modal_" + d.slice(ind + 1, ind + 1 + space1)
                   // Make the contents box
                   var content = document.createElement("div")
                   content.className = "modal-content"
@@ -193,9 +192,9 @@ const load = (posts) => {
   })
 }
 
-const firstSpace = (arr) =>{
-  for(iii = 0; iii<arr.length; iii++){
-    if(arr[iii] === " "){
+const firstSpace = (arr) => {
+  for (iii = 0; iii < arr.length; iii++) {
+    if (arr[iii] === " ") {
       return iii
     }
   }
