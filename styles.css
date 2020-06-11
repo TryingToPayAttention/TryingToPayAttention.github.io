@@ -21,7 +21,7 @@ html{
 .header {
     text-align: center;
     padding: .01em;
-    background-color: rgba(63, 141, 141, .9);
+    background-color: var(--post-color-opaque);
 }
 
 
