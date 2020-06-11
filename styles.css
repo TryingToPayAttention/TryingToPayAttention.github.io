@@ -126,12 +126,12 @@ a:active {
   .modal-content {
     text-align: justify;
     background-color:var(--post-color-1);
-    padding: .35em 6em 0 6em;
+    padding: .50em 7em 0 7em;
     width: 35em;
     position: fixed;
     margin: auto;
     bottom: 0px;
-    left: 23%;
+    left: 20%;
   }
   
   /* The Close Button */
