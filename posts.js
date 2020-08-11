@@ -34,6 +34,7 @@ const viewRecent = (num) => {
       appendPost(post)
     }
     appendBreaks(3)
+    scrollToTop()
   })
 }
 
@@ -43,6 +44,7 @@ const viewPost = (urlTitle) => {
     appendBreaks(1)
     appendPost(post)
     appendBreaks(3)
+    scrollToTop()
   })
 }
 
@@ -52,6 +54,7 @@ const viewAbout = () => {
     appendBreaks(1)
     appendPost(about)
     appendBreaks(3)
+    scrollToTop()
   })
 }
 
@@ -101,6 +104,10 @@ const clearPosts = () => {
   for (post of posts) {
     post.style.display = "none"
   }
+}
+
+const scrollToTop = () => {
+  window.scrollTo(0, 0)
 }
 
 const appendBreaks = (num) => {
