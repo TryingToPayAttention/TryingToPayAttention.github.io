@@ -1,4 +1,3 @@
-@
 # Different definitions of identity politics
 $ identity
 & 8-10-2020
