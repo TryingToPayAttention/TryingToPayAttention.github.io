@@ -16,7 +16,7 @@ $ identity
 
 4.1 This is now part of mainstream US politics, since it has become part of the “culture wars,” maybe the broadest discursive space in US politics. 
 
-@
+##########
 # Notes on White Experience
 $ white-experience
 & 8-9-2020
@@ -55,7 +55,7 @@ $ white-experience
 
 8. I am speaking in incredible generalities, as if “white US people” is a well defined and homogenous category. White experience is immense and multifaceted. My thoughts fail on so many different white communities. But I’m trying to explain part of white alienation which has been undeniable in my own life. 
 
-@
+##########
 # Balance of Payment: a Euphemism
 $ balance
 & 11-6-2020
@@ -98,7 +98,7 @@ Oh.
 
 Well, I'm glad I wasn't reading leftists, I would have learned nastier things.
 
-@
+##########
 # Post q
 & 2020-1-1
 lol!
