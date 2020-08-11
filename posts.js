@@ -35,7 +35,7 @@ const changeAbout = () => {
 ///////////////////////////////////////
 
 const viewRecent = (num) => {
-  getRecent(num).then((posts) => {
+  getRecents(num).then((posts) => {
     clearPosts()
     for (post of posts) {
       appendBreaks(1)
