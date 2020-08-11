@@ -112,7 +112,7 @@ const appendBreaks = (num) => {
 const appendPost = (text) => {
   var post = document.createElement("div")
   if (isLongPost(text)) {
-    post.className = CLASS_POST //CLASS_LONG_POST
+    post.className = CLASS_LONG_POST
   } else {
     post.className = CLASS_POST
   }
