@@ -193,15 +193,15 @@ const MEDIA = '!'
 const BLOCK_QUOTE = '""'
 
 const isTitle = (line) => {
-  return line.slice(0, 1) === TITLE && !(isSection(line) || isSubSection(line) || isSeparator2(line))
+  return (line.slice(0, 1) === TITLE) && !(isSection(line) || isSubSection(line) || isSeparator2(line))
 }
 
 const isSection = (line) => {
-  return line.slice(0, 2) === SECTION && !(isSubSection(line) || isSeparator2(line))
+  return (line.slice(0, 2) === SECTION) && !(isSubSection(line) || isSeparator2(line))
 }
 
 const isSubSection = (line) => {
-  return line.slice(0, 3) === SUB_SECTION && !isSeparator2(line)
+  return (line.slice(0, 3) === SUB_SECTION) && !isSeparator2(line)
 }
 
 const isSeparator = (line) => {
