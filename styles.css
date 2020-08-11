@@ -68,7 +68,7 @@ html {
 .block {
   text-align: justify;
   hyphens: auto;
-  font-style: "italic";
+  font-style: italic;
   margin-left: 1em;
   margin-right: 1em;
 }
@@ -111,53 +111,6 @@ a:hover {
 
 a:active {
   text-decoration: underline;
-}
-
-/* Modals */
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  text-align: justify;
-  hyphens: none;
-  line-height: 1.4;
-
-  background-color: var(--post-color-1);
-  padding: 0.5em 7.5em 0 7.5em;
-  width: 35em;
-
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 /* Note Superscript*/
