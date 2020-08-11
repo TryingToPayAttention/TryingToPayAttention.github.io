@@ -21,14 +21,6 @@ const route = () => {
   }
 }
 
-const changeMain = () => {
-  window.location.href = "https://andrewmohebbi.github.io"
-}
-
-const changeAbout = () => {
-  window.location.href = "https://andrewmohebbi.github.io#about"
-}
-
 
 ///////////////////////////////////////
 // Views
