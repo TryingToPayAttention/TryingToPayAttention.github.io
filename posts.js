@@ -56,9 +56,9 @@ const viewAbout = () => {
 }
 
 const cleanView = () => {
-  scrollToTop()
   clearPosts()
   clearBreaks()
+  scrollToTop()
 }
 
 
@@ -102,11 +102,8 @@ const getPost = async (urlTitle) => {
 // Rendering
 ///////////////////////////////////////
 
-const clearPosts = () => {
-  var posts = document.getElementsByClassName(CLASS_POST)
-  for (post of posts) {
-    post.style.display = "none"
-  }
+const scrollToTop = () => {
+  window.scrollTo(0, 0)
 }
 
 const clearBreaks = () => {
@@ -116,8 +113,11 @@ const clearBreaks = () => {
   }
 }
 
-const scrollToTop = () => {
-  window.scrollTo(0, 0)
+const clearPosts = () => {
+  var posts = document.getElementsByClassName(CLASS_POST)
+  for (post of posts) {
+    post.style.display = "none"
+  }
 }
 
 const appendBreaks = (num) => {
@@ -135,6 +135,10 @@ const appendPost = (text) => {
   }
   fill(post, text)
   document.body.append(post)
+}
+
+const isLongPost = (post) => {
+  return (post.length >= LONG_POST_LENGTH)
 }
 
 const fill = (post, text) => {
@@ -176,10 +180,6 @@ const create = (type, name, text) => {
   el.className = name
   el.innerHTML = text
   return el
-}
-
-const isLongPost = (post) => {
-  return (post.length >= LONG_POST_LENGTH)
 }
 
 
