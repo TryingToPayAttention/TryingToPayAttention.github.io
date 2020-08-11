@@ -70,7 +70,7 @@ const viewAbout = () => {
 
 const getRecents = async (num) => {
   const all = await fetch("text/posts.txt").then((response) => response.text())
-  const posts = all.split(/@/)
+  const posts = all.split(/^##########/)
   const first = (num - 1) * 10
   const last = num * 10
   return posts.slice(first, last + 1)
@@ -83,7 +83,7 @@ const getAbout = async () => {
 
 const getPost = async (urlTitle) => {
   var all = await fetch("text/posts.txt").then((response) => response.text())
-  const posts = all.split(/@/)
+  const posts = all.split(/^##########/)
   for (post of posts) {
     const lines = post.split(/\r?\n/)
     for (line of lines) {
@@ -131,7 +131,7 @@ const appendPost = (text) => {
 const fill = (post, text) => {
   const lines = text.split(/\r?\n/)
   for (line of lines) {
-    if (isSeparator(line)) {
+    if (isSeparator2(line)) {
       // Discard
     }
     if (isTitle(line)) {
@@ -193,11 +193,11 @@ const MEDIA = '!'
 const BLOCK_QUOTE = '""'
 
 const isTitle = (line) => {
-  return line.slice(0, 1) === TITLE && !isSection(line) && !isSubSection(line) && !isSeparator2(line)
+  return line.slice(0, 1) === TITLE && !(isSection(line) || isSubSection(line) || isSeparator2(line))
 }
 
 const isSection = (line) => {
-  return line.slice(0, 2) === SECTION && !isSubSection(line) && !isSeparator2(line)
+  return line.slice(0, 2) === SECTION && !(isSubSection(line) || isSeparator2(line))
 }
 
 const isSubSection = (line) => {
