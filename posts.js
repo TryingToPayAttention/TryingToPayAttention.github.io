@@ -131,9 +131,6 @@ const appendPost = (text) => {
 const fill = (post, text) => {
   const lines = text.split(/\r?\n/)
   for (line of lines) {
-    if (line.slice(0, 10) === '##########') {
-      // Discard
-    }
     if (isTitle(line)) {
       var el = create("h1", "title", line.slice(2))
       post.append(el)
@@ -185,32 +182,24 @@ const isLongPost = (post) => {
 const TITLE = '#'
 const SECTION = '##'
 const SUB_SECTION = '###'
-const SEPARATOR2 = '##########'
-const SEPARATOR = '@'
+const SEPARATOR = '##########'
 const URL_TITLE = '$'
 const DATE = '&'
 const MEDIA = '!'
 const BLOCK_QUOTE = '""'
 
 const isTitle = (line) => {
-  return (line.slice(0, 1) === TITLE) && !(isSection(line) || isSubSection(line) || isSeparator2(line))
+  return (line.slice(0, 1) === TITLE) && !(isSection(line) || isSubSection(line))
 }
 
 const isSection = (line) => {
-  return (line.slice(0, 2) === SECTION) && !(isSubSection(line) || isSeparator2(line))
+  return (line.slice(0, 2) === SECTION) && !isSubSection(line)
 }
 
 const isSubSection = (line) => {
-  return (line.slice(0, 3) === SUB_SECTION) && !isSeparator2(line)
+  return line.slice(0, 3) === SUB_SECTION
 }
 
-const isSeparator = (line) => {
-  return line.slice(0, 1) === SEPARATOR
-}
-
-const isSeparator2 = (line) => {
-  return line.slice(0, 10) === SEPARATOR2
-}
 
 const isURLTitle = (line) => {
   return line.slice(0, 1) === URL_TITLE
