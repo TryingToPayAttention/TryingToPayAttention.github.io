@@ -1,212 +1,229 @@
-const load = (posts) => {
+///////////////////////////////////////
+// Routing
+///////////////////////////////////////
 
-  get(posts).then((data) => {
-    // Create a container for the posts
-    var postContainer = document.createElement("div")
-    postContainer.className = "postContainer"
-    document.body.append(postContainer)
+const listen = () => {
+  window.addEventListener("hashchange", route)
+}
 
-    for (i = 0; i < posts.length; i++) {
-      // Add a break
-      postContainer.append(document.createElement("br"))
+const route = () => {
+  var hash = window.location.hash.slice(1)
+  var hInt = parseInt(hash)
 
-      // Make the post element
-      var post = document.createElement("div")
-      if (data[i].length > 2000) {
-        // If it's over 2000 chars, hide some content
-        post.className = "post fade"
-      } else {
-        post.className = "post"
-      }
-      postContainer.append(post)
-      // Parse and process the text
-      for (d of data[i].split(/\r?\n/)) {
-        // Title of post
-        if (d.slice(0, 2) === "# ") {
-          var el = document.createElement("h1")
-          el.className = "title"
-          el.innerHTML = d.slice(2)
-          post.append(el)
+  if (hash == "") {
+    viewRecent(1)
+  } else if (hash == "about") {
+    viewAbout()
+  } else if (Number.isInteger(hInt) && (hInt > 0)) {
+    viewRecent(hInt)
+  } else {
+    viewPost(hash)
+  }
+}
 
-          // Callback for clicking on a title
-          el.onclick = function (event) {
-            var posts = document.getElementsByClassName("postContainer") // Get the post container
-            var postList = document.getElementsByClassName("post") // Get the posts
-            var saved
-            // To Do: will this become useless after adding url change listener?
-            // Then all I would have to do here is change the url and the rest would do its thing
-            for (p of postList) {
-              var t = p.getElementsByClassName("title")
-              if (t[0].innerHTML != event.target.innerHTML) {
-                p.style.display = "none" // Turn off posts that aren't of the clicked title
-              } else {
-                p.className = "post" // Make sure this post is not faded
-                saved = p// Save the post so you can atach it later
-              }
-            }
-            while (posts[0].hasChildNodes()) {
-              posts[0].removeChild(posts[0].lastChild);
-            }
+const changeMain = () => {
+  window.location.href = "https://andrewmohebbi.github.io"
+}
 
-            posts[0].append(document.createElement("br")) // Add a space
-            posts[0].append(saved) // Add the single post back into the container
-            window.scrollTo(0, 0)
-          }
-        }
-        // Article Title Metadata
-        else if (d.slice(0, 2) === "$ ") {
-        }
-        // Date published
-        else if (d.slice(0, 2) === "& ") {
-          var el = document.createElement("h6")
-          el.className = "date"
-          el.innerHTML = d.slice(2)
-          post.append(el)
-        }
-        // Section Header
-        else if (d.slice(0, 4) === "### ") {
-          var el = document.createElement("h3")
-          el.className = "subsection"
-          el.innerHTML = d.slice(4)
-          post.append(el)
-        }
-        // Subsection Header
-        else if (d.slice(0, 3) === "## ") {
-          var el = document.createElement("h2")
-          el.className = "section"
-          el.innerHTML = d.slice(3)
-          post.append(el)
-        }
-        // Media
-        else if (d.slice(0, 2) === "! ") {
-        }
-        // Paragraph
-        else {
-          var el = document.createElement("p")
-          el.className = "paragraph"
+const changeAbout = () => {
+  window.location.href = "https://andrewmohebbi.github.io#about"
+}
 
-          // Check for block quote
-          if (d.slice(0, 3) === '"" ') {
-            el.style.fontStyle = "italic"
-            el.style.marginLeft = "1em"
-            el.style.marginRight = "1em"
-            d = d.slice(3)
-          }
 
-          var ind
-          last = 0
-          //Check to see if a character is {
-          for (ind = 0; ind < d.length; ind++) {
-            if (d[ind] === "{") {
-              //Append the text that came before
-              var node = document.createTextNode(d.slice(last, ind))
-              el.append(node)
+///////////////////////////////////////
+// Views
+///////////////////////////////////////
 
-              // Search for the }
-              var j;
-              for (j = ind + 1; j < d.length; j++) {
-                // When you find it, append it
-                if (d[j] === "}") {
-                  // Append the superscript
-                  var sup = document.createElement("sup")
-                  sup.className = "superscript"
-                  space1 = firstSpace(d.slice(ind + 1))
-                  sup.innerHTML = d.slice(ind + 1, ind + 1 + space1)
-                  el.append(sup);
-
-                  // Append the note to the modal content
-                  // Make the footnotes modal
-                  var mod = document.createElement("div")
-                  mod.className = "modal"
-                  postName = post.getElementsByClassName("title")[0]
-                  mod.id = postName.innerHTML + "_modal_" + d.slice(ind + 1, ind + 1 + space1)
-                  // Make the contents box
-                  var content = document.createElement("div")
-                  content.className = "modal-content"
-                  // Make the x exit button
-                  var span = document.createElement("span")
-                  span.className = "close"
-                  span.innerHTML = "&times;"
-                  content.append(span)
-                  // Append the note to the content box
-                  var note = document.createElement("p")
-                  var footnoteName = document.createElement("span")
-                  footnoteName.innerHTML = d.slice(ind + 1, ind + 1 + space1)
-                  footnoteName.style.textDecoration = "underline"
-                  var restOfText = document.createTextNode(d.slice(ind + 1 + space1, j))
-                  note.append(footnoteName)
-                  note.append(restOfText)
-                  content.append(note)
-                  // Append modal content in backwards order: content to modal, modal to page
-                  mod.append(content)
-                  document.body.append(mod)
-
-                  // Setup callback on superscript
-                  sup.onclick = function (event) {
-                    enclosedSup = event.target
-                    enclosedPost = event.target.parentNode.parentNode
-                    postName1 = enclosedPost.getElementsByClassName("title")[0]
-                    var modalName = postName1.innerHTML + "_modal_" + enclosedSup.innerHTML
-                    var enclosedMod = document.getElementById(modalName)
-                    enclosedMod.style.display = "block";
-
-                    // If click x button
-                    var enclosedSpan = enclosedMod.getElementsByClassName("close")[0]
-                    enclosedSpan.onclick = function (event2) {
-                      enclosedMod2 = event2.target.parentNode.parentNode
-                      enclosedMod2.style.display = "none"
-                    }
-
-                    // If click outside content
-                    window.onclick = function (event3) {
-                      if (event3.target == enclosedMod) { // Beware: enclosedMode is not enclosed for this callback!
-                        enclosedMod.style.display = "none"
-                      }
-                    }
-                  }
-
-                  break;
-                }
-              }
-              // Set to the character after the }
-              last = j + 1;
-              ind = j
-            }
-          }
-          // If the post doesnt end in a footnote, append text that you have not gotten to
-          if (last != ind) {
-            var node = document.createTextNode(d.slice(last))
-            el.append(node)
-          }
-
-          // Append the full paragraph to the page
-          post.append(el)
-        }
-      }
+const viewRecent = (num) => {
+  getRecent(num).then((posts) => {
+    clearPosts()
+    for (post of posts) {
+      appendBreaks(1)
+      appendPost(post)
     }
-
-    // Add some space at the bottom
-    postContainer.append(document.createElement("br"))
-    postContainer.append(document.createElement("br"))
-    postContainer.append(document.createElement("br"))
+    appendBreaks(3)
   })
 }
 
-const firstSpace = (arr) => {
-  for (iii = 0; iii < arr.length; iii++) {
-    if (arr[iii] === " ") {
-      return iii
-    }
-  }
-  return 1
+const viewPost = (urlTitle) => {
+  getPost(urlTitle).then((post) => {
+    clearPosts()
+    appendBreaks(1)
+    appendPost(post)
+    appendBreaks(3)
+  })
 }
 
-const get = async (posts) => {
-  var ret = [];
-  for (p of posts) {
-    var url = "/posts/" + p;
-    var data = await fetch(url).then((response) => response.text());
-    ret.push(data);
-  }
-  return ret;
+const viewAbout = () => {
+  getAbout().then((about) => {
+    clearPosts()
+    appendBreaks(1)
+    appendPost(about)
+    appendBreaks(3)
+  })
 }
+
+
+///////////////////////////////////////
+// Get text
+///////////////////////////////////////
+
+const getRecents = async (num) => {
+  const all = await fetch("text/posts.txt").then((response) => response.text())
+  const posts = all.split(/^########## /)
+  const first = (num - 1) * 10
+  const last = num * 10
+  return posts.slice(first, last + 1)
+}
+
+const getAbout = async () => {
+  var about = await fetch("text/about.txt").then((response) => response.text())
+  return about
+}
+
+const getPost = async (urlTitle) => {
+  var all = await fetch("text/posts.txt").then((response) => response.text())
+  const posts = all.split(/^########## /)
+  for (post of posts) {
+    const lines = post.split(/\r?\n/)
+    for (line of lines) {
+      if (isURLTitle(line)) {
+        if (line.slice(2) == urlTitle) {
+          return post
+        }
+        break
+      }
+    }
+  }
+  var notFound = await fetch("text/notfound.txt").then((response) => response.text())
+  return notFound
+}
+
+
+///////////////////////////////////////
+// Rendering
+///////////////////////////////////////
+
+const clearPosts = () => {
+  var posts = document.getElementsByClassName(CLASS_POST)
+  for (post of posts) {
+    post.style.display = "none"
+  }
+}
+
+const appendBreaks = (num) => {
+  for (i = 0; i < num; i++) {
+    document.body.append(document.createElement("br"))
+  }
+}
+
+const appendPost = (text) => {
+  var post = document.createElement("div")
+  if (isLongPost(rawPost)) {
+    post.className = CLASS_LONG_POST
+  } else {
+    post.className = CLASS_POST
+  }
+  fill(post, text)
+  document.body.append(post)
+}
+
+const fill = (post, text) => {
+  const lines = text.split(/\r?\n/)
+  for (line of lines) {
+    if (isTitle(line)) {
+      var el = create("h1", "title", line.slice(2))
+      post.append(el)
+    }
+    else if (isURLTitle(line)) {
+    }
+    else if (isDate(line)) {
+      var el = create("h6", "date", line.slice(2))
+      post.append(el)
+    }
+    else if (isSection(line)) {
+      var el = create("h2", "section", line.slice(3))
+      post.append(el)
+    }
+    else if (isSubSection(line)) {
+      var el = create("h3", "subsection", line.slice(4))
+      post.append(el)
+    }
+    else if (isMedia(line)) {
+    }
+    else if (isBlockQuote(line)) {
+      var el = create("p", "block", line.slice(3))
+      post.append(el)
+    }
+    else {
+      var el = create("p", "paragraph", line)
+      post.append(el)
+    }
+  }
+}
+
+const create = (type, name, text) => {
+  var el = document.createElement(type)
+  el.className = name
+  el.innerHTML = text
+  return el
+}
+
+const isLongPost = (post) => {
+  return (post.length >= LONG_POST_LENGTH)
+}
+
+
+///////////////////////////////////////
+// Markup
+///////////////////////////////////////
+
+const SEPARATOR = '##########'
+const TITLE = '#'
+const URL_TITLE = '$'
+const DATE = '&'
+const SECTION = '##'
+const SUB_SECTION = '###'
+const MEDIA = '!'
+const BLOCK_QUOTE = '""'
+
+const isTitle = (line) => {
+  return line.slice(0, 1) === TITLE && !isSection(line) && !isSubSection(line) && !isSeparator(line)
+}
+
+const isSection = (line) => {
+  return line.slice(0, 2) === SECTION && !isSubSection(line) && !isSeparator(line)
+}
+
+const isSubSection = (line) => {
+  return line.slice(0, 3) === SUB_SECTION && !isSeparator(line)
+}
+
+const isSeparator = (line) => {
+  return line.slice(0, 10) === SEPARATOR
+}
+
+const isURLTitle = (line) => {
+  return line.slice(0, 1) === URL_TITLE
+}
+
+const isDate = (line) => {
+  return line.slice(0, 1) === DATE
+}
+
+const isMedia = (line) => {
+  return line.slice(0, 1) === MEDIA
+}
+
+const isBlockQuote = (line) => {
+  return line.slice(0, 2) === BLOCK_QUOTE
+}
+
+
+///////////////////////////////////////
+// Style constants
+///////////////////////////////////////
+
+const CLASS_POST = "post"
+const CLASS_LONG_POST = "post fade"
+const LONG_POST_LENGTH = 2000

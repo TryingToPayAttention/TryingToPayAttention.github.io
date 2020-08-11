@@ -1,3 +1,5 @@
 push.sh
-original.jpg
 blog.txt
+.DS_STORE
+stuff
+.eslintrc

@@ -62,8 +62,15 @@ html {
 
 .paragraph {
   text-align: justify;
-  /*font-family: "Ariel", sans-serif;*/
   hyphens: auto;
+}
+
+.block {
+  text-align: justify;
+  hyphens: auto;
+  font-style: "italic";
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 /* Fade for longer posts */
