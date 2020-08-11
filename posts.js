@@ -69,8 +69,8 @@ const cleanView = () => {
 const getRecents = async (num) => {
   const all = await fetch("text/posts.txt").then((response) => response.text())
   const posts = all.split(/##########/)
-  const first = (num - 1) * 10
-  const last = num * 10
+  const first = (num - 1) * POSTS_PER_PAGE
+  const last = num * POSTS_PER_PAGE
   return posts.slice(first, last + 1)
 }
 
@@ -231,6 +231,7 @@ const isBlockQuote = (line) => {
 // Style constants
 ///////////////////////////////////////
 
+const POSTS_PER_PAGE = 5
 const CLASS_POST = "post"
 const CLASS_LONG_POST = "post fade"
 const LONG_POST_LENGTH = 2000
