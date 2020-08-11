@@ -131,6 +131,9 @@ const appendPost = (text) => {
 const fill = (post, text) => {
   const lines = text.split(/\r?\n/)
   for (line of lines) {
+    if (isSeparator(line)) {
+      // Discard
+    }
     if (isTitle(line)) {
       var el = create("h1", "title", line.slice(2))
       post.append(el)
