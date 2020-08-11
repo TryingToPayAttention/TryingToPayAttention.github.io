@@ -28,34 +28,37 @@ const route = () => {
 
 const viewRecent = (num) => {
   getRecents(num).then((posts) => {
-    clearPosts()
+    cleanView()
     for (post of posts) {
       appendBreaks(1)
       appendPost(post)
     }
     appendBreaks(3)
-    scrollToTop()
   })
 }
 
 const viewPost = (urlTitle) => {
   getPost(urlTitle).then((post) => {
-    clearPosts()
+    cleanView()
     appendBreaks(1)
     appendPost(post)
     appendBreaks(3)
-    scrollToTop()
   })
 }
 
 const viewAbout = () => {
   getAbout().then((about) => {
-    clearPosts()
+    cleanView()
     appendBreaks(1)
     appendPost(about)
     appendBreaks(3)
-    scrollToTop()
   })
+}
+
+const cleanView = () => {
+  scrollToTop()
+  clearPosts()
+  clearBreaks()
 }
 
 
@@ -103,6 +106,13 @@ const clearPosts = () => {
   var posts = document.getElementsByClassName(CLASS_POST)
   for (post of posts) {
     post.style.display = "none"
+  }
+}
+
+const clearBreaks = () => {
+  var brs = document.getElementsByTagName("br")
+  for (br of brs) {
+    br.style.display = "none"
   }
 }
 
