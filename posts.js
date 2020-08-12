@@ -77,7 +77,7 @@ const getRecents = async (num) => {
   const all = await fetch("text/posts.txt").then((response) => response.text())
   const posts = all.split(/##########/)
   const first = (num - 1) * POSTS_PER_PAGE
-  const last = num * POSTS_PER_PAGE - 1
+  const last = (num * POSTS_PER_PAGE) - 1
   return posts.slice(first, last + 1)
 }
 
