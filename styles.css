@@ -31,6 +31,15 @@ html {
 
 .title {
   text-align: left;
+  /*color: rgb(0, 0, 0);*/
+}
+
+.title:hover {
+  text-decoration: underline;
+}
+
+.title:active {
+  text-decoration: underline;
 }
 
 .date {
@@ -107,18 +116,5 @@ a:active {
   text-decoration: underline;
 }
 .superscript:active {
-  text-decoration: underline;
-}
-
-/* Post Title*/
-.title {
-  color: rgb(0, 0, 0);
-}
-
-.title:hover {
-  text-decoration: underline;
-}
-
-.title:active {
   text-decoration: underline;
 }
