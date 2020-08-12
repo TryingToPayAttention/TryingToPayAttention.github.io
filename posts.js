@@ -1,4 +1,11 @@
 ///////////////////////////////////////
+// Style constants
+///////////////////////////////////////
+
+const POSTS_PER_PAGE = 5
+const LONG_POST_LENGTH = 2000
+
+///////////////////////////////////////
 // Routing
 ///////////////////////////////////////
 
@@ -70,7 +77,7 @@ const getRecents = async (num) => {
   const all = await fetch("text/posts.txt").then((response) => response.text())
   const posts = all.split(/##########/)
   const first = (num - 1) * POSTS_PER_PAGE
-  const last = num * POSTS_PER_PAGE
+  const last = num * POSTS_PER_PAGE - 1
   return posts.slice(first, last + 1)
 }
 
@@ -129,9 +136,9 @@ const appendBreaks = (num) => {
 const appendPost = (text) => {
   var post = document.createElement("div")
   if (isLongPost(text)) {
-    post.className = CLASS_LONG_POST
+    post.className = "post fade"
   } else {
-    post.className = CLASS_POST
+    post.className = "post"
   }
   fill(post, text)
   document.body.append(post)
@@ -225,13 +232,3 @@ const isMedia = (line) => {
 const isBlockQuote = (line) => {
   return line.slice(0, 2) === BLOCK_QUOTE
 }
-
-
-///////////////////////////////////////
-// Style constants
-///////////////////////////////////////
-
-const POSTS_PER_PAGE = 5
-const CLASS_POST = "post"
-const CLASS_LONG_POST = "post fade"
-const LONG_POST_LENGTH = 2000

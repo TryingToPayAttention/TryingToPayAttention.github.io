@@ -67,6 +67,11 @@ html {
   margin-right: 1em;
 }
 
+.superscript {
+  color: rgb(0, 0, 0);
+  vertical-align: top;
+}
+
 /* Fade for longer posts */
 .fade {
   position: relative;
@@ -104,17 +109,5 @@ a:hover {
 }
 
 a:active {
-  text-decoration: underline;
-}
-
-/* Note Superscript*/
-.superscript {
-  color: rgb(0, 0, 0);
-  vertical-align: top;
-}
-.superscript:hover {
-  text-decoration: underline;
-}
-.superscript:active {
   text-decoration: underline;
 }
