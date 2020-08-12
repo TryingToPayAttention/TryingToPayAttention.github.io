@@ -121,7 +121,7 @@ const clearBreaks = () => {
 }
 
 const clearPosts = () => {
-  var posts = document.getElementsByClassName(CLASS_POST)
+  var posts = document.getElementsByClassName("post")
   for (post of posts) {
     post.style.display = "none"
   }
