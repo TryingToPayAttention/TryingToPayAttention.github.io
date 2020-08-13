@@ -93,8 +93,8 @@ const getPost = async (urlTitle) => {
   for (post of posts) {
     const lines = post.split(/\r?\n/)
     for (line of lines) {
-      if (isURLTitle(line)) {
-        if (line.slice(2) == urlTitle) {
+      if (isTitle(line)) {
+        if (urlify(line.slice(2)) == urlTitle) {
           return post
         }
         break
