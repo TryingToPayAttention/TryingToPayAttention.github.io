@@ -1,5 +1,6 @@
 /* Variables*/
 :root {
+  --image: url("pretty.jpg");
   --post-color-opaque: rgba(255, 250, 245, 0.9);
   --post-color-0: rgba(255, 250, 245, 0);
   --post-color-1: rgba(255, 250, 245, 1);
@@ -10,7 +11,7 @@ html {
   text-rendering: optimizeLegibility;
   font-family: "Scala W01", "Palatino", "Book Antiqua", serif;
   font-size: 19px;
-  background-image: url("pretty.jpg");
+  background-image: var(--image);
 }
 
 /* Header */
