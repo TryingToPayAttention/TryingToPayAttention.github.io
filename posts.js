@@ -204,7 +204,7 @@ const createTitle = (text) => {
 }
 
 const urlify = (title) => {
-  title = title.replace(" ", "-")
+  title = title.replace(/\s/, "-")
   title = title.toLowerCase()
   return title
 }
