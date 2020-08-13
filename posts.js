@@ -173,7 +173,7 @@ const parseAndFill = (post, text) => {
       var el = create("h6", "date", line.slice(2))
       post.append(el)
     }
-    else if (line.slice(0, 2) === "@ ") {
+    else if (isFootnote(line)) {
       var el = create("h6", "footnote", line.slice(2))
       post.append(el)
     }
@@ -267,6 +267,7 @@ const SECTION = '##'
 const SUB_SECTION = '###'
 const SEPARATOR = '##########'
 const DATE = '&'
+const FOOT_NOTE = '@'
 const MEDIA = '!'
 const BLOCK_QUOTE = '""'
 
@@ -284,6 +285,10 @@ const isSubSection = (line) => {
 
 const isDate = (line) => {
   return line.slice(0, 1) === DATE
+}
+
+const isFootnote = (line) => {
+  return line.slice(0, 1) === FOOT_NOTE
 }
 
 const isMedia = (line) => {
