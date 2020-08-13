@@ -228,7 +228,7 @@ const createSuperscripted = (type, name, text) => {
       var sup = document.createElement("sup")
       sup.className = "superscript"
       sup.innerHTML = text.slice(first + 1, second)
-      post.append(sup)
+      el.append(sup)
     }
 
     i = second
