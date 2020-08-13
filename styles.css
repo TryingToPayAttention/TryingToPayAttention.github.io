@@ -12,6 +12,7 @@
 
 /* Page */
 html {
+  -webkit-text-size-adjust: 100%; /*For mobile Safari inconsistency*/
   text-rendering: optimizeLegibility;
   font-family: var(--font);
   font-size: var(--font-size);
