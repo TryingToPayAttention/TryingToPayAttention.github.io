@@ -105,6 +105,12 @@ const getPost = async (urlTitle) => {
   return notFound
 }
 
+const urlify = (title) => {
+  title = title.toLowerCase()
+  title = title.replace(/\s/g, "-")
+  title = title.replace(/[^a-z\-]/g, '')
+  return title
+}
 
 ///////////////////////////////////////
 // Rendering
@@ -141,7 +147,7 @@ const appendPost = (text, shorten) => {
   } else {
     post.className = "post"
   }
-  parseAndFill(post, text, shorten)
+  parseAndFill(post, text)
   document.body.append(post)
 }
 
@@ -150,10 +156,10 @@ const isLongPost = (post) => {
 }
 
 ///////////////////////////////////////
-// Parse Markup
+// Parse
 ///////////////////////////////////////
 
-const parseAndFill = (post, text, shorten) => {
+const parseAndFill = (post, text) => {
   const lines = text.split(/\r?\n/)
   for (line of lines) {
     if (isTitle(line)) {
@@ -201,13 +207,6 @@ const createTitle = (text) => {
   a.href = MAIN_URL + "#" + urlify(text)
   el.append(a)
   return el
-}
-
-const urlify = (title) => {
-  title = title.toLowerCase()
-  title = title.replace(/\s/g, "-")
-  title = title.replace(/[^a-z\-]/g, '')
-  return title
 }
 
 
