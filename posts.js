@@ -141,7 +141,7 @@ const appendPost = (text) => {
   } else {
     post.className = "post"
   }
-  fill(post, text)
+  parseAndFill(post, text)
   document.body.append(post)
 }
 
@@ -149,14 +149,16 @@ const isLongPost = (post) => {
   return (post.length >= LONG_POST_LENGTH)
 }
 
-const fill = (post, text) => {
+///////////////////////////////////////
+// Parse Markup
+///////////////////////////////////////
+
+const parseAndFill = (post, text) => {
   const lines = text.split(/\r?\n/)
   for (line of lines) {
     if (isTitle(line)) {
       var el = createTitle(line.slice(2))
       post.append(el)
-    }
-    else if (isURLTitle(line)) {
     }
     else if (isDate(line)) {
       var el = create("h6", "date", line.slice(2))
@@ -202,7 +204,9 @@ const createTitle = (text) => {
 }
 
 const urlify = (title) => {
-  return "lol"
+  title = title.replace(" ", "-")
+  title = title.toLowerCase()
+  return title
 }
 
 
@@ -214,7 +218,6 @@ const TITLE = '#'
 const SECTION = '##'
 const SUB_SECTION = '###'
 const SEPARATOR = '##########'
-const URL_TITLE = '$'
 const DATE = '&'
 const MEDIA = '!'
 const BLOCK_QUOTE = '""'
@@ -229,10 +232,6 @@ const isSection = (line) => {
 
 const isSubSection = (line) => {
   return line.slice(0, 3) === SUB_SECTION
-}
-
-const isURLTitle = (line) => {
-  return line.slice(0, 1) === URL_TITLE
 }
 
 const isDate = (line) => {
