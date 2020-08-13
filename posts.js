@@ -4,6 +4,7 @@
 
 const POSTS_PER_PAGE = 5
 const LONG_POST_LENGTH = 2000
+const MAIN_URL = "https://andrewmohebbi.github.io"
 
 ///////////////////////////////////////
 // Routing
@@ -152,7 +153,7 @@ const fill = (post, text) => {
   const lines = text.split(/\r?\n/)
   for (line of lines) {
     if (isTitle(line)) {
-      var el = create("h1", "title", line.slice(2))
+      var el = createTitle(line.slice(2))
       post.append(el)
     }
     else if (isURLTitle(line)) {
@@ -189,11 +190,25 @@ const create = (type, name, text) => {
   return el
 }
 
+const createTitle = (text) => {
+  var el = document.createElement("h1")
+  el.className = "title"
+
+  var a = document.createElement("a")
+  a.innerHTML = text
+  a.href = MAIN_URL + "#" + urlify(text)
+  el.append(a)
+  return el
+}
+
+const urlify = (title) => {
+  return "lol"
+}
+
 
 ///////////////////////////////////////
 // Markup
 ///////////////////////////////////////
-
 
 const TITLE = '#'
 const SECTION = '##'
@@ -215,7 +230,6 @@ const isSection = (line) => {
 const isSubSection = (line) => {
   return line.slice(0, 3) === SUB_SECTION
 }
-
 
 const isURLTitle = (line) => {
   return line.slice(0, 1) === URL_TITLE
