@@ -194,24 +194,6 @@ const parseAndFill = (post, text) => {
   }
 }
 
-const firstBracket = (line, pos) => {
-  for (; pos < line.length; pos++) {
-    if (line[pos] === '{') {
-      return pos
-    }
-  }
-  return pos
-}
-
-const secondBracket = (line, pos) => {
-  for (; pos < line.length; pos++) {
-    if (line[pos] === '}') {
-      return pos
-    }
-  }
-  return pos
-}
-
 const create = (type, name, text) => {
   var el = document.createElement(type)
   el.className = name
@@ -238,7 +220,7 @@ const createSuperscripted = (type, name, text) => {
   for (i = 0; i < text.length; i++) {
 
     first = firstBracket(text, i)
-    second = secondBracket(text, start)
+    second = secondBracket(text, first)
     var node = document.createTextNode(text.slice(i, first))
     el.append(node)
 
@@ -254,6 +236,23 @@ const createSuperscripted = (type, name, text) => {
   return el
 }
 
+const firstBracket = (line, pos) => {
+  for (; pos < line.length; pos++) {
+    if (line[pos] === '{') {
+      return pos
+    }
+  }
+  return pos
+}
+
+const secondBracket = (line, pos) => {
+  for (; pos < line.length; pos++) {
+    if (line[pos] === '}') {
+      return pos
+    }
+  }
+  return pos
+}
 
 ///////////////////////////////////////
 // Markup
