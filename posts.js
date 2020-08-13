@@ -1,10 +1,11 @@
 ///////////////////////////////////////
-// Style constants
+// Globals
 ///////////////////////////////////////
 
+const MAIN_URL = "https://andrewmohebbi.github.io"
 const POSTS_PER_PAGE = 5
 const LONG_POST_LENGTH = 2000
-const MAIN_URL = "https://andrewmohebbi.github.io"
+
 
 ///////////////////////////////////////
 // Routing
@@ -20,10 +21,10 @@ const route = () => {
 
   if (hash == "") {
     viewRecent(1)
-  } else if (hash == "about") {
-    viewAbout()
   } else if (Number.isInteger(hInt) && (hInt > 0)) {
     viewRecent(hInt)
+  } else if (hash == "about") {
+    viewAbout()
   } else {
     viewPost(hash)
   }
@@ -105,12 +106,6 @@ const getPost = async (urlTitle) => {
   return notFound
 }
 
-const urlify = (title) => {
-  title = title.toLowerCase()
-  title = title.replace(/\s/g, "-")
-  title = title.replace(/[^a-z\-]/g, '')
-  return title
-}
 
 ///////////////////////////////////////
 // Rendering
@@ -151,13 +146,21 @@ const appendPost = (text, shorten) => {
   document.body.append(post)
 }
 
+
+///////////////////////////////////////
+// Processing
+///////////////////////////////////////
+
 const isLongPost = (post) => {
   return (post.length >= LONG_POST_LENGTH)
 }
 
-///////////////////////////////////////
-// Parse
-///////////////////////////////////////
+const urlify = (title) => {
+  title = title.toLowerCase()
+  title = title.replace(/\s/g, "-")
+  title = title.replace(/[^a-z\-]/g, '')
+  return title
+}
 
 const parseAndFill = (post, text) => {
   const lines = text.split(/\r?\n/)
@@ -181,14 +184,32 @@ const parseAndFill = (post, text) => {
     else if (isMedia(line)) {
     }
     else if (isBlockQuote(line)) {
-      var el = create("p", "block", line.slice(3))
+      var el = create("p", "quote", line.slice(3))
       post.append(el)
     }
     else {
-      var el = create("p", "paragraph", line)
+      var el = createSuperscripted("p", "paragraph", line)
       post.append(el)
     }
   }
+}
+
+const firstBracket = (line, pos) => {
+  for (; pos < line.length; pos++) {
+    if (line[pos] === '{') {
+      return pos
+    }
+  }
+  return pos
+}
+
+const secondBracket = (line, pos) => {
+  for (; pos < line.length; pos++) {
+    if (line[pos] === '}') {
+      return pos
+    }
+  }
+  return pos
 }
 
 const create = (type, name, text) => {
@@ -207,6 +228,29 @@ const createTitle = (text) => {
   a.href = MAIN_URL + "#" + urlify(text)
   el.append(a)
   return el
+}
+
+const createSuperscripted = (type, name, text) => {
+  var el = document.createElement(type)
+  el.className = name
+
+  var i, first, second
+  for (i = 0; i < text.length; i++) {
+
+    first = firstBracket(text, i)
+    second = secondBracket(text, start)
+    var node = document.createTextNode(text.slice(i, first))
+    el.append(node)
+
+    if (first != text.length) {
+      var sup = document.createElement("sup")
+      sup.className = "superscript"
+      sup.innerHTML = text.slice(first + 1, second)
+      post.append(sup)
+    }
+
+    i = second
+  }
 }
 
 
