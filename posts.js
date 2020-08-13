@@ -39,7 +39,7 @@ const viewRecent = (num) => {
     cleanView()
     for (post of posts) {
       appendBreaks(1)
-      appendPost(post)
+      appendPost(post, true)
     }
     appendBreaks(3)
   })
@@ -49,7 +49,7 @@ const viewPost = (urlTitle) => {
   getPost(urlTitle).then((post) => {
     cleanView()
     appendBreaks(1)
-    appendPost(post)
+    appendPost(post, false)
     appendBreaks(3)
   })
 }
@@ -58,7 +58,7 @@ const viewAbout = () => {
   getAbout().then((about) => {
     cleanView()
     appendBreaks(1)
-    appendPost(about)
+    appendPost(about, false)
     appendBreaks(3)
   })
 }
@@ -134,14 +134,14 @@ const appendBreaks = (num) => {
   }
 }
 
-const appendPost = (text) => {
+const appendPost = (text, shorten) => {
   var post = document.createElement("div")
-  if (isLongPost(text)) {
+  if (isLongPost(text) && shorten) {
     post.className = "post fade"
   } else {
     post.className = "post"
   }
-  parseAndFill(post, text)
+  parseAndFill(post, text, shorten)
   document.body.append(post)
 }
 
@@ -153,7 +153,7 @@ const isLongPost = (post) => {
 // Parse Markup
 ///////////////////////////////////////
 
-const parseAndFill = (post, text) => {
+const parseAndFill = (post, text, shorten) => {
   const lines = text.split(/\r?\n/)
   for (line of lines) {
     if (isTitle(line)) {
