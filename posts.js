@@ -184,7 +184,7 @@ const parseAndFill = (post, text) => {
     else if (isMedia(line)) {
     }
     else if (isBlockQuote(line)) {
-      var el = create("p", "quote", line.slice(3))
+      var el = createSuperscripted("p", "quote", line.slice(3))
       post.append(el)
     }
     else {
@@ -251,6 +251,7 @@ const createSuperscripted = (type, name, text) => {
 
     i = second
   }
+  return el
 }
 
 
