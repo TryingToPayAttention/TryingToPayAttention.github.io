@@ -173,6 +173,10 @@ const parseAndFill = (post, text) => {
       var el = create("h6", "date", line.slice(2))
       post.append(el)
     }
+    else if (line.slice(0, 2) === "@ ") {
+      var el = create("h6", "footnote", line.slice(2))
+      post.append(el)
+    }
     else if (isSection(line)) {
       var el = create("h2", "section", line.slice(3))
       post.append(el)

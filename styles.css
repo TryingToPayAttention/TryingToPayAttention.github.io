@@ -68,6 +68,11 @@ html {
   vertical-align: top;
 }
 
+.footnote {
+  text-align: left;
+  line-height: 1;
+}
+
 /* Fade for longer posts */
 .fade {
   position: relative;
