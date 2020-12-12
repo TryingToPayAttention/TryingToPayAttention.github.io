@@ -1,3 +1,32 @@
+# Power as Redistribution
+& 2020-9-22
+
+1. An important form of power is power as redistribution. That is, the ability to distribute necessary goods, like food, shelter, land, or a currency equivalent. The individual or organized body which redistributes gains power from that redistribution.
+
+2. We say redistribution to emphasize that these goods have been acquired from the producers, and that they are being distributed again in a different manner. As an example, consider how a government taxes its citizens and then spends those same taxes every year, much of it on its citizens. 
+
+3. Giving is better than keeping. We often think about institutions which extract goods from producers as parasites. And they are, but the redistribution is crucial. Because if the goods were instead extravagantly consumed by the institution, no power would result from it. The goods need to be passed on to some sort of dependent, or supporter, or employee. 
+
+4. Other forms of power are power as force, like how someone might have power over you because of a superior weapon. Or power as status, where someone has power over you because they have more authority in a given community. Or power as law, which is the power to make rules, which is not the same as redistribution but is related, since the ability to redistribute goods is often conceptualized as a legal right to do so.
+
+5. Let’s look at an example. A feudal lord extracts produce from peasants. The lord then distributes this to servants, retainers, and soldiers. The ability to extract goods, along with the ability to redistribute those goods, are the powers of the lord. The act of redistribution to a select number of people, always with strings attached, is crucial. It is a reorganization of resources to benefit an individual and his house. 
+
+6. The U.S. government extracts trillions of dollars a year from the U.S. population, and then redistributes it through large bureaucratic mechanisms. A huge chunk of it is given back, in the form of Medicare, Medicaid and Social Security. A smaller chunk is given to the army, to army contractors, and to military researchers. Hundreds of thousands of bureaucrats are sustained through this tax money, including politicians (but they also take lobby money). Some makes its way to the private sector, in the form of subsidies, government contracts, and bailouts. Every financial crisis sees rivers of opulence flowing from the federal treasury into the treasuries of commercial and investment banks. Even favored foreign states get their share. 
+
+7. Generalizing this, the entire economy is a great mechanism of redistribution. There are people (it seems like less every year) who produce necessary goods, such as food, clothing, housing, medicine. Others, regardless of what they do, whether they are administrators, politicians, teachers, musicians, engineers, shopkeepers, truck drivers- even someone who has nothing but leisure all day- all of these people rely on a system of redistribution to get necessary goods. Society is a giant redistribution network, and the nodes are the points where redistribution is decided. That is, where power is. 
+
+8. This form of power, the ability to redistribute, is in a positive reinforcement loop with power as force. Redistribution is sometimes done in common, or is allowed by the consent of those who produce and otherwise participate in the redistribution. But much of the time it’s simply something imposed, which one has no say in, and which is protected by the actual violence of a police force. But the police rely on that very same redistribution for their income.
+
+9. A smaller example is a corporation. The power they have over people is through wages. Or through bribes. If everything goes correctly, they can then accumulate more wealth through the efforts of their workers, which then gets redistributed either to higher wages, or to more employees, or to shareholders (whose function as investors is almost purely redistributive). Regardless, redistribution is a tool to increase the power of the firm. 
+
+10. The accumulation of wealth is an accumulation of power only because of its potential to be redistributed. The way in which the wealth is distributed can make or break the power of the redistributor. 
+
+11. An even smaller example is in the household. For decades the ideal of the male wage earner has subordinated women living in money economies. Generalizing this across previous economies, the ability to redistribute more wealth to adult males is constitutive of what we call patriarchy. 
+
+12. Redistribution is old. The adults which harvested and cooked shared the children, the old, the disabled, healers and priests, warriors during times of war, and on and on. Many schemes of distribution and redistribution existed, organized through a mix of household, kinship and community, depending on the society. Storage and rationing were important. Certain goods were saved for certain needs, or maybe for certain celebrations. Power and responsibility were in the ability to decide on distribution. In some societies, charismatic leaders collected and then redistributed in feasts, opulent events of consumption. Some societies developed classes of administrators whose job was redistribution, the management of resources; some societies developed leisure classes. But we can’t say “the rest is history,” since it’s been shown by anthropologists that money economies, where money is at the heart of economic distribution, don’t pop-up spontaneously.
+
+
+##########
 # One-Way Holes
 & 2020-9-15
 
@@ -139,7 +168,7 @@ Wha-
 
 Oh. Well, thats no fun.
  
-@ ...
+@ ---
 @ 1. "Did the Washington Consensus Fail?" An outline for a speech, dated 2002. https://www.piie.com/commentary/speeches-papers/did-washington-consensus-fail
 @ 2. https://www.britannica.com/topic/Third-World-debt
 @ 3. Same, https://www.britannica.com/topic/Third-World-debt
