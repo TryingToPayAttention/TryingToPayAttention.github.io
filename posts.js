@@ -3,7 +3,7 @@
 ///////////////////////////////////////
 
 const MAIN_URL = "https://andrewmohebbi.github.io"
-const POSTS_PER_PAGE = 5
+const POSTS_PER_PAGE = 6
 const LONG_POST_LENGTH = 1500
 
 
