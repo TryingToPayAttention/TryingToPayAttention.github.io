@@ -30,8 +30,7 @@ html {
 /* Post Navigation */
 .navigation {
   width: 35em;
-  margin: auto;
-  padding: 2em 6em 3em 6em;
+  padding: 2em 0em 3em 0em;
   background-color: var(--post-color-opaque);
   font-size: var(--font-size-navigation);
 }
