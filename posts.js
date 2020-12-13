@@ -36,13 +36,13 @@ const route = () => {
 ///////////////////////////////////////
 
 const viewRecent = (num) => {
-  getRecents(num).then((posts) => {
+  getRecents(num).then(([posts, more]) => {
     cleanView()
     for (post of posts) {
       appendBreaks(1)
-      appendPost(post, true)
+      appendPost(post, more)
     }
-    appendNavigation()
+    appendNavigation(num, posts.length)
     appendBreaks(3)
   })
 }
@@ -82,7 +82,7 @@ const getRecents = async (num) => {
   const posts = all.split(/##########/)
   const first = (num - 1) * POSTS_PER_PAGE
   const last = (num * POSTS_PER_PAGE) - 1
-  return posts.slice(first, last + 1)
+  return [posts.slice(first, last + 1), true]
 }
 
 const getAbout = async () => {
@@ -155,10 +155,15 @@ const appendPost = (text, shorten) => {
   document.body.append(post)
 }
 
-const appendNavigation = () => {
+const appendNavigation = (num, more) => {
   var el = document.createElement("p")
   el.className = "navigation"
-  el.innerHTML = "See newer posts   |   See older posts"
+  if(num !== 1){
+    el.innerHTML = "See newer posts"
+  }
+  if(more === true){
+    el.innerHTML = el.innerHTML + " | See older posts"
+  }
   document.body.append(el)
 }
 
