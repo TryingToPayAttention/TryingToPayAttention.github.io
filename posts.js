@@ -40,9 +40,9 @@ const viewRecent = (num) => {
     cleanView()
     for (post of posts) {
       appendBreaks(1)
-      appendPost(post, more)
+      appendPost(post, true)
     }
-    appendNavigation(num, posts.length)
+    appendNavigation(num, more)
     appendBreaks(3)
   })
 }
@@ -163,7 +163,7 @@ const appendNavigation = (num, more) => {
     el.innerHTML = "See newer posts"
   }
   if(more == true){
-    el.innerHTML = " | See older posts"
+    el.innerHTML = el.innerHTML + " | See older posts"
   }
   document.body.append(el)
 }
