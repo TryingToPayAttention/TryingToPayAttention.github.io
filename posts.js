@@ -216,7 +216,7 @@ const createTitle = (text) => {
   return el
 }
 
-const ITALICS_CLASS = 'italics'
+const ITALICS_CLASS = 'italictext'
 const SUPERSCRIPT_CLASS = 'superscript'
 
 const createSuperscripted = (type, name, text) => {
@@ -242,7 +242,6 @@ const createSuperscripted = (type, name, text) => {
         case ITALICS_CLASS:
           subEl = document.createTextNode(text.slice(firstPos + 1, secondPos))
           subEl.className = classname
-          subEl.style.fontStyle = "italic"
           break
       }
       el.append(subEl)
