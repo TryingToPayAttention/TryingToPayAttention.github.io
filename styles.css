@@ -64,8 +64,13 @@ html {
   margin-right: 1em;
 }
 
+/*To do: make a little smaller*/
 .superscript {
   vertical-align: top;
+}
+
+.italics {
+  font-style: italic;
 }
 
 .footnote {

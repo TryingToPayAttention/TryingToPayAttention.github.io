@@ -95,7 +95,7 @@ const getPost = async (urlTitle) => {
     const lines = post.split(/\r?\n/)
     for (line of lines) {
       if (isTitle(line)) {
-        if (urlify(line.slice(2)) == urlTitle) {
+        if (getURL(line.slice(2)) == urlTitle) {
           return post
         }
         break
@@ -155,7 +155,7 @@ const isLongPost = (post) => {
   return (post.length >= LONG_POST_LENGTH)
 }
 
-const urlify = (title) => {
+const getURL = (title) => {
   title = title.toLowerCase()
   title = title.replace(/\s/g, "-")
   title = title.replace(/[^a-z\-]/g, '')
@@ -211,7 +211,7 @@ const createTitle = (text) => {
 
   var a = document.createElement("a")
   a.innerHTML = text
-  a.href = MAIN_URL + "#" + urlify(text)
+  a.href = MAIN_URL + "#" + getURL(text)
   el.append(a)
   return el
 }
@@ -220,39 +220,60 @@ const createSuperscripted = (type, name, text) => {
   var el = document.createElement(type)
   el.className = name
 
-  var i, first, second
+  var i, firstPos, secondPos
   for (i = 0; i < text.length; i++) {
 
-    first = firstBracket(text, i)
-    second = secondBracket(text, first)
-    var node = document.createTextNode(text.slice(i, first))
+    [firstPos, classname] = firstMarkdown(text, i)
+    secondPos = secondMarkdown(text, firstPos, classname)
+    var node = document.createTextNode(text.slice(i, firstPos))
     el.append(node)
 
-    if (first != text.length) {
-      var sup = document.createElement("sup")
-      sup.className = "superscript"
-      sup.innerHTML = text.slice(first + 1, second)
-      el.append(sup)
+    if (firstPos != text.length) {
+      var subEl
+      switch (classname){
+        case SUPERSCRIPT_CLASS:
+          subEl = document.createElement("sup")
+          break
+        case ITALICS_CLASS:
+          subEl = document.createElement("text")
+          break
+      }
+      subEl.className = classname
+      subEl.innerHTML = text.slice(firstPos + 1, secondPos)
+      el.append(subEl)
     }
 
-    i = second
+    i = secondPos
   }
   return el
 }
 
-const firstBracket = (line, pos) => {
+const ITALICS_CLASS = 'italics'
+const SUPERSCRIPT_CLASS = 'superscript'
+
+const firstMarkdown = (line, pos) => {
   for (; pos < line.length; pos++) {
-    if (line[pos] === '{') {
-      return pos
+    switch (line[pos]){
+      case '{':
+        return [pos, SUPERSCRIPT_CLASS]
+      case '_':
+        return [pos, ITALICS_CLASS]
     }
   }
-  return pos
+  return [pos, ""]
 }
 
-const secondBracket = (line, pos) => {
+const secondMarkdown = (line, pos, classname) => {
   for (; pos < line.length; pos++) {
-    if (line[pos] === '}') {
-      return pos
+    switch (classname){
+      case SUPERSCRIPT_CLASS:
+        if (line[pos] === '}') {
+          return pos
+        }
+      case ITALICS_CLASS:
+        if (line[pos] === '_') {
+          return pos
+        }
     }
   }
   return pos
