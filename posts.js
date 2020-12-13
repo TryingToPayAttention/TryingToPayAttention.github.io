@@ -216,6 +216,9 @@ const createTitle = (text) => {
   return el
 }
 
+const ITALICS_CLASS = 'italics'
+const SUPERSCRIPT_CLASS = 'superscript'
+
 const createSuperscripted = (type, name, text) => {
   var el = document.createElement(type)
   el.className = name
@@ -233,13 +236,14 @@ const createSuperscripted = (type, name, text) => {
       switch (classname){
         case SUPERSCRIPT_CLASS:
           subEl = document.createElement("sup")
+          subEl.className = classname
+          subEl.innerHTML = text.slice(firstPos + 1, secondPos)
           break
         case ITALICS_CLASS:
-          subEl = document.createElement("p")
+          subEl = document.createTextNode(text.slice(firstPos + 1, secondPos))
+          subEl.className = classname
           break
       }
-      subEl.className = classname
-      subEl.innerHTML = text.slice(firstPos + 1, secondPos)
       el.append(subEl)
     }
 
@@ -247,9 +251,6 @@ const createSuperscripted = (type, name, text) => {
   }
   return el
 }
-
-const ITALICS_CLASS = 'italics'
-const SUPERSCRIPT_CLASS = 'superscript'
 
 const firstMarkdown = (line, pos) => {
   for (; pos < line.length; pos++) {
