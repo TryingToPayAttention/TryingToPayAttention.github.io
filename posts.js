@@ -235,7 +235,7 @@ const createSuperscripted = (type, name, text) => {
           subEl = document.createElement("sup")
           break
         case ITALICS_CLASS:
-          subEl = document.createElement("text")
+          subEl = document.createElement("p")
           break
       }
       subEl.className = classname
