@@ -82,7 +82,7 @@ const getRecents = async (num) => {
   const posts = all.split(/##########/)
   const first = (num - 1) * POSTS_PER_PAGE
   const last = (num * POSTS_PER_PAGE) - 1
-  const more = (posts.length != last)
+  const more = (posts.length - 1 != last)
   return [posts.slice(first, last + 1), more]
 }
 
