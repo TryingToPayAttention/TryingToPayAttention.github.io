@@ -3,7 +3,7 @@
 ///////////////////////////////////////
 
 const MAIN_URL = "https://andrewmohebbi.github.io"
-const POSTS_PER_PAGE = 6
+const POSTS_PER_PAGE = 5
 const LONG_POST_LENGTH = 1500
 
 
@@ -42,6 +42,7 @@ const viewRecent = (num) => {
       appendBreaks(1)
       appendPost(post, true)
     }
+    appendNavigation()
     appendBreaks(3)
   })
 }
@@ -66,6 +67,7 @@ const viewAbout = () => {
 
 const cleanView = () => {
   clearPosts()
+  clearNavigation()
   clearBreaks()
   scrollToTop()
 }
@@ -129,6 +131,13 @@ const clearPosts = () => {
   }
 }
 
+const clearNavigation = () => {
+  var els = document.getElementsByClassName("navigation")
+  for (el of els) {
+    el.style.display = "none"
+  }
+}
+
 const appendBreaks = (num) => {
   for (i = 0; i < num; i++) {
     document.body.append(document.createElement("br"))
@@ -144,6 +153,13 @@ const appendPost = (text, shorten) => {
   }
   parseAndFill(post, text)
   document.body.append(post)
+}
+
+const appendNavigation = () => {
+  var el = document.createElement("p")
+  el.className = "navigation"
+  el.innerHTML = "See newer posts   |   See older posts"
+  document.body.append(el)
 }
 
 
@@ -166,33 +182,33 @@ const parseAndFill = (post, text) => {
   const lines = text.split(/\r?\n/)
   for (line of lines) {
     if (isTitle(line)) {
-      var el = createTitle(line.slice(2))
+      var el = createTitle(line.slice(TITLE.length + 1))
       post.append(el)
     }
     else if (isDate(line)) {
-      var el = create("h6", "date", line.slice(2))
+      var el = create("h6", "date", line.slice(DATE.length + 1))
       post.append(el)
     }
     else if (isFootnote(line)) {
-      var el = create("h6", "footnote", line.slice(2))
+      var el = create("h6", "footnote", line.slice(FOOT_NOTE.length + 1))
       post.append(el)
     }
     else if (isSection(line)) {
-      var el = create("h2", "section", line.slice(3))
+      var el = create("h2", "section", line.slice(SECTION.length + 1))
       post.append(el)
     }
     else if (isSubSection(line)) {
-      var el = create("h3", "subsection", line.slice(4))
+      var el = create("h3", "subsection", line.slice(SUB_SECTION.length + 1))
       post.append(el)
     }
     else if (isMedia(line)) {
     }
     else if (isBlockQuote(line)) {
-      var el = createSuperscripted("p", "quote", line.slice(3))
+      var el = createBlock("p", "quote", line.slice(BLOCK_QUOTE.length + 1))
       post.append(el)
     }
     else {
-      var el = createSuperscripted("p", "paragraph", line)
+      var el = createBlock("p", "paragraph", line)
       post.append(el)
     }
   }
@@ -213,19 +229,19 @@ const createTitle = (text) => {
   a.innerHTML = text
   a.href = MAIN_URL + "#" + getURL(text)
   el.append(a)
+
   return el
 }
 
 const ITALICS_CLASS = 'italics'
 const SUPERSCRIPT_CLASS = 'superscript'
 
-const createSuperscripted = (type, name, text) => {
+const createBlock = (type, name, text) => {
   var el = document.createElement(type)
   el.className = name
 
   var i, firstPos, secondPos
   for (i = 0; i < text.length; i++) {
-
     [firstPos, classname] = firstMarkdown(text, i)
     secondPos = secondMarkdown(text, firstPos, classname)
     var node = document.createTextNode(text.slice(i, firstPos))
@@ -241,13 +257,11 @@ const createSuperscripted = (type, name, text) => {
           break
         case ITALICS_CLASS:
           subEl = document.createElement("i")
-          //subEl.className = classname
           subEl.innerHTML = text.slice(firstPos + 1, secondPos)
           break
       }
       el.append(subEl)
     }
-
     i = secondPos
   }
   return el
