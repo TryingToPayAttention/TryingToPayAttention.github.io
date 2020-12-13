@@ -163,7 +163,7 @@ const appendNavigation = (num, more) => {
     el.innerHTML = "See newer posts"
   }
   if(more == true){
-    el.innerHTML = el.innerHTML + " | See older posts"
+    el.innerHTML = " | See older posts"
   }
   document.body.append(el)
 }
