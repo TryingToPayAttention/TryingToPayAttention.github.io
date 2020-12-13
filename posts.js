@@ -216,7 +216,7 @@ const createTitle = (text) => {
   return el
 }
 
-const ITALICS_CLASS = 'italictext'
+const ITALICS_CLASS = 'italics'
 const SUPERSCRIPT_CLASS = 'superscript'
 
 const createSuperscripted = (type, name, text) => {
@@ -241,8 +241,7 @@ const createSuperscripted = (type, name, text) => {
           break
         case ITALICS_CLASS:
           subEl = document.createElement("i")
-          // I think what's happening is the parent style is overriding the italics
-          subEl.className = classname
+          //subEl.className = classname
           subEl.innerHTML = text.slice(firstPos + 1, secondPos)
           break
       }
@@ -267,6 +266,7 @@ const firstMarkdown = (line, pos) => {
 }
 
 const secondMarkdown = (line, pos, classname) => {
+  pos++
   for (; pos < line.length; pos++) {
     switch (classname){
       case SUPERSCRIPT_CLASS:
