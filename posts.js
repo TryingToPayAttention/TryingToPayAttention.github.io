@@ -241,7 +241,7 @@ const createSuperscripted = (type, name, text) => {
           break
         case ITALICS_CLASS:
           italicsText = text.slice(firstPos + 1, secondPos).italics()
-          subEl = document.createTextNode(italicstext)
+          subEl = document.createTextNode(italicsText)
           // I think what's happening is the parent style is overriding the italics style?
           // subEl.className = classname
           break
