@@ -240,7 +240,7 @@ const createSuperscripted = (type, name, text) => {
           subEl.innerHTML = text.slice(firstPos + 1, secondPos)
           break
         case ITALICS_CLASS:
-          subEl = document.createElement("div")
+          subEl = document.createElement("i")
           // I think what's happening is the parent style is overriding the italics
           subEl.className = classname
           subEl.innerHTML = text.slice(firstPos + 1, secondPos)
