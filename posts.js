@@ -82,7 +82,8 @@ const getRecents = async (num) => {
   const posts = all.split(/##########/)
   const first = (num - 1) * POSTS_PER_PAGE
   const last = (num * POSTS_PER_PAGE) - 1
-  return [posts.slice(first, last + 1), true]
+  const more = (posts.length === last)
+  return [posts.slice(first, last + 1), more]
 }
 
 const getAbout = async () => {
@@ -158,10 +159,10 @@ const appendPost = (text, shorten) => {
 const appendNavigation = (num, more) => {
   var el = document.createElement("p")
   el.className = "navigation"
-  if(num !== 1){
+  if(num != 1){
     el.innerHTML = "See newer posts"
   }
-  if(more === true){
+  if(more == true){
     el.innerHTML = el.innerHTML + " | See older posts"
   }
   document.body.append(el)
