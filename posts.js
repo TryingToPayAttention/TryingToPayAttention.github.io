@@ -162,13 +162,15 @@ const appendNavigation = (num, more) => {
   if(num != 1){
     var a = document.createElement("a")
     a.innerHTML = "See newer posts"
-    a.href = MAIN_URL + "#" + num - 1
+    var nextNum = num - 1
+    a.href = MAIN_URL + "#" + nextNum.toString()
     el.append(a)
   }
   if(more == true){
     var a = document.createElement("a")
     a.innerHTML = "See older posts"
-    a.href = MAIN_URL + "#" + num - 2
+    var nextNum = num + 1
+    a.href = MAIN_URL + "#" + nextNum.toString()
     el.append(a)
   }
 
