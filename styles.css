@@ -29,8 +29,7 @@ html {
 
 /* Post Navigation */
 .navigation {
-  margin: auto;
-  padding: 0em 6em 0em 0em;
+  text-align: center;
   font-size: var(--font-size-navigation);
 }
 

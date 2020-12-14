@@ -159,6 +159,7 @@ const appendPost = (text, shorten) => {
 const appendNavigation = (num, more) => {
   var el = document.createElement("p")
   el.className = "navigation"
+
   if(num != 1){
     var a = document.createElement("a")
     a.innerHTML = "See newer posts"
@@ -168,12 +169,12 @@ const appendNavigation = (num, more) => {
     } else{
       a.href = MAIN_URL + "#" + nextNum.toString()
     }
-    
     el.append(a)
   }
+  
   if(more == true){
     var a = document.createElement("a")
-    a.innerHTML = "See older posts"
+    a.innerHTML = a.innerHTML + " | See older posts"
     var nextNum = num + 1
     a.href = MAIN_URL + "#" + nextNum.toString()
     el.append(a)
