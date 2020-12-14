@@ -29,9 +29,8 @@ html {
 
 /* Post Navigation */
 .navigation {
-  width: 35em;
-  padding: 2em 0em 3em 0em;
-  background-color: var(--post-color-opaque);
+  margin: auto;
+  padding: 0em 6em 0em 0em;
   font-size: var(--font-size-navigation);
 }
 
