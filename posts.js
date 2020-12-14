@@ -43,7 +43,7 @@ const viewRecent = (num) => {
       appendPost(post, true)
     }
     appendNavigation(num, more)
-    appendBreaks(3)
+    appendBreaks(2)
   })
 }
 
