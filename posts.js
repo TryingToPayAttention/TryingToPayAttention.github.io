@@ -3,7 +3,7 @@
 ///////////////////////////////////////
 
 const MAIN_URL = "https://andrewmohebbi.github.io"
-const POSTS_PER_PAGE = 5
+const POSTS_PER_PAGE = 2
 const LONG_POST_LENGTH = 1500
 
 
@@ -160,25 +160,25 @@ const appendNavigation = (num, more) => {
   var el = document.createElement("p")
   el.className = "navigation"
 
+  var left = document.createElement("a")
+  left.innerHTML = "<<<"
   if(num != 1){
-    var a = document.createElement("a")
-    a.innerHTML = "<<<"
     var nextNum = num - 1
     if (nextNum == 1){
-      a.href = MAIN_URL
+      left.href = MAIN_URL
     } else{
-      a.href = MAIN_URL + "#" + nextNum.toString()
+      left.href = MAIN_URL + "#" + nextNum.toString()
     }
-    el.append(a)
   }
+  el.append(left)
 
+  var right = document.createElement("a")
+  right.innerHTML = ">>>"
   if(more == true){
-    var a = document.createElement("a")
-    a.innerHTML = a.innerHTML + ">>>"
     var nextNum = num + 1
-    a.href = MAIN_URL + "#" + nextNum.toString()
-    el.append(a)
+    right.href = MAIN_URL + "#" + nextNum.toString()
   }
+  el.append(right)
 
   document.body.append(el)
 }
