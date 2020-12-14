@@ -160,25 +160,31 @@ const appendNavigation = (num, more) => {
   var el = document.createElement("p")
   el.className = "navigation"
 
-  var left = document.createElement("a")
-  left.innerHTML = "<<<"
   if(num != 1){
+    var left = document.createElement("a")
+    left.innerHTML = "<<<"
     var nextNum = num - 1
     if (nextNum == 1){
       left.href = MAIN_URL
     } else{
       left.href = MAIN_URL + "#" + nextNum.toString()
     }
+    el.append(left)
+  } else{
+    el.append(document.createTextNode("<<<"))
   }
-  el.append(left)
 
-  var right = document.createElement("a")
-  right.innerHTML = ">>>"
+  
   if(more == true){
+    var right = document.createElement("a")
+    right.innerHTML = ">>>"
     var nextNum = num + 1
     right.href = MAIN_URL + "#" + nextNum.toString()
+    el.append(right)
+  } else{
+    el.append(document.createTextNode(">>>"))
   }
-  el.append(right)
+  
 
   document.body.append(el)
 }
