@@ -162,7 +162,7 @@ const appendNavigation = (num, more) => {
 
   if(num != 1){
     var a = document.createElement("a")
-    a.innerHTML = "<< "
+    a.innerHTML = "<- "
     var nextNum = num - 1
     if (nextNum == 1){
       a.href = MAIN_URL
@@ -177,7 +177,7 @@ const appendNavigation = (num, more) => {
 
   if(more == true){
     var a = document.createElement("a")
-    a.innerHTML = a.innerHTML + " >>"
+    a.innerHTML = a.innerHTML + " ->"
     var nextNum = num + 1
     a.href = MAIN_URL + "#" + nextNum.toString()
     el.append(a)
