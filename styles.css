@@ -29,7 +29,6 @@ html {
 /* Post Navigation */
 .navigation {
   margin: auto;
-  margin-top: 1em;
   padding: 0em .3em 0em .3em;
   background-color:  rgba(255, 250, 245, .1);
   display: table; /*for tight background shading*/

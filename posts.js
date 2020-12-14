@@ -42,6 +42,7 @@ const viewRecent = (num) => {
       appendBreaks(1)
       appendPost(post, true)
     }
+    appendBreaks(1)
     appendNavigation(num, more)
     appendBreaks(1)
   })
