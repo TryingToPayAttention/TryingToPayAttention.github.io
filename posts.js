@@ -3,7 +3,7 @@
 ///////////////////////////////////////
 
 const MAIN_URL = "https://andrewmohebbi.github.io"
-const POSTS_PER_PAGE = 2
+const POSTS_PER_PAGE = 5
 const LONG_POST_LENGTH = 1500
 
 
@@ -43,7 +43,7 @@ const viewRecent = (num) => {
       appendPost(post, true)
     }
     appendNavigation(num, more)
-    appendBreaks(2)
+    appendBreaks(1)
   })
 }
 
