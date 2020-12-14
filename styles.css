@@ -4,7 +4,6 @@
 
   --font: "Scala W01", "Palatino", "Book Antiqua", serif;
   --font-size: 19px;
-  --font-size-navigation: 17px;
 
   --post-color-opaque: rgba(255, 250, 245, 0.9);
   --post-color-0: rgba(255, 250, 245, 0);
@@ -30,7 +29,7 @@ html {
 /* Post Navigation */
 .navigation {
   text-align: center;
-  font-size: var(--font-size-navigation);
+  font-style: bold;
 }
 
 /* Posts */
