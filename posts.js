@@ -2,7 +2,7 @@
 // Globals
 ///////////////////////////////////////
 
-const MAIN_URL = "https://andrewmohebbi.github.io"
+const MAIN_URL = "http://www.tryingtopayattention.com/" //"https://andrewmohebbi.github.io"
 const POSTS_PER_PAGE = 5
 const LONG_POST_LENGTH = 1500
 
