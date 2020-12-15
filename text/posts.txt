@@ -102,12 +102,13 @@ I stepped back and took in the whole room, everything at once. My breath caught,
 # SHOWER MORALIZER (a play)
 & 2020-10-19
 
+### Characters
 Ignacio- just a regular guy
 Herbert- his buddy
 Andy- a shower moralizer
 
-~~Act I~~
-SCENE- a baptism party
+## ~~Act I~~
+### SCENE- a baptism party
 Ignacio: And so I normally take a shower everyday, but I don’t always use soap. It depends on wh-
 Andy: You what??? You don’t use soap?
 Ignacio: *visibly upset* let me aks you a question. You take a shower every day?
