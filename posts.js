@@ -266,7 +266,7 @@ const createTitle = (text) => {
 const createMedia = (line) => {
   var el = document.createElement("img")
   el.className = "image"
-  el.src = 'https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg'
+  el.src = 'pretty.jpg'
   return el
 }
 
