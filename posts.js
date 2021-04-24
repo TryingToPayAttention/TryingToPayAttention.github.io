@@ -266,7 +266,7 @@ const createTitle = (text) => {
 const createMedia = (title) => {
   var el = document.createElement("img")
   el.className = "image"
-  el.src = 'images/fargo.jpg'
+  el.src = 'images/' + title
   return el
 }
 
