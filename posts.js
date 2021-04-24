@@ -230,11 +230,11 @@ const parseAndFill = (post, text) => {
       post.append(el)
     }
     else if (isMedia(line)) {
-    var el = createBlock("p", "quote", line.slice(BLOCK_QUOTE.length + 1))
-    post.append(el)
+      var el = createMedia(line)
+      post.append(el)
     }
     else if (isBlockQuote(line)) {
-      var el = createMedia(line)
+      var el = createBlock("p", "quote", line.slice(BLOCK_QUOTE.length + 1))
       post.append(el)
     }
     else {
