@@ -230,9 +230,11 @@ const parseAndFill = (post, text) => {
       post.append(el)
     }
     else if (isMedia(line)) {
+    var el = createBlock("p", "quote", line.slice(BLOCK_QUOTE.length + 1))
+    post.append(el)
     }
     else if (isBlockQuote(line)) {
-      var el = createBlock("p", "quote", line.slice(BLOCK_QUOTE.length + 1))
+      var el = createMedia(line)
       post.append(el)
     }
     else {
@@ -258,6 +260,13 @@ const createTitle = (text) => {
   a.href = MAIN_URL + "#" + getURL(text)
   el.append(a)
 
+  return el
+}
+
+const createMedia = (line) => {
+  var el = document.createElement("img")
+  el.className = "image"
+  el.src = 'https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg'
   return el
 }
 

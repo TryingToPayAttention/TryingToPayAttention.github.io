@@ -1,3 +1,12 @@
+# Test for images
+& 2021-4-24
+
+This is text
+
+! media
+
+This is also text
+
 # A Girl of the North Shore
 & 2021-4-13
 
@@ -11,7 +20,7 @@ Enk, always a smile on its face, slipped out of the darkness and thought "there'
 
 The match was full of generosity and greed like all good matches of Poc. Enk refused to let the game end. The red and yellow stones danced on the board and the void was filled with wind, and the dancing also brought flowers, and the head of the giant became a snail which crawled away, and its body became the Purple Mountain.
 
-When the board was beautiful they agreed to end the game. When Oda looked away from the board she saw she was in a meadow, beside a lake with a reed-thatched hut, and her father stood outside stoking the supper fire. She almost jumped and shouted, but caught herself, because she was no longer a young girl, and understood what a delicate situation this was.
+When the board was beautiful they agreed to end the game. When Oda looked away from the board she saw she was in a meadow, beside a lake with a reed-thatched hut, and her father stood outside stoking the supper fire. She almost jumped and shouted, but caught herself, because she was no longer a young girl, and understood what a delicate situation she was in.
 
 Oda went for a walk among the pines, and we don't know what she did. Enk slipped into the evening, laughing like lake reeds.
 
