@@ -72,6 +72,13 @@ html {
   margin-right: 1em;
 }
 
+.image {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*To do: make a little smaller*/
 .superscript {
   vertical-align: top;
