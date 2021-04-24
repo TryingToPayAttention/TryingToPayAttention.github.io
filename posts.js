@@ -230,7 +230,7 @@ const parseAndFill = (post, text) => {
       post.append(el)
     }
     else if (isMedia(line)) {
-      var el = createMedia(line)
+      var el = createMedia(line.slice(MEDIA.length + 1))
       post.append(el)
     }
     else if (isBlockQuote(line)) {
@@ -263,10 +263,10 @@ const createTitle = (text) => {
   return el
 }
 
-const createMedia = (line) => {
+const createMedia = (title) => {
   var el = document.createElement("img")
   el.className = "image"
-  el.src = 'pretty.jpg'
+  el.src = 'images/fargo.jpg'
   return el
 }
 
