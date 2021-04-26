@@ -211,9 +211,12 @@ const hasManyImages = (post) => {
   for (line of lines) {
     if (isImage(line)) {
       count++
+      if (count >= LONG_POST_IMAGES) {
+        return true
+      }
     }
   }
-  return (count >= LONG_POST_IMAGES)
+  return false
 }
 
 const getURL = (title) => {
