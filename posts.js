@@ -206,7 +206,14 @@ const isLongPost = (post) => {
 }
 
 const hasManyImages = (post) => {
-  return true
+  count = 0
+  const lines = post.split(/\r?\n/)
+  for (line of lines) {
+    if (isImage(line)) {
+      count++
+    }
+  }
+  return (count >= LONG_POST_IMAGES)
 }
 
 const getURL = (title) => {
