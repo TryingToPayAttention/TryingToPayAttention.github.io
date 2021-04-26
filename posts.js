@@ -221,8 +221,8 @@ const hasManyImages = (post) => {
 
 const getURL = (title) => {
   title = title.toLowerCase()
-  title = title.replace(/\s/g, "-")
-  title = title.replace(/[^a-z0-9\-]/g, '')
+  title = title.replace(/\s/g, "-") // Replace whitespace with -
+  title = title.replace(/[^a-z0-9\-]/g, '') // Remove all non alphanumeric and - characters
   return title
 }
 
