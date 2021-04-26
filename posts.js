@@ -4,7 +4,7 @@
 
 const MAIN_URL = "http://www.tryingtopayattention.com/"
 const POSTS_PER_PAGE = 5
-const LONG_POST_LENGTH = 1300
+const LONG_POST_LENGTH = 1200
 const LONG_POST_IMAGES = 2
 
 const ITALICS_CLASS = 'italics'
@@ -222,7 +222,7 @@ const hasManyImages = (post) => {
 const getURL = (title) => {
   title = title.toLowerCase()
   title = title.replace(/\s/g, "-")
-  title = title.replace(/[^a-z\-]/g, '')
+  title = title.replace(/[^a-z0-9\-]/g, '')
   return title
 }
 
