@@ -2,9 +2,13 @@
 // Globals
 ///////////////////////////////////////
 
-const MAIN_URL = "http://www.tryingtopayattention.com/" //"https://andrewmohebbi.github.io"
+const MAIN_URL = "http://www.tryingtopayattention.com/"
 const POSTS_PER_PAGE = 5
 const LONG_POST_LENGTH = 1300
+const LONG_POST_IMAGES = 2
+
+const ITALICS_CLASS = 'italics'
+const SUPERSCRIPT_CLASS = 'superscript'
 
 
 ///////////////////////////////////////
@@ -196,7 +200,13 @@ const appendNavigation = (num, more) => {
 ///////////////////////////////////////
 
 const isLongPost = (post) => {
-  return (post.length >= LONG_POST_LENGTH)
+  long = (post.length >= LONG_POST_LENGTH)
+  images = hasManyImages(post)
+  return long || images
+}
+
+const hasManyImages = (post) => {
+  return true
 }
 
 const getURL = (title) => {
@@ -229,8 +239,8 @@ const parseAndFill = (post, text) => {
       var el = create("h3", "subsection", line.slice(SUB_SECTION.length + 1))
       post.append(el)
     }
-    else if (isMedia(line)) {
-      var el = createMedia(line.slice(MEDIA.length + 1))
+    else if (isImage(line)) {
+      var el = createImage(line.slice(IMAGE.length + 1))
       post.append(el)
     }
     else if (isBlockQuote(line)) {
@@ -263,15 +273,12 @@ const createTitle = (text) => {
   return el
 }
 
-const createMedia = (title) => {
+const createImage = (title) => {
   var el = document.createElement("img")
   el.className = "image"
   el.src = 'images/' + title
   return el
 }
-
-const ITALICS_CLASS = 'italics'
-const SUPERSCRIPT_CLASS = 'superscript'
 
 const createBlock = (type, name, text) => {
   var el = document.createElement(type)
@@ -343,7 +350,7 @@ const SUB_SECTION = '###'
 const SEPARATOR = '##########'
 const DATE = '&'
 const FOOT_NOTE = '@'
-const MEDIA = '!'
+const IMAGE = '!'
 const BLOCK_QUOTE = '""'
 
 const isTitle = (line) => {
@@ -366,8 +373,8 @@ const isFootnote = (line) => {
   return line.slice(0, 1) === FOOT_NOTE
 }
 
-const isMedia = (line) => {
-  return line.slice(0, 1) === MEDIA
+const isImage = (line) => {
+  return line.slice(0, 1) === IMAGE
 }
 
 const isBlockQuote = (line) => {
