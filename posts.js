@@ -201,8 +201,7 @@ const appendNavigation = (num, more) => {
 
 const isLongPost = (post) => {
   long = (post.length >= LONG_POST_LENGTH)
-  images = hasManyImages(post)
-  return long || images
+  return long || hasManyImages(post)
 }
 
 const hasManyImages = (post) => {
