@@ -112,8 +112,6 @@ A few commentators on the matter, no doubt philosophers, have compared the back-
 # Christ and the Duck
 & 2020-12-7
 
-! archimboldo-water.jpg
-
 ### Note from the Editor
 It has been a strange and exhilarating year for _Archimboldo Studies_, one which has seen a renewed public interest in the great painter. Our last issue saw two major analyses of newly discovered paintings by Martijn Verbeke (_Arch. St._ LXII 2, Nov 1998, "The Great Duck Collage", and "The Duck's on the Other Foot"), followed closely by highly publicized discoveries which would scandalize the art world. Other publications may have succumbed to the spectacle, but in this special edition on Verbeke we focus on new and rigorous insights on the Flemish painter's stylistic and formal influences on Archimboldo.
 
@@ -127,6 +125,8 @@ The one exception to the theme of this edition is "Archimboldo's Artichoke?", Be
 
 Eugene Witting
 New Haven
+
+! archimboldo-water.jpg
 
 
 ##########
