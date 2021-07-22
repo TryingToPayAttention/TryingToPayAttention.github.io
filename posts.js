@@ -253,12 +253,12 @@ const parseAndFill = (post, text) => {
       var el = createImage(line.slice(IMAGE.length + 1))
       post.append(el)
     }
-    else if (isBlockQuote(line)) {
-      var el = createBlock("p", "quote", line.slice(BLOCK_QUOTE.length + 1))
+    else if (isVerse(line)) {
+      var el = createVerse(line.slice(VERSE.length + 1))
       post.append(el)
     }
-    else if (isVerse(line)) {
-      var el = createVerse(line.slice(2 + 1))
+    else if (isBlockQuote(line)) {
+      var el = createBlock("p", "quote", line.slice(BLOCK_QUOTE.length + 1))
       post.append(el)
     }
     else {
@@ -291,6 +291,29 @@ const createImage = (title) => {
   var el = document.createElement("img")
   el.className = "image"
   el.src = 'images/' + title
+  return el
+}
+
+const createVerse = (text) => {
+  var el = document.createElement("p")
+  el.className = 'verse'
+
+    subEl = document.createElement("i")
+    subEl.innerHTML = "lol haha lol"
+    el.append(subEl)
+    br = document.createElement("br")
+    el.append(br)
+
+    subEl2 = document.createElement("i")
+    subEl2.innerHTML = "lol haha lol"
+    el.append(subEl2)
+    br2 = document.createElement("br")
+    el.append(br2)
+
+    el.innerHTML += "This should not be italic"
+    br3 = document.createElement("br")
+    el.append(br3)
+
   return el
 }
 
@@ -354,24 +377,6 @@ const secondMarkdown = (line, pos, classname) => {
   return pos
 }
 
-const createVerse = (text) => {
-  var el = document.createElement('p')
-  el.className = 'verse'
-
-    subEl = document.createElement("i")
-    subEl.innerHTML = "lol haha lol"
-    el.append(subEl)
-    br = document.createElement("br")
-    el.append(br)
-
-    subEl2 = document.createElement("i")
-    subEl2.innerHTML = "lol haha lol"
-    el.append(subEl2)
-    br2 = document.createElement("br")
-    el.append(br2)
-
-  return el
-}
 
 ///////////////////////////////////////
 // Markup
@@ -385,6 +390,7 @@ const DATE = '&'
 const FOOT_NOTE = '@'
 const IMAGE = '!'
 const BLOCK_QUOTE = '""'
+const VERSE = '//'
 
 const isTitle = (line) => {
   return (line.slice(0, 1) === TITLE) && !(isSection(line) || isSubSection(line))
@@ -415,5 +421,5 @@ const isBlockQuote = (line) => {
 }
 
 const isVerse = (line) => {
-  return line.slice(0, 2) === '//'
+  return line.slice(0, 2) === VERSE
 }
