@@ -309,6 +309,7 @@ const createVerse = (text) => {
       i++
     }
   }
+  el.innerHTML += text.slice(lastPos)
   return el
 }
 
