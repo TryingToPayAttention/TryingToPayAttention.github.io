@@ -358,14 +358,18 @@ const createVerse = (text) => {
   var el = document.createElement('p')
   el.className = 'verse'
 
-  var i
-  for (i = 0; i < text.length; i++) {
     subEl = document.createElement("i")
     subEl.innerHTML = "lol haha lol"
     el.append(subEl)
     br = document.createElement("br")
     el.append(br)
-  }
+
+    subEl2 = document.createElement("i")
+    subEl2.innerHTML = "lol haha lol"
+    el.append(subEl2)
+    br2 = document.createElement("br")
+    el.append(br2)
+
   return el
 }
 
