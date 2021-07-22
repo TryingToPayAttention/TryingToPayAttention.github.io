@@ -359,7 +359,7 @@ const createVerse = (text) => {
   el.className = 'verse'
 
   var i
-  for (i = 0; i < text.length; i+3) {
+  for (i = 0; i < text.length; i++) {
     subEl = document.createElement("i")
     subEl.innerHTML = "lol haha lol"
     el.append(subEl)

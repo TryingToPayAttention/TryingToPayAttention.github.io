@@ -1,9 +1,9 @@
 # Poetry example
 & date
 
-// This is // a poem // with separators
+// This is // a poem
 
-// And this // is a new // stanza
+// And this // is
 
 ##########
 # The Prince of Nevada City
