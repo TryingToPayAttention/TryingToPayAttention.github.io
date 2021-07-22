@@ -9,7 +9,6 @@ const LONG_POST_IMAGES = 2
 
 const ITALICS_CLASS = 'italics'
 const SUPERSCRIPT_CLASS = 'superscript'
-const VERSE_CLASS = 'verse'
 
 
 ///////////////////////////////////////
@@ -347,6 +346,7 @@ const createBlock = (type, name, text) => {
 const firstMarkdown = (line, pos) => {
   for (; pos < line.length; pos++) {
     switch (line[pos]){
+      // These characters needed to be abstracted into annotation names
       case '{':
         return [pos, SUPERSCRIPT_CLASS]
       case '_':
