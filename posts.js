@@ -299,17 +299,16 @@ const createVerse = (text) => {
   el.className = 'verse'
 
   var i
-  lastPos = 0
+  var lastPos = 0
   for (i = 0; i < text.length; i++){
     if (text.slice(i, i+2) == VERSE){
       el.innerHTML += text.slice(lastPos, i)
       br = document.createElement("br")
       el.append(br)
+      lastPos = i + 2
       i++
-      lastPos = i + 1
     }
   }
-
   return el
 }
 
