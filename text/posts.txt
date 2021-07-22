@@ -1,3 +1,11 @@
+# Poetry example
+& date
+
+// This is // a poem // with separators
+
+// And this // is a new // stanza
+
+##########
 # The Prince of Nevada City
 & 2021-7-20
 

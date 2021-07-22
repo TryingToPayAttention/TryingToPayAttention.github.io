@@ -9,6 +9,7 @@ const LONG_POST_IMAGES = 2
 
 const ITALICS_CLASS = 'italics'
 const SUPERSCRIPT_CLASS = 'superscript'
+const VERSE_CLASS = 'verse'
 
 
 ///////////////////////////////////////
@@ -256,6 +257,10 @@ const parseAndFill = (post, text) => {
       var el = createBlock("p", "quote", line.slice(BLOCK_QUOTE.length + 1))
       post.append(el)
     }
+    else if (isVerse(line)) {
+      var el = createVerse(line.slice(2 + 1))
+      post.append(el)
+    }
     else {
       var el = createBlock("p", "paragraph", line)
       post.append(el)
@@ -349,6 +354,21 @@ const secondMarkdown = (line, pos, classname) => {
   return pos
 }
 
+const createVerse = (text) => {
+  var el = document.createElement('p')
+  el.className = 'verse'
+
+  var i
+  for (i = 0; i < text.length; i+3) {
+    subEl = document.createElement("i")
+    subEl.innerHTML = "lol haha lol"
+    el.append(subEl)
+    br = document.createElement("br")
+    el.append(br)
+  }
+  return el
+}
+
 ///////////////////////////////////////
 // Markup
 ///////////////////////////////////////
@@ -388,4 +408,8 @@ const isImage = (line) => {
 
 const isBlockQuote = (line) => {
   return line.slice(0, 2) === BLOCK_QUOTE
+}
+
+const isVerse = (line) => {
+  return line.slice(0, 2) === '//'
 }

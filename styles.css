@@ -64,6 +64,12 @@ html {
   hyphens: auto;
 }
 
+.verse {
+  text-align: justify;
+  hyphens: auto;
+  line-height: 1.2;
+}
+
 .quote {
   text-align: justify;
   hyphens: auto;
