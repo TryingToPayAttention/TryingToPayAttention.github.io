@@ -298,17 +298,17 @@ const createVerse = (text) => {
   var el = document.createElement("p")
   el.className = 'verse'
 
-    subEl = document.createElement("p")
-    subEl.innerHTML = "lol haha lol"
-    el.append(subEl)
+    el.innerHTML += "This should not be italic"
     br = document.createElement("br")
     el.append(br)
 
-    subEl2 = document.createElement("p")
-    subEl2.innerHTML = "lol haha lol"
-    el.append(subEl2)
+    el.innerHTML += "This neither"
     br2 = document.createElement("br")
     el.append(br2)
+
+    el.innerHTML += "Nor this"
+    br3 = document.createElement("br")
+    el.append(br3)
 
   return el
 }
