@@ -1,9 +1,9 @@
 # Poetry example
 & date
 
-// This is // a poem
+// This is // a poem // and this bit shoudl be cut
 
-// And this // is
+// And this // is // poem
 
 ##########
 # The Prince of Nevada City

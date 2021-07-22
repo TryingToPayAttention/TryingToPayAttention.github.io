@@ -298,17 +298,17 @@ const createVerse = (text) => {
   var el = document.createElement("p")
   el.className = 'verse'
 
-    el.innerHTML += "This should not be italic"
-    br = document.createElement("br")
-    el.append(br)
-
-    el.innerHTML += "This neither"
-    br2 = document.createElement("br")
-    el.append(br2)
-
-    el.innerHTML += "Nor this"
-    br3 = document.createElement("br")
-    el.append(br3)
+  var i
+  lastPos = 0
+  for (i = 0; i < text.length; i++){
+    if (text.slice(i, i+2) == VERSE){
+      el.innerHTML += text.slice(lastPos, i)
+      br = document.createElement("br")
+      el.append(br)
+      i++
+      lastPos = i + 1
+    }
+  }
 
   return el
 }
