@@ -133,3 +133,23 @@ a:hover {
 a:active {
   text-decoration: underline;
 }
+
+.download:link {
+  color: black;
+  text-decoration: underline;
+}
+
+.download:visited {
+  color: black;
+  text-decoration: underline;
+}
+
+.download:hover {
+  color: grey;
+  text-decoration: underline;
+}
+
+.download:active {
+  color: grey;
+  text-decoration: underline;
+}
