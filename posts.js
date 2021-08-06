@@ -297,10 +297,10 @@ const createImage = (title) => {
   return el
 }
 
-const createDownload = (text) => {
+const createDownload = (title) => {
   var el = document.createElement("a")
   el.innerHTML = "Download it!"
-  el.href = "./documents/" + text
+  el.href = "documents/" + title
   return el
 }
 
