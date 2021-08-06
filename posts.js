@@ -299,8 +299,9 @@ const createImage = (title) => {
 
 const createDownload = (title) => {
   var el = document.createElement("a")
+  el.className = "download"
   el.innerHTML = "Download it!"
-  el.href = "./documents/" + title
+  el.href = "documents/" + title
   return el
 }
 
