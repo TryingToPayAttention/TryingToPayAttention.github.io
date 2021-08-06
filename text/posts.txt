@@ -3,12 +3,6 @@
 
 This is a test for my flower post. What will it look like?
 
-! f1.jpg
-! f2.jpg
-! f3.jpg
-! f4.jpg
-! f5.jpg
-
 
 ##########
 # The Earliest Life on Earth
