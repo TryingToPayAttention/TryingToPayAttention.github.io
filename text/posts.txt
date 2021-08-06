@@ -3,6 +3,8 @@
 
 This is a test for my flower post. What will it look like?
 
+!! flowers.pdf
+
 
 ##########
 # The Earliest Life on Earth

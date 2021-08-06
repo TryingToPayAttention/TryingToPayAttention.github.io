@@ -248,6 +248,10 @@ const parseAndFill = (post, text) => {
       var el = create("h3", "subsection", line.slice(SUB_SECTION.length + 1))
       post.append(el)
     }
+    else if (isDownload(line)) {
+      var el = createDownload(line.slice(DOWNLOAD.length + 1))
+      post.append(el)
+    }
     else if (isImage(line)) {
       var el = createImage(line.slice(IMAGE.length + 1))
       post.append(el)
@@ -290,6 +294,13 @@ const createImage = (title) => {
   var el = document.createElement("img")
   el.className = "image"
   el.src = 'images/' + title
+  return el
+}
+
+const createDownload = (text) => {
+  var el = document.createElement("a")
+  el.innerHTML = "Download it!"
+  el.href = "./documents/" + text
   return el
 }
 
@@ -385,6 +396,7 @@ const SEPARATOR = '##########'
 const DATE = '&'
 const FOOT_NOTE = '@'
 const IMAGE = '!'
+const DOWNLOAD = '!!'
 const BLOCK_QUOTE = '""'
 const VERSE = '//'
 
@@ -406,6 +418,10 @@ const isDate = (line) => {
 
 const isFootnote = (line) => {
   return line.slice(0, 1) === FOOT_NOTE
+}
+
+const isDownload = (line) => {
+  return line.slice(0, 2) === DOWNLOAD
 }
 
 const isImage = (line) => {
