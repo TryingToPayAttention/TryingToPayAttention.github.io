@@ -3,7 +3,7 @@
 
 This is a test for my flower post. What will it look like?
 
-!! flowers.pdf
+!! flowers.pdf !! You can click here to download the essay.
 
 
 ##########

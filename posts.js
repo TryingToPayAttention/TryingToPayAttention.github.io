@@ -297,11 +297,18 @@ const createImage = (title) => {
   return el
 }
 
-const createDownload = (title) => {
+const createDownload = (text) => {
   var el = document.createElement("a")
   el.className = "download"
-  el.innerHTML = "Download it!"
-  el.href = "documents/" + title
+
+  var i
+  for (i = 0; i < text.length; i++) {
+    if (text.slice(i, i+2) == DOWNLOAD){
+      el.href = "documents/" + text.slice(0, i)
+      el.innerHTML = text.slice(i+3)
+      break
+    }
+  }
   return el
 }
 
