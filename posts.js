@@ -167,7 +167,7 @@ const appendNavigation = (num, more) => {
 
   if(num != 1){
     var left = document.createElement("a")
-    left.innerHTML = "<<<"
+    left.innerHTML = "newer"
     var nextNum = num - 1
     if (nextNum == 1){
       left.href = MAIN_URL
@@ -176,18 +176,21 @@ const appendNavigation = (num, more) => {
     }
     el.append(left)
   } else{
-    el.append(document.createTextNode("<<<"))
+    // el.append(document.createTextNode("<<<"))
   }
 
   
   if(more == true){
+    if (num != 1){
+      el.append(document.createTextNode("|"))
+    }
     var right = document.createElement("a")
-    right.innerHTML = ">>>"
+    right.innerHTML = "older"
     var nextNum = num + 1
     right.href = MAIN_URL + "#" + nextNum.toString()
     el.append(right)
   } else{
-    el.append(document.createTextNode(">>>"))
+    // el.append(document.createTextNode(">>>"))
   }
   
 
