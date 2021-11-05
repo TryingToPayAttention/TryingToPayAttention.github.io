@@ -167,7 +167,7 @@ const appendNavigation = (num, more) => {
 
   if(num != 1){
     var left = document.createElement("a")
-    left.innerHTML = "< newer"
+    left.innerHTML = "newer"
     var nextNum = num - 1
     if (nextNum == 1){
       left.href = MAIN_URL
@@ -185,7 +185,7 @@ const appendNavigation = (num, more) => {
       el.append(document.createTextNode("|"))
     }
     var right = document.createElement("a")
-    right.innerHTML = "older >"
+    right.innerHTML = "older"
     var nextNum = num + 1
     right.href = MAIN_URL + "#" + nextNum.toString()
     el.append(right)
