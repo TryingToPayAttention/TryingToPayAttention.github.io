@@ -2,7 +2,7 @@
 // Globals
 ///////////////////////////////////////
 
-const MAIN_URL = "http://www.tryingtopayattention.com/"
+const MAIN_URL = "http://www.tryingtopayattention.github.io/"
 const POSTS_PER_PAGE = 5
 const LONG_POST_LENGTH = 1200
 const LONG_POST_IMAGES = 2
